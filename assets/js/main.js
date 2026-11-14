@@ -122,14 +122,11 @@
       }
     });
 
-    // Scroll handler for sticky nav & scroll-to-top button
+    // Scroll handler for scroll-to-top button (Sticky navigation disabled per request)
     window.addEventListener(
       'scroll',
       function () {
         var scrollY = window.scrollY || window.pageYOffset;
-        if (headerBottom) {
-          headerBottom.classList.toggle('is-sticky', scrollY > 60);
-        }
         if (scrollToTopBtn) {
           scrollToTopBtn.classList.toggle('active', scrollY > 320);
         }
@@ -531,8 +528,8 @@
       observer.observe(el);
     });
 
-    // 1. Strip Cards (Staggered Entrance)
-    document.querySelectorAll('.strip-sec .card').forEach(function (el, idx) {
+    // 1. Strip Highlights 3D Flip Cards (Staggered Entrance)
+    document.querySelectorAll('.flip-card, .strip-sec .card').forEach(function (el, idx) {
       el.classList.add('reveal-on-scroll');
       el.style.transitionDelay = (idx * 120) + 'ms';
       observer.observe(el);
@@ -557,17 +554,20 @@
       observer.observe(el);
     });
 
-    // 3. Guiding Pillars / Leadership Cards (Staggered 3 + 2)
-    document.querySelectorAll('.found-row-top .card').forEach(function (el, idx) {
-      el.classList.add('reveal-on-scroll');
-      el.style.transitionDelay = (idx * 120) + 'ms';
-      observer.observe(el);
-    });
+    // 3. Editorial Leadership & Heritage Sections (Photo & Content Fade)
+    document.querySelectorAll('.leader-editorial-sec').forEach(function (sec) {
+      var photoWrap = sec.querySelector('.editorial-photo-wrapper');
+      var content = sec.querySelector('.editorial-content');
+      var isReversed = sec.querySelector('.flex-row-reverse') !== null;
 
-    document.querySelectorAll('.found-row-bottom .card').forEach(function (el, idx) {
-      el.classList.add('reveal-on-scroll');
-      el.style.transitionDelay = (idx * 140) + 'ms';
-      observer.observe(el);
+      if (photoWrap) {
+        photoWrap.classList.add('reveal-on-scroll', isReversed ? 'reveal-right' : 'reveal-left');
+        observer.observe(photoWrap);
+      }
+      if (content) {
+        content.classList.add('reveal-on-scroll', isReversed ? 'reveal-left' : 'reveal-right');
+        observer.observe(content);
+      }
     });
 
     // 4. Counters / Metric Ribbon (Staggered 4 Columns)
