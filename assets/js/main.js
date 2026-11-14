@@ -16,7 +16,182 @@
     initScrollReveal();
     initDynamicNotices();
     initFlipCards();
+    initNewNavbar();
+    initHeroImageSlider();
+    initWhyChooseAccordion();
   });
+
+  /* 0.1 Full-Area Hero Background Continuous Auto-Sliding Carousel */
+  function initHeroImageSlider() {
+    var slides = document.querySelectorAll('.hero-bg-slide');
+    var dots = document.querySelectorAll('.hero-stage-dot');
+    var prevBtn = document.getElementById('hero-prev');
+    var nextBtn = document.getElementById('hero-next');
+    var captionLabel = document.getElementById('hero-caption-label');
+    if (!slides || slides.length === 0) return;
+
+    var captions = [
+      'Academic Excellence • Classroom Learning',
+      'Modern Science & Computer Lab',
+      'Library & Interactive Learning',
+      'Student Community & Moral Discipline',
+      'Independence Day & Patriotic Fest',
+      'Yoga & Holistic Physical Wellness',
+      'Tree Plantation & Environmental Stewardship',
+      'Campus Life • Kosamghat, Jabalpur'
+    ];
+
+    var currentIndex = 0;
+    var slideInterval = null;
+    var autoPlayDelay = 3500; // Auto-advance every 3.5 seconds
+
+    function goToSlide(index) {
+      if (index < 0) {
+        index = slides.length - 1;
+      } else if (index >= slides.length) {
+        index = 0;
+      }
+      currentIndex = index;
+
+      for (var i = 0; i < slides.length; i++) {
+        if (i === currentIndex) {
+          slides[i].classList.add('active');
+        } else {
+          slides[i].classList.remove('active');
+        }
+      }
+
+      for (var j = 0; j < dots.length; j++) {
+        if (j === currentIndex) {
+          dots[j].classList.add('active');
+        } else {
+          dots[j].classList.remove('active');
+        }
+      }
+
+      if (captionLabel && captions[currentIndex]) {
+        captionLabel.textContent = captions[currentIndex];
+      }
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    function resetTimer() {
+      if (slideInterval) clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, autoPlayDelay);
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        nextSlide();
+        resetTimer();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        prevSlide();
+        resetTimer();
+      });
+    }
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        var idx = parseInt(dot.getAttribute('data-index'), 10);
+        if (!isNaN(idx)) {
+          goToSlide(idx);
+          resetTimer();
+        }
+      });
+    });
+
+    // Start auto slide immediately and keep sliding continuously
+    resetTimer();
+  }
+
+  /* 0. New Navbar toggle for dbchsstura.in-design system */
+  function initNewNavbar() {
+    var navToggle = document.getElementById('nav-toggle');
+    var navMenu = document.getElementById('nav-menu');
+    if (!navToggle || !navMenu) return;
+
+    navToggle.addEventListener('click', function () {
+      var isOpen = navMenu.classList.toggle('active');
+      navToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Mobile submenu toggle on clicking parent nav-item
+    var navItems = navMenu.querySelectorAll('.nav-item');
+    navItems.forEach(function (item) {
+      var trigger = item.querySelector(':scope > a, :scope > span.nav-label');
+      var dropdown = item.querySelector('.dropdown-menu');
+      if (dropdown && trigger) {
+        trigger.addEventListener('click', function (e) {
+          if (window.innerWidth <= 991) {
+            e.preventDefault();
+            var wasOpen = item.classList.contains('open-mobile');
+            navItems.forEach(function (other) {
+              other.classList.remove('open-mobile');
+            });
+            if (!wasOpen) {
+              item.classList.add('open-mobile');
+            }
+          }
+        });
+      }
+    });
+
+    // Close menu when clicking any dropdown destination link
+    var directLinks = navMenu.querySelectorAll('.dropdown-menu a, .nav-item > a:not([data-has-children])');
+    directLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 991) {
+          navMenu.classList.remove('active');
+          navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+          navToggle.setAttribute('aria-expanded', 'false');
+          navItems.forEach(function (other) {
+            other.classList.remove('open-mobile');
+          });
+        }
+      });
+    });
+  }
+
+  /* 0.2 Interactive Why Should You Choose Accordion */
+  function initWhyChooseAccordion() {
+    var accordion = document.getElementById('why-accordion');
+    if (!accordion) return;
+
+    var cards = accordion.querySelectorAll('.accordion-card');
+    cards.forEach(function (card) {
+      var trigger = card.querySelector('.accordion-trigger');
+      if (!trigger) return;
+
+      trigger.addEventListener('click', function () {
+        var isOpen = card.classList.contains('active');
+
+        // Close all other accordion items
+        cards.forEach(function (other) {
+          other.classList.remove('active');
+          var otherBtn = other.querySelector('.accordion-trigger');
+          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle clicked item
+        if (!isOpen) {
+          card.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
 
   /* 1. Apply [data-background] attributes */
   function initDataBackgrounds() {
@@ -545,33 +720,41 @@
     );
 
     // Section Headers
-    document.querySelectorAll('.section-header').forEach(function (el) {
+    document.querySelectorAll('.section-header, .section-header-academic').forEach(function (el) {
+      el.classList.add('reveal-on-scroll');
       observer.observe(el);
     });
 
-    // 1. Strip Highlights 3D Flip Cards (Staggered Entrance)
-    document.querySelectorAll('.flip-card, .strip-sec .card').forEach(function (el, idx) {
+    // 1. Strip Highlights & Stat Cards
+    document.querySelectorAll('.flip-card, .strip-sec .card, .single-stat-card').forEach(function (el, idx) {
       el.classList.add('reveal-on-scroll');
-      el.style.transitionDelay = (idx * 120) + 'ms';
+      el.style.transitionDelay = (idx * 100) + 'ms';
       observer.observe(el);
     });
 
     // 2. About Section (Directional Reveals)
-    var aboutImg = document.querySelector('.about-video');
+    var aboutImg = document.querySelector('.about-video, .about-photo-composition');
     if (aboutImg) {
       aboutImg.classList.add('reveal-on-scroll', 'reveal-left');
       observer.observe(aboutImg);
     }
 
-    var aboutContent = document.querySelector('.about-content');
+    var aboutContent = document.querySelector('.about-content, .about-split-grid > div:last-child');
     if (aboutContent) {
       aboutContent.classList.add('reveal-on-scroll', 'reveal-right');
       observer.observe(aboutContent);
     }
 
-    document.querySelectorAll('.nulla-list .hallmark-card').forEach(function (el, idx) {
+    document.querySelectorAll('.nulla-list .hallmark-card, .hallmark-box').forEach(function (el, idx) {
       el.classList.add('reveal-on-scroll');
       el.style.transitionDelay = (idx * 90) + 'ms';
+      observer.observe(el);
+    });
+
+    // 2.1 Vision & Mission Cards (Staggered Entrance)
+    document.querySelectorAll('.vm-panel, .testimonial-card').forEach(function (el, idx) {
+      el.classList.add('reveal-on-scroll');
+      el.style.transitionDelay = ((idx % 3) * 120) + 'ms';
       observer.observe(el);
     });
 
@@ -617,8 +800,8 @@
       observer.observe(eventsCol);
     }
 
-    // 6. Facilities Section Cards (Staggered Grid)
-    document.querySelectorAll('.facility-item, .facility-card').forEach(function (el, idx) {
+    // 6. Facilities & Courses Cards (Staggered Grid)
+    document.querySelectorAll('.facility-item, .facility-card, .course-card, .accordion-card').forEach(function (el, idx) {
       el.classList.add('reveal-on-scroll');
       el.style.transitionDelay = ((idx % 4) * 85) + 'ms';
       observer.observe(el);
