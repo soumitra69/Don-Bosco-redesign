@@ -116,6 +116,27 @@
       overlay.addEventListener('click', closeMobileMenu);
     }
 
+    // Close on Escape key press
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu && menu.classList.contains('active')) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close mobile menu when clicking direct page navigation links (excluding submenu toggles)
+    if (menu) {
+      var directLinks = menu.querySelectorAll('a');
+      directLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          var href = link.getAttribute('href');
+          var parentLi = link.parentElement;
+          if (window.innerWidth <= 991 && href && href !== '#' && (!parentLi || !parentLi.classList.contains('has-submenu'))) {
+            closeMobileMenu();
+          }
+        });
+      });
+    }
+
     window.addEventListener('resize', function () {
       if (window.innerWidth > 991) {
         closeMobileMenu();

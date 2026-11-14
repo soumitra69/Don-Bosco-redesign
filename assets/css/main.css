@@ -1130,7 +1130,7 @@ header {
   padding: 8px;
   z-index: 1060;
   box-shadow: 0 4px 12px rgba(13, 102, 50, 0.25);
-  transition: all 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .header-bar:hover {
@@ -1144,26 +1144,51 @@ header {
 .header-bar span {
   display: block;
   width: 22px;
-  height: 2px;
+  height: 2.5px;
   background: #FFFFFF;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  border-radius: 3px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, background 0.3s ease;
+  transform-origin: center;
+}
+
+/* Close button state when mobile menu is active */
+.header-bar.active {
+  background: var(--brand-burgundy) !important;
+  border-color: var(--brand-gold-bright) !important;
+  box-shadow: 0 6px 18px rgba(107, 11, 55, 0.45) !important;
+}
+
+.header-bar.active:hover {
+  background: var(--brand-burgundy-deep) !important;
+  border-color: #FFFFFF !important;
+}
+
+.header-bar.active span {
+  background: #FFFFFF !important;
 }
 
 .header-bar.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(7.5px) rotate(45deg);
 }
 
 .header-bar.active span:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 
 .header-bar.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-7.5px) rotate(-45deg);
 }
 
 /* Mobile View: Off-Canvas Drawer (max-width: 991px) */
 @media (max-width: 991px) {
+  .header-bar.active {
+    position: fixed !important;
+    top: 14px !important;
+    right: 16px !important;
+    z-index: 1070 !important;
+  }
+
   .menu-area {
     background: transparent;
     border: none;
@@ -1186,7 +1211,7 @@ header {
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    padding: 70px 18px 30px;
+    padding: 16px 16px 30px;
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.25);
     overflow-y: auto;
     transition: right 0.35s ease;
@@ -1197,6 +1222,58 @@ header {
 
   .menu.active {
     right: 0;
+  }
+
+  .mobile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 46px 14px 4px;
+    margin-bottom: 10px;
+    border-bottom: 1.5px solid rgba(13, 102, 50, 0.12);
+    width: 100%;
+  }
+
+  .mobile-drawer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mobile-drawer-brand i {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--brand-burgundy) 0%, var(--brand-burgundy-deep) 100%);
+    color: var(--brand-gold-bright);
+    border: 1px solid var(--brand-gold-bright);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(107, 11, 55, 0.25);
+  }
+
+  .drawer-brand-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .drawer-brand-title {
+    font-family: var(--font-heading);
+    font-size: 0.94rem;
+    font-weight: 700;
+    color: var(--brand-burgundy);
+    line-height: 1.2;
+  }
+
+  .drawer-brand-sub {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--brand-green);
   }
 
   .menu > li > a {
