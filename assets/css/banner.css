@@ -1,0 +1,238 @@
+.bn-sec .item {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.bn-sec .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Cinematic Ken-Burns subtle zoom on active slide */
+.bn-sec .item.active img {
+    transform: scale(1.06);
+}
+
+.bn-sec .item .cover {
+    padding: 75px 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(4, 45, 21, 0.45) 0%, rgba(10, 4, 8, 0.72) 100%);
+    display: flex;
+    align-items: center;
+}
+
+.bn-sec .item .cover .header-content {
+    position: relative;
+    padding: 56px;
+    overflow: hidden;
+}
+
+.bn-sec .item .cover .header-content .line {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    border: 7px solid var(--brand-gold-bright, #F5B800);
+    -webkit-clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
+    clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
+    opacity: 0;
+}
+
+.bn-sec .item .cover .header-content h2 {
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--brand-gold-bright, #F5B800);
+    opacity: 0;
+}
+
+.bn-sec .item .cover .header-content h1 {
+    font-size: 56px;
+    font-weight: 800;
+    margin: 8px 0 20px;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+}
+
+.bn-sec .item .cover .header-content h4 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 36px;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+}
+
+/* Staggered Cinematic Keyframes for Active Slide */
+.bn-sec .item.active .line {
+    animation: heroLineFade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+.bn-sec .item.active h2 {
+    animation: heroFadeDown 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.bn-sec .item.active h1 {
+    animation: heroTitleReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+}
+
+.bn-sec .item.active h4 {
+    animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+
+@keyframes heroLineFade {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    100% {
+        opacity: 0.85;
+        transform: translateX(0);
+    }
+}
+
+@keyframes heroFadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-26px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroTitleReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+        letter-spacing: 4px;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        letter-spacing: 1px;
+    }
+}
+
+@keyframes heroFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Carousel Navigation Arrows */
+.bn-sec .hero-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(10, 4, 8, 0.65);
+    border: 1.5px solid var(--brand-gold-bright, #F5B800);
+    color: var(--brand-gold-bright, #F5B800);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.bn-sec .hero-nav-btn:hover {
+    background: var(--brand-gold-bright, #F5B800);
+    color: var(--brand-burgundy-deep, #3B061E);
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: 0 6px 20px rgba(245, 184, 0, 0.4);
+}
+
+.bn-sec .hero-nav-prev {
+    left: 24px;
+}
+
+.bn-sec .hero-nav-next {
+    right: 24px;
+}
+
+/* Bullets */
+.bn-sec .bullets {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 100;
+}
+
+.bn-sec .bullets li {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bn-sec .bullets li.active {
+    width: 32px;
+    background: var(--brand-gold-bright, #F5B800);
+    box-shadow: 0 0 10px rgba(245, 184, 0, 0.6);
+}
+
+@media (max-width: 991px) {
+    .bn-sec .item {
+        height: 520px;
+    }
+
+    .bn-sec .item .cover .header-content {
+        padding: 30px 20px;
+    }
+
+    .bn-sec .item .cover .header-content h1 {
+        font-size: 34px;
+    }
+
+    .bn-sec .item .cover .header-content h2 {
+        font-size: 20px;
+    }
+
+    .bn-sec .item .cover .header-content h4 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .bn-sec .hero-nav-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 0.95rem;
+    }
+}
