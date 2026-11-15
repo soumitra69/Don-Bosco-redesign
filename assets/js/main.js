@@ -19,6 +19,7 @@
     initNewNavbar();
     initHeroImageSlider();
     initWhyChooseAccordion();
+    initSanskaraFeatures();
   });
 
   /* 0.1 Full-Area Hero Background Continuous Auto-Sliding Carousel */
@@ -905,5 +906,84 @@
         }
       });
     });
+  }
+
+  /* 11. Sanskara-Style Interactive Features (Sticky Helpdesk Drawer, Video Modal & ScrollToTop) */
+  function initSanskaraFeatures() {
+    // Quick Inquiry Helpdesk Drawer Toggle
+    var chatToggle = document.getElementById('sn-chat-toggle');
+    var chatPopup = document.getElementById('sn-chat-popup');
+    var chatClose = document.getElementById('sn-chat-close');
+
+    if (chatToggle && chatPopup) {
+      chatToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        chatPopup.classList.toggle('active');
+      });
+    }
+
+    if (chatClose && chatPopup) {
+      chatClose.addEventListener('click', function () {
+        chatPopup.classList.remove('active');
+      });
+    }
+
+    // Close Helpdesk when clicking outside
+    document.addEventListener('click', function (e) {
+      if (chatPopup && chatPopup.classList.contains('active')) {
+        if (!chatPopup.contains(e.target) && !chatToggle.contains(e.target)) {
+          chatPopup.classList.remove('active');
+        }
+      }
+    });
+
+    // Scroll To Top Button
+    var scrollBtn = document.getElementById('scrollToTopBtn');
+    if (scrollBtn) {
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 350) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      });
+
+      scrollBtn.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Video Modal Lightbox (Global Hooks)
+    window.openVideoModal = function (videoUrl) {
+      var backdrop = document.getElementById('videoModalBackdrop');
+      var iframe = document.getElementById('videoModalIframe');
+      if (!backdrop || !iframe) return;
+
+      iframe.src = videoUrl + '?autoplay=1&rel=0';
+      backdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    window.closeVideoModal = function () {
+      var backdrop = document.getElementById('videoModalBackdrop');
+      var iframe = document.getElementById('videoModalIframe');
+      if (!backdrop || !iframe) return;
+
+      iframe.src = '';
+      backdrop.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    var backdrop = document.getElementById('videoModalBackdrop');
+    if (backdrop) {
+      backdrop.addEventListener('click', function (e) {
+        if (e.target === backdrop) {
+          window.closeVideoModal();
+        }
+      });
+    }
   }
 })();
