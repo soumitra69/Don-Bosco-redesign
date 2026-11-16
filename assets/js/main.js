@@ -959,22 +959,39 @@
       }
     });
 
-    // Scroll To Top Button
-    var scrollBtn = document.getElementById('scrollToTopBtn');
+    // Scroll To Top Button (Both #scrollToTopBtn and #globalScrollToTop)
+    var scrollBtn = document.getElementById('scrollToTopBtn') || document.getElementById('globalScrollToTop');
     if (scrollBtn) {
       window.addEventListener('scroll', function () {
-        if (window.scrollY > 350) {
+        if (window.scrollY > 300) {
           scrollBtn.classList.add('visible');
         } else {
           scrollBtn.classList.remove('visible');
         }
-      });
+      }, { passive: true });
 
       scrollBtn.addEventListener('click', function () {
         window.scrollTo({
           top: 0,
           behavior: 'smooth'
         });
+      });
+    }
+
+    // Right-Side Floating Actions (FAB) Toggle & Outside Click Listener
+    var floatingWrap = document.getElementById('floatingActionsWrap');
+    var floatingBtn = document.getElementById('floatingToggleBtn');
+
+    if (floatingWrap && floatingBtn) {
+      floatingBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        floatingWrap.classList.toggle('active');
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!floatingWrap.contains(e.target)) {
+          floatingWrap.classList.remove('active');
+        }
       });
     }
 
