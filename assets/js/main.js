@@ -582,11 +582,12 @@
 
   /* 6. Animated Odometer Counters */
   function initCounters() {
-    var counters = document.querySelectorAll('.odometer[data-odometer-final]');
+    var counters = document.querySelectorAll('.odometer[data-odometer-final], .count-number[data-count]');
     if (counters.length === 0) return;
 
     function animateCounter(el) {
-      var target = parseInt(el.getAttribute('data-odometer-final'), 10);
+      var rawAttr = el.getAttribute('data-odometer-final') || el.getAttribute('data-count');
+      var target = parseInt(rawAttr, 10);
       if (isNaN(target)) return;
 
       var duration = 1800;
@@ -699,12 +700,47 @@
 
   /* 8. Full Page Scroll Reveal Animation Engine */
   function initScrollReveal() {
+    var allTargetsSelector = [
+      '.section-header',
+      '.section-header-academic',
+      '.page-header-content',
+      '.quick-access-item',
+      '.count-box-sn',
+      '.stat-card',
+      '.about-photo-composition',
+      '.about-split-grid > div:last-child',
+      '.hallmark-box',
+      '.vm-panel',
+      '.vision-card',
+      '.mission-card',
+      '.why-choose-visual',
+      '.accordion-card',
+      '.accordion-item-academic',
+      '.leadership-box-card',
+      '.leader-editorial-sec .editorial-photo-wrapper',
+      '.leader-editorial-sec .editorial-content',
+      '.course-card',
+      '.house-pill-card',
+      '.facility-badge-card',
+      '.academic-table-wrap',
+      '.events-showcase-panel',
+      '.video-card-sn',
+      '.gallery-card',
+      '.testimonial-card',
+      '.admissions-box',
+      '.adm-step-item',
+      '.pillar-card',
+      '.heritage-col-text',
+      '.heritage-col-visual',
+      '.metric-mini-card',
+      '.founder-cta-box',
+      '.footer-col'
+    ].join(', ');
+
     if (!('IntersectionObserver' in window)) {
-      // Fallback for older browsers: show everything immediately
-      document.querySelectorAll('.section-header, .strip-sec .card, .about-video, .about-content, .found-sec .card, .single-counter, .notice-board-col, .events-carousel-col, .facility-item, .gallery-item, .footer-widget, .footer-callout-ribbon')
-        .forEach(function (el) {
-          el.classList.add('is-visible');
-        });
+      document.querySelectorAll(allTargetsSelector).forEach(function (el) {
+        el.classList.add('is-visible');
+      });
       return;
     }
 
@@ -717,8 +753,17 @@
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -35px 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
     );
+
+    // Hero Content & Page Banner Immediate Staggered Entrance
+    var heroWrapper = document.querySelector('.hero-content-wrapper, .page-header-content');
+    if (heroWrapper) {
+      heroWrapper.classList.add('reveal-on-scroll');
+      setTimeout(function () {
+        heroWrapper.classList.add('is-visible');
+      }, 80);
+    }
 
     // Section Headers
     document.querySelectorAll('.section-header, .section-header-academic').forEach(function (el) {
@@ -726,41 +771,39 @@
       observer.observe(el);
     });
 
-    // 1. Strip Highlights & Stat Cards
-    document.querySelectorAll('.flip-card, .strip-sec .card, .single-stat-card').forEach(function (el, idx) {
+    // 1. Quick Access Strip & Multi-Color Stat Cards
+    document.querySelectorAll('.quick-access-item, .count-box-sn, .stat-card').forEach(function (el, idx) {
       el.classList.add('reveal-on-scroll');
-      el.style.transitionDelay = (idx * 100) + 'ms';
+      el.style.transitionDelay = ((idx % 7) * 75) + 'ms';
       observer.observe(el);
     });
 
-    // 2. About Section (Directional Reveals)
-    var aboutImg = document.querySelector('.about-video, .about-photo-composition');
-    if (aboutImg) {
-      aboutImg.classList.add('reveal-on-scroll', 'reveal-left');
-      observer.observe(aboutImg);
-    }
-
-    var aboutContent = document.querySelector('.about-content, .about-split-grid > div:last-child');
-    if (aboutContent) {
-      aboutContent.classList.add('reveal-on-scroll', 'reveal-right');
-      observer.observe(aboutContent);
-    }
-
-    document.querySelectorAll('.nulla-list .hallmark-card, .hallmark-box').forEach(function (el, idx) {
-      el.classList.add('reveal-on-scroll');
-      el.style.transitionDelay = (idx * 90) + 'ms';
+    // 2. About Section & Heritage Split Rows (Directional Left/Right Reveals)
+    document.querySelectorAll('.about-photo-composition, .heritage-col-text, .why-choose-visual').forEach(function (el) {
+      el.classList.add('reveal-on-scroll', 'reveal-left');
       observer.observe(el);
     });
 
-    // 2.1 Vision & Mission Cards (Staggered Entrance)
-    document.querySelectorAll('.vm-panel, .testimonial-card').forEach(function (el, idx) {
-      el.classList.add('reveal-on-scroll');
-      el.style.transitionDelay = ((idx % 3) * 120) + 'ms';
+    document.querySelectorAll('.about-split-grid > div:last-child, .heritage-col-visual').forEach(function (el) {
+      el.classList.add('reveal-on-scroll', 'reveal-right');
       observer.observe(el);
     });
 
-    // 3. Editorial Leadership & Heritage Sections (Photo & Content Fade)
-    document.querySelectorAll('.leader-editorial-sec').forEach(function (sec) {
+    document.querySelectorAll('.hallmark-box, .metric-mini-card').forEach(function (el, idx) {
+      el.classList.add('reveal-on-scroll');
+      el.style.transitionDelay = ((idx % 4) * 85) + 'ms';
+      observer.observe(el);
+    });
+
+    // 3. Vision & Mission Cards + Dual Leadership Box Cards
+    document.querySelectorAll('.vm-panel, .vision-card, .mission-card, .leadership-box-card').forEach(function (el, idx) {
+      el.classList.add('reveal-on-scroll', idx % 2 === 0 ? 'reveal-left' : 'reveal-right');
+      el.style.transitionDelay = ((idx % 2) * 120) + 'ms';
+      observer.observe(el);
+    });
+
+    // 4. Editorial Leadership Sections (Founder, Principal, Rector Subpages & Sections)
+    document.querySelectorAll('.leader-editorial-sec, #founder-biography, #principal-message-body, #rector-message-body, #manager-message-body').forEach(function (sec) {
       var photoWrap = sec.querySelector('.editorial-photo-wrapper');
       var content = sec.querySelector('.editorial-content');
       var isReversed = sec.querySelector('.flex-row-reverse') !== null;
@@ -775,63 +818,42 @@
       }
     });
 
-    // 4. Counters / Metric Ribbon (Staggered 4 Columns)
-    var counterPill = document.querySelector('.counter-header-pill');
-    if (counterPill) {
-      counterPill.classList.add('reveal-on-scroll', 'reveal-zoom');
-      observer.observe(counterPill);
-    }
-
-    document.querySelectorAll('.single-counter').forEach(function (el, idx) {
-      el.classList.add('reveal-on-scroll');
-      el.style.transitionDelay = (idx * 95) + 'ms';
-      observer.observe(el);
-    });
-
     // 5. Notice Board (Left) & Latest Events (Right)
-    var noticeCol = document.querySelector('.notice-board-col');
-    if (noticeCol) {
-      noticeCol.classList.add('reveal-on-scroll', 'reveal-left');
-      observer.observe(noticeCol);
+    var noticeWrap = document.querySelector('.academic-table-wrap');
+    if (noticeWrap) {
+      noticeWrap.classList.add('reveal-on-scroll', 'reveal-left');
+      observer.observe(noticeWrap);
     }
 
-    var eventsCol = document.querySelector('.events-carousel-col');
-    if (eventsCol) {
-      eventsCol.classList.add('reveal-on-scroll', 'reveal-right');
-      observer.observe(eventsCol);
+    var eventsWrap = document.querySelector('.events-showcase-panel');
+    if (eventsWrap) {
+      eventsWrap.classList.add('reveal-on-scroll', 'reveal-right');
+      observer.observe(eventsWrap);
     }
 
-    // 6. Facilities & Courses Cards (Staggered Grid)
-    document.querySelectorAll('.facility-item, .facility-card, .course-card, .accordion-card').forEach(function (el, idx) {
+    // 6. Facilities, Courses, Pillars, Houses & Accordion Cards (Staggered Grid)
+    document.querySelectorAll('.facility-badge-card, .course-card, .pillar-card, .house-pill-card, .accordion-card, .accordion-item-academic').forEach(function (el, idx) {
       el.classList.add('reveal-on-scroll');
       el.style.transitionDelay = ((idx % 4) * 85) + 'ms';
       observer.observe(el);
     });
 
-    // 7. Photo Gallery Grid (Zoom Reveal)
-    document.querySelectorAll('.gallery-item').forEach(function (el, idx) {
+    // 7. Video Highlights & Photo Gallery Grid (Zoom Reveal)
+    document.querySelectorAll('.video-card-sn, .gallery-card').forEach(function (el, idx) {
       el.classList.add('reveal-on-scroll', 'reveal-zoom');
-      el.style.transitionDelay = ((idx % 3) * 90) + 'ms';
+      el.style.transitionDelay = ((idx % 4) * 80) + 'ms';
       observer.observe(el);
     });
 
-    // 8. Teachers Feature Blocks (Staggered)
-    document.querySelectorAll('.feature-block').forEach(function (el, idx) {
+    // 8. Testimonials, Admissions Box & Footer Columns
+    document.querySelectorAll('.testimonial-card, .adm-step-item, .footer-col').forEach(function (el, idx) {
       el.classList.add('reveal-on-scroll');
-      el.style.transitionDelay = ((idx % 3) * 110) + 'ms';
+      el.style.transitionDelay = ((idx % 4) * 95) + 'ms';
       observer.observe(el);
     });
 
-    // 9. Footer Callout Ribbon & Widgets
-    var footerRibbon = document.querySelector('.footer-callout-ribbon');
-    if (footerRibbon) {
-      footerRibbon.classList.add('reveal-on-scroll');
-      observer.observe(footerRibbon);
-    }
-
-    document.querySelectorAll('.footer-widget').forEach(function (el, idx) {
-      el.classList.add('reveal-on-scroll');
-      el.style.transitionDelay = (idx * 110) + 'ms';
+    document.querySelectorAll('.admissions-box, .founder-cta-box').forEach(function (el) {
+      el.classList.add('reveal-on-scroll', 'reveal-zoom');
       observer.observe(el);
     });
   }
