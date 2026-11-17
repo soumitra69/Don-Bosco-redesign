@@ -3411,54 +3411,34 @@ ul {
 
 .gallery-card {
   background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border: 3px solid #FFFFFF;
   border-radius: var(--rounded-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-subtle);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  line-height: 0;
+  position: relative;
   transition: transform var(--transition-snappy), box-shadow var(--transition-snappy);
 }
 
 .gallery-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-card);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(11, 94, 40, 0.14);
 }
 
 .gallery-card img {
   width: 100%;
-  height: 210px;
+  height: 230px;
   object-fit: cover;
-  transition: transform 0.35s ease;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gallery-card:hover img {
-  transform: scale(1.03);
+  transform: scale(1.06);
 }
 
 .gallery-caption {
-  padding: 11px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid var(--color-border);
-  background-color: var(--color-surface);
-}
-
-.gallery-caption .title {
-  font-family: var(--font-oswald);
-  font-size: 13.5px;
-  color: var(--color-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-}
-
-.gallery-caption .tag {
-  font-size: 10.5px;
-  color: var(--color-secondary);
-  background-color: var(--color-secondary-10);
-  padding: 3px 8px;
-  border-radius: var(--rounded-full);
-  font-weight: 700;
-  text-transform: uppercase;
+  display: none;
 }
 
 /* ==========================================================================
