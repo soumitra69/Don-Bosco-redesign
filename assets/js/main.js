@@ -516,7 +516,7 @@
 
     function getVisibleCount() {
       var trackWidth = getTrackWidth();
-      return trackWidth < 460 ? 1 : 2;
+      return trackWidth < 540 ? 1 : 2;
     }
 
     function updatePosition() {
@@ -727,7 +727,9 @@
       '.house-pill-card',
       '.facility-badge-card',
       '.academic-table-wrap',
+      '.notice-board-card',
       '.events-showcase-panel',
+      '.events-feature-panel',
       '.video-card-sn',
       '.gallery-card',
       '.testimonial-card',
@@ -829,13 +831,13 @@
     });
 
     // 5. Notice Board (Left) & Latest Events (Right)
-    var noticeWrap = document.querySelector('.academic-table-wrap');
+    var noticeWrap = document.querySelector('.academic-table-wrap, .notice-board-card');
     if (noticeWrap) {
       noticeWrap.classList.add('reveal-on-scroll', 'reveal-left');
       observer.observe(noticeWrap);
     }
 
-    var eventsWrap = document.querySelector('.events-showcase-panel');
+    var eventsWrap = document.querySelector('.events-showcase-panel, .events-feature-panel');
     if (eventsWrap) {
       eventsWrap.classList.add('reveal-on-scroll', 'reveal-right');
       observer.observe(eventsWrap);
