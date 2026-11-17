@@ -1335,15 +1335,15 @@ ul {
 
 /* Left Crest Column */
 .vm-crest-side {
-  flex: 0 0 34%;
-  max-width: 34%;
+  flex: 0 0 32%;
+  max-width: 32%;
   background: linear-gradient(180deg, #f3f8f5 0%, #e5f0ea 100%);
   border-right: 1px solid #d4e4db;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 22px 16px;
+  padding: 16px 14px;
   position: relative;
   text-align: center;
 }
@@ -1354,22 +1354,22 @@ ul {
 }
 
 .vm-crest-wrap {
-  width: 96px;
-  height: 96px;
+  width: 82px;
+  height: 82px;
   border-radius: 50%;
   background: #FFFFFF;
-  padding: 12px;
-  box-shadow: 0 8px 22px rgba(11, 94, 40, 0.14), inset 0 0 0 1px rgba(212, 152, 0, 0.3);
+  padding: 10px;
+  box-shadow: 0 6px 18px rgba(11, 94, 40, 0.14), inset 0 0 0 1px rgba(212, 152, 0, 0.3);
   border: 2px solid var(--color-tertiary);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .vm-card-burgundy .vm-crest-wrap {
-  box-shadow: 0 8px 22px rgba(107, 11, 55, 0.14), inset 0 0 0 1px rgba(212, 152, 0, 0.3);
+  box-shadow: 0 6px 18px rgba(107, 11, 55, 0.14), inset 0 0 0 1px rgba(212, 152, 0, 0.3);
 }
 
 .vm-horizontal-card:hover .vm-crest-wrap {
@@ -1388,206 +1388,96 @@ ul {
   align-items: center;
   gap: 6px;
   font-family: var(--font-oswald);
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-primary);
   background: #FFFFFF;
-  padding: 5px 14px;
+  padding: 4px 12px;
   border-radius: 50px;
   border: 1.5px solid #cce3d4;
-  box-shadow: 0 3px 10px rgba(11, 94, 40, 0.12);
+  box-shadow: 0 2px 8px rgba(11, 94, 40, 0.12);
 }
 
 .vm-crest-tag.crest-tag-burgundy {
   color: var(--color-secondary);
   border-color: #ebd0dc;
-  box-shadow: 0 3px 10px rgba(107, 11, 55, 0.12);
+  box-shadow: 0 2px 8px rgba(107, 11, 55, 0.12);
 }
 
 .vm-crest-tag i {
   color: var(--color-tertiary);
-  font-size: 11px;
+  font-size: 10.5px;
 }
 
 /* Right Content Column */
 .vm-content-side {
-  flex: 0 0 66%;
-  max-width: 66%;
-  padding: 22px 26px 18px;
+  flex: 0 0 68%;
+  max-width: 68%;
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   background: #FFFFFF;
-}
-
-.vm-top-chip-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.vm-chip-lead {
-  font-family: var(--font-oswald);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-}
-
-.vm-chip-lead.chip-burgundy {
-  color: var(--color-secondary);
-}
-
-.vm-step-pill {
-  font-family: var(--font-oswald);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 50px;
-  background: #edf7f1;
-  color: var(--color-primary);
-  border: 1px solid #cce3d4;
-}
-
-.vm-step-pill.pill-burgundy {
-  background: #faedf2;
-  color: var(--color-secondary);
-  border-color: #ebd0dc;
 }
 
 .vm-editorial-title {
   font-family: var(--font-serif);
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 700;
-  color: var(--color-primary);
+  color: #1e3a8a;
   line-height: 1.25;
-  margin: 0 0 8px 0;
+  margin: 0 0 10px 0;
   letter-spacing: -0.01em;
 }
 
 .vm-editorial-title.title-burgundy {
-  color: var(--color-secondary);
+  color: #1e3a8a;
 }
 
-.vm-editorial-quote {
-  font-family: var(--font-serif);
-  font-size: 13px;
-  line-height: 1.54;
-  color: #1a261f;
-  font-style: italic;
-  margin: 0 0 10px 0;
-  padding: 9px 13px;
-  background-color: #f7faf8;
-  border-left: 3.5px solid var(--color-primary);
-  border-radius: 0 6px 6px 0;
+.vm-editorial-desc {
+  font-family: var(--font-system);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #2b3940;
+  margin: 0 0 14px 0;
 }
 
-.vm-editorial-quote.quote-burgundy {
-  border-left-color: var(--color-secondary);
-  background-color: #fcf6f8;
-}
-
-.vm-editorial-points {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  margin-bottom: 12px;
-  flex: 1;
-}
-
-.vm-editorial-points li {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 12.8px;
-  line-height: 1.45;
-  color: #4a5550;
-}
-
-.vm-editorial-points li i {
-  color: var(--color-primary);
-  margin-top: 3px;
-  font-size: 11.5px;
-  flex-shrink: 0;
-}
-
-.vm-editorial-points.points-burgundy li i {
-  color: var(--color-secondary);
-}
-
-.vm-editorial-points li strong {
-  color: var(--color-on-surface);
+.vm-editorial-desc strong {
+  color: #0f172a;
 }
 
 /* Card Bottom Row */
 .vm-card-bottom-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-top: 12px;
-  border-top: 1px solid #edf0ee;
-  margin-top: auto;
+  margin-top: 4px;
 }
 
-.vm-office-label {
-  font-size: 11.5px;
-  color: #6a7c74;
-  line-height: 1.25;
-  font-weight: 500;
-}
-
-.vm-readmore-pill {
+.vm-readmore-link {
+  font-family: var(--font-system);
+  font-size: 13px;
+  font-weight: 700;
+  color: #b91c1c;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  background: var(--color-primary);
-  color: #FFFFFF;
-  font-family: var(--font-oswald);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 7px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 3px 10px rgba(11, 94, 40, 0.22);
-  transition: all 0.25s ease;
 }
 
-.vm-readmore-pill:hover {
-  background: var(--color-primary-80);
-  color: var(--color-tertiary);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(11, 94, 40, 0.35);
-}
-
-.vm-readmore-pill.pill-btn-burgundy {
-  background: var(--color-secondary);
-  box-shadow: 0 3px 10px rgba(107, 11, 55, 0.22);
-}
-
-.vm-readmore-pill.pill-btn-burgundy:hover {
-  background: #500829;
-  color: var(--color-tertiary);
-  box-shadow: 0 6px 16px rgba(107, 11, 55, 0.35);
-}
-
-.vm-readmore-pill i {
-  font-size: 10px;
-  transition: transform 0.25s ease;
-}
-
-.vm-readmore-pill:hover i {
+.vm-readmore-link:hover {
+  color: #7f1d1d;
+  text-decoration: underline;
   transform: translateX(3px);
+}
+
+.vm-readmore-link.link-burgundy {
+  color: #b91c1c;
+}
+
+.vm-readmore-link.link-burgundy:hover {
+  color: #7f1d1d;
 }
 
 /* Responsive Stacking */
