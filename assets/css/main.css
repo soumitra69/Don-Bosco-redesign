@@ -504,8 +504,7 @@ ul {
   background-color: var(--color-primary);
   border-top: 2px solid var(--color-tertiary);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(6, 40, 18, 0.2);
   width: 100%;
@@ -3590,8 +3589,7 @@ html {
 @media (max-width: 991px) {
   /* Navigation & Hamburger Fix */
   .main-navbar {
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 1000;
   }
   .main-navbar .container {
