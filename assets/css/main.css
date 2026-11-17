@@ -382,7 +382,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: clamp(14px, 2vw, 24px);
   width: 100%;
 }
 
@@ -531,9 +531,10 @@ ul {
 .nav-links {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   margin: 0;
   padding: 0;
-  gap: 0;
+  gap: 2px;
   flex: 1 1 auto;
 }
 
@@ -544,14 +545,14 @@ ul {
 .nav-item > a {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   font-family: var(--font-oswald);
   font-size: 13.5px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--color-surface);
-  padding: 16px 11px;
+  padding: 16px 14px;
   position: relative;
   white-space: nowrap;
   transition: all var(--transition-snappy);
@@ -3511,17 +3512,17 @@ html {
    ========================================================================== */
 @media (max-width: 1220px) {
   .nav-item > a {
-    font-size: 12.5px;
-    padding: 16px 8px;
+    font-size: 13px;
+    padding: 16px 10px;
     gap: 4px;
     letter-spacing: 0.03em;
   }
   .nav-right-action {
-    margin-left: 8px;
+    margin-left: 10px;
   }
   .nav-cta-btn {
-    padding: 8px 16px;
-    font-size: 12px;
+    padding: 8px 18px;
+    font-size: 12.5px;
   }
 }
 
