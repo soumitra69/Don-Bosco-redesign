@@ -12,7 +12,6 @@
     initHeroCarousel();
     initEventsSlider();
     initCounters();
-    initGalleryLightbox();
     initNoticeFilter();
     initScrollReveal();
     initDynamicNotices();
@@ -631,73 +630,8 @@
     }
   }
 
-  /* 7. Photo Gallery Lightbox (Vanilla JS Replacement for Magnific Popup) */
-  function initGalleryLightbox() {
-    var links = Array.prototype.slice.call(
-      document.querySelectorAll('#gallery a.img-pop, .gallery-card a.img-pop, .gallery-section a.img-pop')
-    );
-    if (links.length === 0) return;
-
-    var lightbox = document.createElement('div');
-    lightbox.className = 'gallery-lightbox';
-    lightbox.innerHTML =
-      '<button type="button" class="lightbox-btn lightbox-close" aria-label="Close"><i class="fas fa-times"></i></button>' +
-      '<button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>' +
-      '<img class="gallery-lightbox-img" src="" alt="Gallery preview">' +
-      '<button type="button" class="lightbox-btn lightbox-next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>' +
-      '<div class="lightbox-counter"></div>';
-
-    document.body.appendChild(lightbox);
-
-    var imgEl = lightbox.querySelector('.gallery-lightbox-img');
-    var closeBtn = lightbox.querySelector('.lightbox-close');
-    var prevBtn = lightbox.querySelector('.lightbox-prev');
-    var nextBtn = lightbox.querySelector('.lightbox-next');
-    var counterEl = lightbox.querySelector('.lightbox-counter');
-    var activeIndex = 0;
-
-    function openAt(index) {
-      activeIndex = (index + links.length) % links.length;
-      var href = links[activeIndex].getAttribute('href');
-      imgEl.setAttribute('src', href);
-      counterEl.textContent = activeIndex + 1 + ' / ' + links.length;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    links.forEach(function (link, idx) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        openAt(idx);
-      });
-    });
-
-    closeBtn.addEventListener('click', closeLightbox);
-    prevBtn.addEventListener('click', function () {
-      openAt(activeIndex - 1);
-    });
-    nextBtn.addEventListener('click', function () {
-      openAt(activeIndex + 1);
-    });
-
-    lightbox.addEventListener('click', function (e) {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (!lightbox.classList.contains('active')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') openAt(activeIndex - 1);
-      if (e.key === 'ArrowRight') openAt(activeIndex + 1);
-    });
-  }
+  /* 7. Photo Gallery Lightbox (Disabled as requested) */
+  function initGalleryLightbox() {}
 
   /* 8. Full Page Scroll Reveal Animation Engine */
   function initScrollReveal() {
