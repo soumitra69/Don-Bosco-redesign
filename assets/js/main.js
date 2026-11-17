@@ -719,6 +719,7 @@
       '.why-choose-visual',
       '.accordion-card',
       '.accordion-item-academic',
+      '.leader-split-card',
       '.leadership-box-card',
       '.leader-editorial-sec .editorial-photo-wrapper',
       '.leader-editorial-sec .editorial-content',
@@ -799,7 +800,7 @@
     });
 
     // 3. Vision & Mission Cards + Dual Leadership Box Cards
-    document.querySelectorAll('.vm-panel, .vm-charter-card, .vision-card, .mission-card, .leadership-box-card').forEach(function (el, idx) {
+    document.querySelectorAll('.vm-panel, .vm-charter-card, .leader-split-card, .vision-card, .mission-card, .leadership-box-card').forEach(function (el, idx) {
       el.classList.add('reveal-on-scroll', idx % 2 === 0 ? 'reveal-left' : 'reveal-right');
       el.style.transitionDelay = ((idx % 2) * 120) + 'ms';
       observer.observe(el);
