@@ -1284,15 +1284,15 @@ ul {
 
 /* Left Crest Column */
 .vm-crest-side {
-  flex: 0 0 38%;
-  max-width: 38%;
+  flex: 0 0 34%;
+  max-width: 34%;
   background: linear-gradient(180deg, #f4f8f5 0%, #e8f0eb 100%);
   border-right: 1px solid #dce8e0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px 20px;
+  padding: 20px 16px;
   position: relative;
   text-align: center;
 }
@@ -1303,17 +1303,17 @@ ul {
 }
 
 .vm-crest-wrap {
-  width: 130px;
-  height: 130px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   background: #FFFFFF;
-  padding: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   border: 2px solid var(--color-tertiary);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   transition: transform 0.4s ease;
 }
 
@@ -1333,13 +1333,13 @@ ul {
   align-items: center;
   gap: 6px;
   font-family: var(--font-oswald);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-primary);
   background: #FFFFFF;
-  padding: 5px 14px;
+  padding: 4px 12px;
   border-radius: 50px;
   border: 1px solid #cce3d4;
   box-shadow: 0 2px 8px rgba(11, 94, 40, 0.12);
@@ -1358,9 +1358,9 @@ ul {
 
 /* Right Content Column */
 .vm-content-side {
-  flex: 0 0 62%;
-  max-width: 62%;
-  padding: 28px 30px 24px;
+  flex: 0 0 66%;
+  max-width: 66%;
+  padding: 20px 24px 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1372,12 +1372,12 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .vm-chip-lead {
   font-family: var(--font-oswald);
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1390,11 +1390,11 @@ ul {
 
 .vm-step-pill {
   font-family: var(--font-oswald);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: 2px 8px;
   border-radius: 50px;
   background: #f1f7f3;
   color: var(--color-primary);
@@ -1409,11 +1409,11 @@ ul {
 
 .vm-editorial-title {
   font-family: var(--font-serif);
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--color-primary);
-  line-height: 1.25;
-  margin: 0 0 12px 0;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
   letter-spacing: -0.01em;
 }
 
@@ -1423,14 +1423,14 @@ ul {
 
 .vm-editorial-quote {
   font-family: var(--font-serif);
-  font-size: 13.5px;
-  line-height: 1.58;
+  font-size: 12.8px;
+  line-height: 1.5;
   color: #1a261f;
   font-style: italic;
-  margin: 0 0 14px 0;
-  padding: 10px 14px;
+  margin: 0 0 10px 0;
+  padding: 8px 12px;
   background-color: #f9faf9;
-  border-left: 3.5px solid var(--color-primary);
+  border-left: 3px solid var(--color-primary);
   border-radius: 0 6px 6px 0;
 }
 
@@ -1442,8 +1442,8 @@ ul {
 .vm-editorial-points {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 18px;
+  gap: 6px;
+  margin-bottom: 12px;
   flex: 1;
 }
 
@@ -1451,15 +1451,15 @@ ul {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: 12.5px;
+  line-height: 1.45;
   color: #4a5550;
 }
 
 .vm-editorial-points li i {
   color: var(--color-primary);
   margin-top: 3px;
-  font-size: 12px;
+  font-size: 11px;
   flex-shrink: 0;
 }
 
@@ -1477,7 +1477,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding-top: 14px;
+  padding-top: 10px;
   border-top: 1px solid #edf0ee;
   margin-top: auto;
 }
