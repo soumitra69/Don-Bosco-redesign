@@ -13,6 +13,7 @@
     initEventsSlider();
     initCounters();
     initGalleryLightbox();
+    initNoticeFilter();
     initScrollReveal();
     initDynamicNotices();
     initFlipCards();
@@ -633,7 +634,7 @@
   /* 7. Photo Gallery Lightbox (Vanilla JS Replacement for Magnific Popup) */
   function initGalleryLightbox() {
     var links = Array.prototype.slice.call(
-      document.querySelectorAll('.gallery-section a.img-pop')
+      document.querySelectorAll('#gallery a.img-pop, .gallery-card a.img-pop, .gallery-section a.img-pop')
     );
     if (links.length === 0) return;
 
@@ -911,10 +912,35 @@
         var list = document.getElementById('dynamic-notice-list');
         if (!list) return;
         list.innerHTML = data.notices.map(buildItem).join('');
+        initNoticeFilter();
       })
       .catch(function () {
         /* silently keep hardcoded fallback on error */
       });
+  }
+
+  /* Notice Board Interactive Category Filter */
+  function initNoticeFilter() {
+    var filterBtns = document.querySelectorAll('.notice-filter-btn');
+    var noticeItems = document.querySelectorAll('#dynamic-notice-list .event');
+    if (filterBtns.length === 0 || noticeItems.length === 0) return;
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var cat = btn.getAttribute('data-filter');
+        filterBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        noticeItems.forEach(function (item) {
+          var itemCat = item.getAttribute('data-cat');
+          if (cat === 'all' || itemCat === cat) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
   }
 
   /* 10. Highlights Strip 3D Flip Card Touch & Keyboard Interaction */

@@ -999,11 +999,11 @@
                     <div class="notice-board-head">
                         <div class="notice-head-left">
                             <div class="notice-head-icon" aria-hidden="true">
-                                <i class="fa-regular fa-clipboard"></i>
+                                <i class="fa-solid fa-clipboard-list"></i>
                             </div>
                             <div>
                                 <h3>Notice Board &amp; Circulars</h3>
-                                <span>Official PDF Schedules &amp; Notifications</span>
+                                <span>Official PDF Schedules &bull; Session 2025–26</span>
                             </div>
                         </div>
                         <span class="notice-count-pill">
@@ -1012,19 +1012,30 @@
                         </span>
                     </div>
 
+                    <!-- Notice Interactive Filter Tabs -->
+                    <div class="notice-filter-bar" role="tablist" aria-label="Filter school notices">
+                        <button type="button" class="notice-filter-btn active" data-filter="all"><i class="fa-solid fa-layer-group"></i> All (11)</button>
+                        <button type="button" class="notice-filter-btn" data-filter="exam"><i class="fa-solid fa-pen-ruler"></i> Exams (3)</button>
+                        <button type="button" class="notice-filter-btn" data-filter="academic"><i class="fa-solid fa-calendar-days"></i> Calendars (7)</button>
+                        <button type="button" class="notice-filter-btn" data-filter="holiday"><i class="fa-solid fa-tree"></i> Holidays (1)</button>
+                    </div>
+
                     <div class="notice-list">
                         <ul class="event-list" id="dynamic-notice-list">
-                            <li class="event">
-                                <div class="date">
-                                    <span class="day">28</span>
+                            <!-- Notice 1: Exam -->
+                            <li class="event event-exam" data-cat="exam">
+                                <div class="date date-exam">
                                     <span class="month">Feb</span>
+                                    <span class="day">28</span>
                                 </div>
                                 <div class="info">
-                                    <span class="notice-cat-tag">Exam Schedule</span>
+                                    <div class="notice-meta-line">
+                                        <span class="notice-cat-tag tag-exam"><i class="fa-solid fa-pen-ruler"></i> Exam Timetable</span>
+                                        <span class="notice-badge-new">NEW</span>
+                                    </div>
                                     <a href="./assets/images/event/Exam time table Cl Nursery LKG UKG.pdf" target="_blank" rel="noopener">
                                         <p class="title">Exam Time Table for Nursery, LKG &amp; UKG 2026</p>
                                     </a>
-                                    <img src="assets/images/event/newIcon.gif" alt="New" class="notice-new-gif">
                                 </div>
                                 <a href="./assets/images/event/Exam time table Cl Nursery LKG UKG.pdf" target="_blank" rel="noopener" class="notice-pdf-btn" aria-label="Download Nursery LKG UKG Exam Time Table PDF">
                                     <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
@@ -1032,17 +1043,20 @@
                                 </a>
                             </li>
 
-                            <li class="event">
+                            <!-- Notice 2: Academic Plan -->
+                            <li class="event event-academic" data-cat="academic">
                                 <div class="date">
-                                    <span class="day">28</span>
                                     <span class="month">Feb</span>
+                                    <span class="day">28</span>
                                 </div>
                                 <div class="info">
-                                    <span class="notice-cat-tag">Academic Plan</span>
+                                    <div class="notice-meta-line">
+                                        <span class="notice-cat-tag tag-academic"><i class="fa-solid fa-calendar-days"></i> Academic Calendar</span>
+                                        <span class="notice-badge-new">NEW</span>
+                                    </div>
                                     <a href="./assets/images/event/March Plan 2026.pdf" target="_blank" rel="noopener">
                                         <p class="title">Monthly Academic Calendar &bull; March 2026</p>
                                     </a>
-                                    <img src="assets/images/event/newIcon.gif" alt="New" class="notice-new-gif">
                                 </div>
                                 <a href="./assets/images/event/March Plan 2026.pdf" target="_blank" rel="noopener" class="notice-pdf-btn" aria-label="Download March 2026 Calendar PDF">
                                     <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
@@ -1050,13 +1064,16 @@
                                 </a>
                             </li>
 
-                            <li class="event">
+                            <!-- Notice 3: Academic Plan -->
+                            <li class="event event-academic" data-cat="academic">
                                 <div class="date">
-                                    <span class="day">29</span>
                                     <span class="month">Jan</span>
+                                    <span class="day">29</span>
                                 </div>
                                 <div class="info">
-                                    <span class="notice-cat-tag">Academic Plan</span>
+                                    <div class="notice-meta-line">
+                                        <span class="notice-cat-tag tag-academic"><i class="fa-solid fa-calendar-days"></i> Academic Calendar</span>
+                                    </div>
                                     <a href="./assets/images/event/February plan 2026.pdf" target="_blank" rel="noopener">
                                         <p class="title">Monthly Academic Calendar &bull; February 2026</p>
                                     </a>
@@ -1067,13 +1084,16 @@
                                 </a>
                             </li>
 
-                            <li class="event">
+                            <!-- Notice 4: Academic Plan -->
+                            <li class="event event-academic" data-cat="academic">
                                 <div class="date">
-                                    <span class="day">23</span>
                                     <span class="month">Dec</span>
+                                    <span class="day">23</span>
                                 </div>
                                 <div class="info">
-                                    <span class="notice-cat-tag">Academic Plan</span>
+                                    <div class="notice-meta-line">
+                                        <span class="notice-cat-tag tag-academic"><i class="fa-solid fa-calendar-days"></i> Academic Calendar</span>
+                                    </div>
                                     <a href="./assets/images/event/Monthly Calender January.pdf" target="_blank" rel="noopener">
                                         <p class="title">Monthly Academic Calendar &bull; January 2026</p>
                                     </a>
@@ -1084,13 +1104,16 @@
                                 </a>
                             </li>
 
-                            <li class="event">
-                                <div class="date">
-                                    <span class="day">23</span>
+                            <!-- Notice 5: Holiday Notice -->
+                            <li class="event event-holiday" data-cat="holiday">
+                                <div class="date date-holiday">
                                     <span class="month">Dec</span>
+                                    <span class="day">23</span>
                                 </div>
                                 <div class="info">
-                                    <span class="notice-cat-tag">Holiday Circular</span>
+                                    <div class="notice-meta-line">
+                                        <span class="notice-cat-tag tag-holiday"><i class="fa-solid fa-tree"></i> Holiday Circular</span>
+                                    </div>
                                     <a href="./assets/images/event/Christmas Holidays and Winter Vacation Schedule.pdf" target="_blank" rel="noopener">
                                         <p class="title">Christmas Holidays &amp; Winter Vacation Schedule 2025</p>
                                     </a>
@@ -1101,13 +1124,16 @@
                                 </a>
                             </li>
 
-                            <li class="event">
-                                <div class="date">
-                                    <span class="day">02</span>
+                            <!-- Notice 6: Exam -->
+                            <li class="event event-exam" data-cat="exam">
+                                <div class="date date-exam">
                                     <span class="month">Dec</span>
+                                    <span class="day">02</span>
                                 </div>
                                 <div class="info">
-                                    <span class="notice-cat-tag">Exam Schedule</span>
+                                    <div class="notice-meta-line">
+                                        <span class="notice-cat-tag tag-exam"><i class="fa-solid fa-pen-ruler"></i> Exam Timetable</span>
+                                    </div>
                                     <a href="./assets/images/event/ut2a.pdf" target="_blank" rel="noopener">
                                         <p class="title">Unit Test II Examination Time Table 2025</p>
                                     </a>
@@ -1118,13 +1144,16 @@
                                 </a>
                             </li>
 
-                            <li class="event">
+                            <!-- Notice 7: Academic Plan -->
+                            <li class="event event-academic" data-cat="academic">
                                 <div class="date">
-                                    <span class="day">01</span>
                                     <span class="month">Dec</span>
+                                    <span class="day">01</span>
                                 </div>
                                 <div class="info">
-                                    <span class="notice-cat-tag">Academic Plan</span>
+                                    <div class="notice-meta-line">
+                                        <span class="notice-cat-tag tag-academic"><i class="fa-solid fa-calendar-days"></i> Academic Calendar</span>
+                                    </div>
                                     <a href="./assets/images/event/decj.pdf" target="_blank" rel="noopener">
                                         <p class="title">Monthly Academic Calendar &bull; December 2025</p>
                                     </a>
@@ -1135,13 +1164,16 @@
                                 </a>
                             </li>
 
-                            <li class="event">
+                            <!-- Notice 8: Academic Plan -->
+                            <li class="event event-academic" data-cat="academic">
                                 <div class="date">
-                                    <span class="day">01</span>
                                     <span class="month">Nov</span>
+                                    <span class="day">01</span>
                                 </div>
                                 <div class="info">
-                                    <span class="notice-cat-tag">Academic Plan</span>
+                                    <div class="notice-meta-line">
+                                        <span class="notice-cat-tag tag-academic"><i class="fa-solid fa-calendar-days"></i> Academic Calendar</span>
+                                    </div>
                                     <a href="./assets/images/event/november.pdf" target="_blank" rel="noopener">
                                         <p class="title">Monthly Academic Calendar &bull; November 2025</p>
                                     </a>
@@ -1152,13 +1184,16 @@
                                 </a>
                             </li>
 
-                            <li class="event">
+                            <!-- Notice 9: Academic Plan -->
+                            <li class="event event-academic" data-cat="academic">
                                 <div class="date">
-                                    <span class="day">01</span>
                                     <span class="month">Sep</span>
+                                    <span class="day">01</span>
                                 </div>
                                 <div class="info">
-                                    <span class="notice-cat-tag">Academic Plan</span>
+                                    <div class="notice-meta-line">
+                                        <span class="notice-cat-tag tag-academic"><i class="fa-solid fa-calendar-days"></i> Academic Calendar</span>
+                                    </div>
                                     <a href="./assets/images/event/Monthly Plan September Kosamghat.pdf" target="_blank" rel="noopener">
                                         <p class="title">Monthly Academic Plan &bull; September 2025</p>
                                     </a>
@@ -1169,13 +1204,16 @@
                                 </a>
                             </li>
 
-                            <li class="event">
+                            <!-- Notice 10: Academic Plan -->
+                            <li class="event event-academic" data-cat="academic">
                                 <div class="date">
-                                    <span class="day">01</span>
                                     <span class="month">Aug</span>
+                                    <span class="day">01</span>
                                 </div>
                                 <div class="info">
-                                    <span class="notice-cat-tag">Academic Plan</span>
+                                    <div class="notice-meta-line">
+                                        <span class="notice-cat-tag tag-academic"><i class="fa-solid fa-calendar-days"></i> Academic Calendar</span>
+                                    </div>
                                     <a href="./assets/images/event/monthlyCalenderAugust.pdf" target="_blank" rel="noopener">
                                         <p class="title">Monthly Academic Calendar &bull; August 2025</p>
                                     </a>
@@ -1186,13 +1224,16 @@
                                 </a>
                             </li>
 
-                            <li class="event">
-                                <div class="date">
-                                    <span class="day">01</span>
+                            <!-- Notice 11: Exam -->
+                            <li class="event event-exam" data-cat="exam">
+                                <div class="date date-exam">
                                     <span class="month">Aug</span>
+                                    <span class="day">01</span>
                                 </div>
                                 <div class="info">
-                                    <span class="notice-cat-tag">Exam Schedule</span>
+                                    <div class="notice-meta-line">
+                                        <span class="notice-cat-tag tag-exam"><i class="fa-solid fa-pen-ruler"></i> Exam Timetable</span>
+                                    </div>
                                     <a href="./assets/images/event/UnitTestTimeTable.pdf" target="_blank" rel="noopener">
                                         <p class="title">Unit Test I Examination Time Table 2025</p>
                                     </a>
@@ -1206,7 +1247,13 @@
                     </div>
 
                     <div class="notice-board-foot">
-                        <span><i class="fa-regular fa-file-pdf" aria-hidden="true"></i> Click any circular to open or download official PDF</span>
+                        <div class="notice-foot-info">
+                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                            <span>Verified Circulars by Principal &amp; Rector's Desk</span>
+                        </div>
+                        <a href="tel:8305211667" class="notice-foot-help">
+                            <i class="fa-solid fa-phone"></i> <span>Helpdesk: 8305211667</span>
+                        </a>
                     </div>
                 </div>
 
@@ -1214,8 +1261,8 @@
                 <div class="events-feature-panel">
                     <div class="contact-title-box">
                         <div class="events-head-title">
-                            <span class="latest-head"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Latest Campus Events</span>
-                            <span class="events-head-sub">Celebrations, Assemblies &amp; Co-Curricular Milestones</span>
+                            <span class="latest-head"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i> Latest Campus Events</span>
+                            <span class="events-head-sub">Assemblies, Celebrations &amp; Co-Curricular Highlights</span>
                         </div>
                         <!-- initEventsSlider() injects .events-slider-controls here -->
                     </div>
@@ -1226,8 +1273,8 @@
                                 <!-- Event 1 -->
                                 <article class="event-slide-card">
                                     <div class="event-slide-media">
-                                        <img src="assets/images/new-img22.png" alt="Teachers' Day Celebration 2026">
-                                        <span class="event-slide-tag">Faculty Felicitation</span>
+                                        <img src="assets/images/new-img22.png" alt="Teachers' Day Celebration 2026" loading="lazy">
+                                        <span class="event-slide-tag"><i class="fa-solid fa-heart"></i> Faculty Felicitation</span>
                                         <div class="news-date">
                                             <span class="news-date__title">05</span>
                                             <span class="news-date__txt">Sep</span>
@@ -1236,15 +1283,18 @@
                                     <div class="news__title">
                                         <span class="event-slide-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Kosamghat Campus</span>
                                         <h4><a href="#gallery">Teachers' Day Celebration 2026</a></h4>
-                                        <p>Honouring our dedicated educators with cultural performances and heartfelt gratitude.</p>
+                                        <p>Honouring our dedicated educators with student stage performances and heartfelt gratitude.</p>
+                                        <div class="event-slide-footer">
+                                            <a href="#gallery" class="event-read-more"><span>View Highlights</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </article>
 
                                 <!-- Event 2 -->
                                 <article class="event-slide-card">
                                     <div class="event-slide-media">
-                                        <img src="assets/images/independence-day2.jpeg" alt="Independence Day Celebration 2026">
-                                        <span class="event-slide-tag">National Festival</span>
+                                        <img src="assets/images/independence-day2.jpeg" alt="Independence Day Celebration 2026" loading="lazy">
+                                        <span class="event-slide-tag"><i class="fa-solid fa-flag"></i> National Festival</span>
                                         <div class="news-date">
                                             <span class="news-date__title">15</span>
                                             <span class="news-date__txt">Aug</span>
@@ -1253,15 +1303,18 @@
                                     <div class="news__title">
                                         <span class="event-slide-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> School Ground</span>
                                         <h4><a href="#gallery">Independence Day Celebration 2026</a></h4>
-                                        <p>Flag hoisting, disciplined march-past, and patriotic cultural presentations.</p>
+                                        <p>Ceremonial flag hoisting, disciplined march-past, and patriotic cultural presentations.</p>
+                                        <div class="event-slide-footer">
+                                            <a href="#gallery" class="event-read-more"><span>View Highlights</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </article>
 
                                 <!-- Event 3 -->
                                 <article class="event-slide-card">
                                     <div class="event-slide-media">
-                                        <img src="assets/images/gallery/fu1.jpeg" alt="Annual Function Celebration 2026">
-                                        <span class="event-slide-tag">Cultural Stage Gala</span>
+                                        <img src="assets/images/gallery/fu1.jpeg" alt="Annual Function Celebration 2026" loading="lazy">
+                                        <span class="event-slide-tag"><i class="fa-solid fa-masks-theater"></i> Cultural Stage Gala</span>
                                         <div class="news-date">
                                             <span class="news-date__title">07</span>
                                             <span class="news-date__txt">Feb</span>
@@ -1270,15 +1323,18 @@
                                     <div class="news__title">
                                         <span class="event-slide-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Main Auditorium</span>
                                         <h4><a href="#gallery">Annual Function Celebration 2026</a></h4>
-                                        <p>Vibrant stage dances, drama, and annual academic merit awards.</p>
+                                        <p>Vibrant stage dramas, musical choreography, and annual academic merit distinctions.</p>
+                                        <div class="event-slide-footer">
+                                            <a href="#gallery" class="event-read-more"><span>View Highlights</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </article>
 
                                 <!-- Event 4 -->
                                 <article class="event-slide-card">
                                     <div class="event-slide-media">
-                                        <img src="assets/images/event/cd1.jpg" alt="Children's Day Celebration 2025">
-                                        <span class="event-slide-tag">Student Festivities</span>
+                                        <img src="assets/images/event/cd1.jpg" alt="Children's Day Celebration 2025" loading="lazy">
+                                        <span class="event-slide-tag"><i class="fa-solid fa-face-smile"></i> Student Festivities</span>
                                         <div class="news-date">
                                             <span class="news-date__title">14</span>
                                             <span class="news-date__txt">Nov</span>
@@ -1287,15 +1343,18 @@
                                     <div class="news__title">
                                         <span class="event-slide-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Kosamghat Campus</span>
                                         <h4><a href="#gallery">Children's Day Celebration 2025</a></h4>
-                                        <p>Joyful games, special assemblies by teachers, and fun activities for all classes.</p>
+                                        <p>Joyful games, special assemblies presented by teachers, and fun activities for all grades.</p>
+                                        <div class="event-slide-footer">
+                                            <a href="#gallery" class="event-read-more"><span>View Highlights</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </article>
 
                                 <!-- Event 5 -->
                                 <article class="event-slide-card">
                                     <div class="event-slide-media">
-                                        <img src="assets/images/event/fd11.jpg" alt="Fancy Dress Competition 2025">
-                                        <span class="event-slide-tag">Pre-Primary &amp; Primary</span>
+                                        <img src="assets/images/event/fd11.jpg" alt="Fancy Dress Competition 2025" loading="lazy">
+                                        <span class="event-slide-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Pre-Primary &amp; Primary</span>
                                         <div class="news-date">
                                             <span class="news-date__title">20</span>
                                             <span class="news-date__txt">Sep</span>
@@ -1304,15 +1363,18 @@
                                     <div class="news__title">
                                         <span class="event-slide-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Activity Hall</span>
                                         <h4><a href="#gallery">Fancy Dress Competition 2025</a></h4>
-                                        <p>Young learners showcasing creativity, confidence, and expressive storytelling.</p>
+                                        <p>Young learners showcasing vibrant creativity, stage confidence, and expressive character roles.</p>
+                                        <div class="event-slide-footer">
+                                            <a href="#gallery" class="event-read-more"><span>View Highlights</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </article>
 
                                 <!-- Event 6 -->
                                 <article class="event-slide-card">
                                     <div class="event-slide-media">
-                                        <img src="assets/images/event/photo-collage.png.png" alt="Teachers' Day Assembly 2025">
-                                        <span class="event-slide-tag">Mentor Appreciation</span>
+                                        <img src="assets/images/event/photo-collage.png.png" alt="Teachers' Day Assembly 2025" loading="lazy">
+                                        <span class="event-slide-tag"><i class="fa-solid fa-star"></i> Mentor Appreciation</span>
                                         <div class="news-date">
                                             <span class="news-date__title">05</span>
                                             <span class="news-date__txt">Sep</span>
@@ -1321,15 +1383,18 @@
                                     <div class="news__title">
                                         <span class="event-slide-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Assembly Stage</span>
                                         <h4><a href="#gallery">Teachers' Day Assembly 2025</a></h4>
-                                        <p>Student-led tributes, greeting cards, and felicitation of our teaching staff.</p>
+                                        <p>Student-led tribute addresses, handcrafted greetings, and honoring of teaching staff.</p>
+                                        <div class="event-slide-footer">
+                                            <a href="#gallery" class="event-read-more"><span>View Highlights</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </article>
 
                                 <!-- Event 7 -->
                                 <article class="event-slide-card">
                                     <div class="event-slide-media">
-                                        <img src="assets/images/event/inde1.jpg" alt="79th Independence Day Parade">
-                                        <span class="event-slide-tag">Parade &amp; Band</span>
+                                        <img src="assets/images/event/inde1.jpg" alt="79th Independence Day Parade" loading="lazy">
+                                        <span class="event-slide-tag"><i class="fa-solid fa-drum"></i> Parade &amp; Band</span>
                                         <div class="news-date">
                                             <span class="news-date__title">15</span>
                                             <span class="news-date__txt">Aug</span>
@@ -1338,15 +1403,18 @@
                                     <div class="news__title">
                                         <span class="event-slide-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Parade Ground</span>
                                         <h4><a href="#gallery">79th Independence Day Parade</a></h4>
-                                        <p>House contingents marching in unison to school band rhythms on Independence Day.</p>
+                                        <p>House contingents marching in disciplined unison to school band drum rhythms.</p>
+                                        <div class="event-slide-footer">
+                                            <a href="#gallery" class="event-read-more"><span>View Highlights</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </article>
 
                                 <!-- Event 8 -->
                                 <article class="event-slide-card">
                                     <div class="event-slide-media">
-                                        <img src="assets/images/event/plant1.jpeg" alt="Ek Pedh Maa Ke Naam Plantation">
-                                        <span class="event-slide-tag">Green Campus</span>
+                                        <img src="assets/images/event/plant1.jpeg" alt="Ek Pedh Maa Ke Naam Plantation" loading="lazy">
+                                        <span class="event-slide-tag"><i class="fa-solid fa-seedling"></i> Green Campus</span>
                                         <div class="news-date">
                                             <span class="news-date__title">26</span>
                                             <span class="news-date__txt">Jul</span>
@@ -1355,15 +1423,18 @@
                                     <div class="news__title">
                                         <span class="event-slide-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Campus Greens</span>
                                         <h4><a href="#gallery">Ek Pedh Maa Ke Naam Plantation</a></h4>
-                                        <p>Students and staff planting saplings to foster ecological stewardship and green habits.</p>
+                                        <p>Students and faculty planting native saplings to nurture environmental stewardship.</p>
+                                        <div class="event-slide-footer">
+                                            <a href="#gallery" class="event-read-more"><span>View Highlights</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </article>
 
                                 <!-- Event 9 -->
                                 <article class="event-slide-card">
                                     <div class="event-slide-media">
-                                        <img src="assets/images/event/ptm2.jpeg" alt="Parents-Teachers Meeting">
-                                        <span class="event-slide-tag">Academic Interaction</span>
+                                        <img src="assets/images/event/ptm2.jpeg" alt="Parents-Teachers Meeting" loading="lazy">
+                                        <span class="event-slide-tag"><i class="fa-solid fa-users"></i> Academic Dialogue</span>
                                         <div class="news-date">
                                             <span class="news-date__title">19</span>
                                             <span class="news-date__txt">Jul</span>
@@ -1372,15 +1443,18 @@
                                     <div class="news__title">
                                         <span class="event-slide-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Classrooms</span>
                                         <h4><a href="#gallery">Parents-Teachers Meeting</a></h4>
-                                        <p>Collaborative parent-mentor discussions on student progress and holistic growth.</p>
+                                        <p>Constructive parent-educator interactions discussing scholastic and personal development.</p>
+                                        <div class="event-slide-footer">
+                                            <a href="#gallery" class="event-read-more"><span>View Highlights</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </article>
 
                                 <!-- Event 10 -->
                                 <article class="event-slide-card">
                                     <div class="event-slide-media">
-                                        <img src="assets/images/event/yoga3.jpeg" alt="International Yoga Day">
-                                        <span class="event-slide-tag">Wellness &amp; Fitness</span>
+                                        <img src="assets/images/event/yoga3.jpeg" alt="International Yoga Day" loading="lazy">
+                                        <span class="event-slide-tag"><i class="fa-solid fa-spa"></i> Wellness &amp; Fitness</span>
                                         <div class="news-date">
                                             <span class="news-date__title">21</span>
                                             <span class="news-date__txt">Jun</span>
@@ -1389,7 +1463,10 @@
                                     <div class="news__title">
                                         <span class="event-slide-loc"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> School Hall</span>
                                         <h4><a href="#gallery">International Yoga Day</a></h4>
-                                        <p>Guided yoga postures and mindfulness sessions building balance and concentration.</p>
+                                        <p>Guided yogasanas, pranayama, and mindfulness sessions cultivating poise and concentration.</p>
+                                        <div class="event-slide-footer">
+                                            <a href="#gallery" class="event-read-more"><span>View Highlights</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </article>
                             </div>
@@ -1397,13 +1474,12 @@
                     </div>
 
                     <div class="events-bottom-bar">
-                        <div class="events-highlight-pills">
-                            <span><i class="fa-solid fa-star" aria-hidden="true"></i> Cultural &amp; Literary Galas</span>
-                            <span><i class="fa-solid fa-flag" aria-hidden="true"></i> National &amp; Civic Observances</span>
-                            <span><i class="fa-solid fa-users" aria-hidden="true"></i> Holistic Student Participation</span>
+                        <div class="events-status-indicator">
+                            <span class="events-pulse-indicator" aria-hidden="true"></span>
+                            <span>Auto-cycling 10 Kosamghat events</span>
                         </div>
                         <a href="#gallery" class="events-view-all-link">
-                            <span>View Photo Archive</span>
+                            <span>Explore Photo Archive (6 Photos)</span>
                             <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -1547,64 +1623,63 @@
     </section>
 
     <!-- ==========================================================================
-         12. CAMPUS PHOTO GALLERY (12 AUTHENTIC PHOTOGRAPHS)
+         12. CAMPUS PHOTO GALLERY (6 AUTHENTIC PHOTOGRAPHS)
          ========================================================================== -->
     <section class="section-band-neutral" id="gallery">
         <div class="container">
             <div class="section-header-academic">
                 <span class="eyebrow"><i class="fa-solid fa-camera-retro"></i> Life at Don Bosco</span>
                 <h2>Campus Moments &amp; Photo Archive</h2>
-                <p class="lead-sub">Authentic glimpses of classroom scholarship, cultural stage performances, sports
-                    meets, and student life at Kosamghat.</p>
+                <p class="lead-sub">Authentic glimpses of classroom scholarship, morning assemblies, cultural celebrations, laboratory experiments, and athletic sports at Kosamghat.</p>
             </div>
 
             <div class="gallery-grid">
+                <!-- Photo 1: Smart Classroom Learning -->
                 <div class="gallery-card">
-                    <img src="assets/images/new-img21.png" alt="Classroom Learning">
+                    <a href="assets/images/new-img21.png" class="img-pop" aria-label="Digital Smart Classroom Learning">
+                        <img src="assets/images/new-img21.png" alt="Classroom Learning with Smart Board at Don Bosco School" loading="lazy">
+                        <span class="gallery-zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </a>
                 </div>
 
+                <!-- Photo 2: Morning Assembly & Campus Quadrangle -->
                 <div class="gallery-card">
-                    <img src="assets/images/new-img23.png" alt="Morning Assembly">
+                    <a href="assets/images/new-img23.png" class="img-pop" aria-label="Morning Assembly and School Formation">
+                        <img src="assets/images/new-img23.png" alt="Morning Assembly at Don Bosco Campus Quadrangle" loading="lazy">
+                        <span class="gallery-zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </a>
                 </div>
 
+                <!-- Photo 3: Independence Day Band & March Past -->
                 <div class="gallery-card">
-                    <img src="assets/images/independence-day3.jpeg" alt="School Band March Past">
+                    <a href="assets/images/independence-day3.jpeg" class="img-pop" aria-label="Independence Day School Band March Past">
+                        <img src="assets/images/independence-day3.jpeg" alt="School Band March Past on Independence Day" loading="lazy">
+                        <span class="gallery-zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </a>
                 </div>
 
+                <!-- Photo 4: Patriotic Folk Dance Performance -->
                 <div class="gallery-card">
-                    <img src="assets/images/independence-day4.jpeg" alt="Patriotic Cultural Dance">
+                    <a href="assets/images/independence-day4.jpeg" class="img-pop" aria-label="Patriotic Cultural Folk Dance Performance">
+                        <img src="assets/images/independence-day4.jpeg" alt="Patriotic Cultural Dance Presentation" loading="lazy">
+                        <span class="gallery-zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </a>
                 </div>
 
+                <!-- Photo 5: Interactive Science & Computer Laboratory -->
                 <div class="gallery-card">
-                    <img src="assets/images/gallery/g15.jpeg" alt="Interactive Science and Computer Lab">
+                    <a href="assets/images/gallery/g15.jpeg" class="img-pop" aria-label="Interactive Science and Computer Laboratory">
+                        <img src="assets/images/gallery/g15.jpeg" alt="Interactive Science &amp; Computer Laboratory Session" loading="lazy">
+                        <span class="gallery-zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </a>
                 </div>
 
+                <!-- Photo 6: Annual Sports & Athletics Ground -->
                 <div class="gallery-card">
-                    <img src="assets/images/gallery/g10.jpeg" alt="Library Reading Session">
-                </div>
-
-                <div class="gallery-card">
-                    <img src="assets/images/gallery/g17.jpeg" alt="Sports and Athletics Meet">
-                </div>
-
-                <div class="gallery-card">
-                    <img src="assets/images/gallery/g12.jpeg" alt="Creative Arts and Crafts Exhibition">
-                </div>
-
-                <div class="gallery-card">
-                    <img src="assets/images/gallery/g18.jpeg" alt="Co-Curricular Group Activities">
-                </div>
-
-                <div class="gallery-card">
-                    <img src="assets/images/gallery/a1.jpg" alt="Annual Athletic Games">
-                </div>
-
-                <div class="gallery-card">
-                    <img src="assets/images/gallery/a2.jpg" alt="Cultural Festivities and Music">
-                </div>
-
-                <div class="gallery-card">
-                    <img src="assets/images/gallery/a3.jpg" alt="Student Awards Ceremony">
+                    <a href="assets/images/gallery/g17.jpeg" class="img-pop" aria-label="Annual Sports and Athletics Ground">
+                        <img src="assets/images/gallery/g17.jpeg" alt="Annual Sports and Athletic Meet at School Ground" loading="lazy">
+                        <span class="gallery-zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1674,86 +1749,138 @@
 
 
     <!-- ==========================================================================
-         15. INSTITUTIONAL FOOTER (OFFICIAL CREST BANNER + DEEP NAVY #152945)
+         15. INSTITUTIONAL FOOTER (OFFICIAL CREST + DEEP FOREST NAVY & GOLD ACCENTS)
          ========================================================================== -->
     <footer class="site-footer" id="site-footer">
+        <!-- Top Institutional Highlights Ribbon -->
+        <div class="footer-top-strip">
+            <div class="container">
+                <div class="footer-strip-grid">
+                    <div class="strip-item">
+                        <div class="strip-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="strip-text">
+                            <strong>UDISE CODE: 23390103903</strong>
+                            <span>Salesians of Don Bosco &bull; New Delhi Province</span>
+                        </div>
+                    </div>
+                    <div class="strip-item">
+                        <div class="strip-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="strip-text">
+                            <strong>Office Timing: 9:00 AM &ndash; 1:30 PM</strong>
+                            <span>Monday to Saturday &bull; Campus Helpdesk</span>
+                        </div>
+                    </div>
+                    <div class="strip-item">
+                        <div class="strip-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div class="strip-text">
+                            <strong>Helpline: +91-8305211667</strong>
+                            <span>Direct Admission &amp; Office Inquiries</span>
+                        </div>
+                    </div>
+                    <div class="strip-cta">
+                        <a href="#admissions" class="footer-strip-btn">
+                            <i class="fa-solid fa-file-signature"></i>
+                            <span>Admissions 2026–27</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <div class="footer-grid">
-                <!-- Col 1: Official School Crest Logo & Heritage -->
-                <div class="footer-col">
-                    <a href="#hero" class="footer-logo-frame">
-                        <img src="assets/images/dbslogo.jpg" alt="Don Bosco School Kosamghat Jabalpur Logo">
+                <!-- Col 1: Official School Crest, Heritage & Socials -->
+                <div class="footer-col footer-col-brand">
+                    <a href="#hero" class="footer-logo-frame" aria-label="Don Bosco School Home">
+                        <img src="assets/images/dbslogo.jpg" alt="Don Bosco School Kosamghat Jabalpur Crest">
                     </a>
-                    <p
-                        style="font-size: 13.5px; line-height: 1.6; color: rgba(255, 255, 255, 0.82); margin-bottom: 16px;">
-                        Inaugurated and blessed by Rev. Father Davis Maniparamben, sdb, Provincial of the New Delhi
-                        Province on 27th January 2022. Administered by the Salesians of Don Bosco.
+                    <div class="footer-school-titles">
+                        <h3>Don Bosco School</h3>
+                        <span>Kosamghat, Jabalpur (M.P.)</span>
+                    </div>
+                    <p class="footer-heritage-text">
+                        Inaugurated and blessed on 27th January 2022 by Rev. Father Davis Maniparamben, sdb, Provincial of New Delhi Province. Administered under the time-honoured Salesian Preventive System of Reason, Religion, and Loving Kindness.
                     </p>
-                    <div style="display: flex; gap: 12px;">
-                        <a href="#" aria-label="Facebook"
-                            style="width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.12); display: inline-flex; align-items: center; justify-content: center; color: #FFF;"><i
-                                class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"
-                            style="width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.12); display: inline-flex; align-items: center; justify-content: center; color: #FFF;"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"
-                            style="width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.12); display: inline-flex; align-items: center; justify-content: center; color: #FFF;"><i
-                                class="fa-brands fa-youtube"></i></a>
+                    <div class="footer-motto-pill">
+                        <i class="fa-solid fa-shield-halved"></i> Reason &bull; Religion &bull; Loving Kindness
+                    </div>
+                    <div class="footer-social-cluster">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://wa.me/918305211667?text=Hello%20Don%20Bosco%20School%20Kosamghat" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <!-- Col 2: Institutional Navigation -->
                 <div class="footer-col">
-                    <h4>About &amp; Heritage</h4>
+                    <h4 class="footer-heading">About &amp; Heritage</h4>
                     <div class="footer-links">
-                        <a href="#about-us"><i class="fa-solid fa-chevron-right"></i> Short History of School</a>
-                        <a href="#vision-mission"><i class="fa-solid fa-chevron-right"></i> Vision &amp; Mission</a>
-                        <a href="our-founder.html"><i class="fa-solid fa-chevron-right"></i> Our Founder (Don Bosco)</a>
-                        <a href="we-in-the-world.html"><i class="fa-solid fa-chevron-right"></i> We in the World</a>
-                        <a href="message-from-principal.html"><i class="fa-solid fa-chevron-right"></i> Principal's
-                            Message</a>
-                        <a href="message-from-rector.html"><i class="fa-solid fa-chevron-right"></i> Rector's
-                            Message</a>
+                        <a href="#about-us"><i class="fa-solid fa-angle-right"></i> Short History of School</a>
+                        <a href="#vision-mission"><i class="fa-solid fa-angle-right"></i> Vision &amp; Mission</a>
+                        <a href="our-founder.html"><i class="fa-solid fa-angle-right"></i> Our Founder (Don Bosco)</a>
+                        <a href="we-in-the-world.html"><i class="fa-solid fa-angle-right"></i> We in the World</a>
+                        <a href="message-from-principal.html"><i class="fa-solid fa-angle-right"></i> Principal's Message</a>
+                        <a href="message-from-rector.html"><i class="fa-solid fa-angle-right"></i> Rector's Message</a>
+                        <a href="aims-and-objectives.html"><i class="fa-solid fa-angle-right"></i> Aims &amp; Objectives</a>
                     </div>
                 </div>
 
-                <!-- Col 3: Academics & Student Life -->
+                <!-- Col 3: Campus Life & Quick Links -->
                 <div class="footer-col">
-                    <h4>Academics &amp; Links</h4>
+                    <h4 class="footer-heading">Campus &amp; Academics</h4>
                     <div class="footer-links">
-                        <a href="aims-and-objectives.html"><i class="fa-solid fa-chevron-right"></i> Aims &amp; Objectives</a>
-                        <a href="#facilities"><i class="fa-solid fa-chevron-right"></i> School Facilities</a>
-                        <a href="#notice-board"><i class="fa-solid fa-chevron-right"></i> Exam Timetables (PDF)</a>
-                        <a href="#gallery"><i class="fa-solid fa-chevron-right"></i> Campus Photo Archive</a>
-                        <a href="#admissions"><i class="fa-solid fa-chevron-right"></i> Admissions 2026–27</a>
+                        <a href="#facilities"><i class="fa-solid fa-angle-right"></i> School Facilities</a>
+                        <a href="#why-choose-us"><i class="fa-solid fa-angle-right"></i> Why Choose Don Bosco</a>
+                        <a href="#notice-board"><i class="fa-solid fa-angle-right"></i> Notice Board &amp; Circulars</a>
+                        <a href="#notice-board"><i class="fa-solid fa-angle-right"></i> Exam Timetables (PDF)</a>
+                        <a href="#gallery"><i class="fa-solid fa-angle-right"></i> Campus Photo Archive</a>
+                        <a href="#admissions"><i class="fa-solid fa-angle-right"></i> Admissions 2026&ndash;27</a>
                     </div>
                 </div>
 
-                <!-- Col 4: Direct Contact -->
-                <div class="footer-col">
-                    <h4>Campus Office</h4>
-                    <div
-                        style="font-size: 13.5px; display: flex; flex-direction: column; gap: 8px; color: rgba(255, 255, 255, 0.85);">
-                        <div><strong style="color: var(--color-tertiary);">Address:</strong> Kosamghat, Mandla Road,
-                            Jabalpur, MP &ndash; 483001</div>
-                        <div><strong style="color: var(--color-tertiary);">Phone:</strong> <a href="tel:8305211667"
-                                style="color: #FFFFFF; font-weight: 700;">+91-8305211667</a></div>
-                        <div><strong style="color: var(--color-tertiary);">Email:</strong> <a
-                                href="mailto:donboscobarela@gmail.com"
-                                style="color: #FFFFFF;">donboscobarela@gmail.com</a></div>
-                        <div><strong style="color: var(--color-tertiary);">Office Timing:</strong> 9:00 AM – 1:30 PM
-                            (Mon – Fri)</div>
+                <!-- Col 4: Campus Office & Google Map Location -->
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-heading">Campus Location &amp; Office</h4>
+                    <div class="footer-contact-details">
+                        <div class="f-contact-row">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <strong>Campus Address:</strong>
+                                <span>Kosamghat, Mandla Road, Barela, Jabalpur, M.P. &ndash; 483001</span>
+                            </div>
+                        </div>
+                        <div class="f-contact-row">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <strong>Direct Office Line:</strong>
+                                <span><a href="tel:8305211667">+91-8305211667</a> / <a href="tel:9406746959">9406746959</a></span>
+                            </div>
+                        </div>
+                        <div class="f-contact-row">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <strong>Official Email:</strong>
+                                <span><a href="mailto:donboscobarela@gmail.com">donboscobarela@gmail.com</a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Authentic Embedded Google Map from donboscoschooljabalpur.org -->
+                    <div class="footer-map-card">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3669.7497390147755!2d80.02021817403174!3d23.10625537911522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981ab71277a0ef3%3A0x52f7d3796de129b6!2sDON%20BOSCO%20SCHOOL!5e0!3m2!1sen!2sin!4v1753122332311!5m2!1sen!2sin"
+                            width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" title="Don Bosco School Kosamghat Location Map">
+                        </iframe>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom-bar">
                 <span>&copy; 2026 <strong>Don Bosco School, Kosamghat, Jabalpur</strong>. All Rights Reserved.</span>
-                <span
-                    style="color: var(--color-tertiary); font-family: var(--font-oswald); letter-spacing: 0.08em;">REASON
-                    &bull; RELIGION &bull; LOVING KINDNESS</span>
-                <span>Designed &amp; Developed by <a href="https://maraktechnologies.com" target="_blank" rel="noopener"
-                        style="color: var(--color-tertiary); font-weight: 600;">Marak Technologies Pvt. Ltd.</a></span>
+                <span class="footer-bottom-motto">REASON &bull; RELIGION &bull; LOVING KINDNESS</span>
+                <span>Designed &amp; Developed by <a href="https://maraktechnologies.com" target="_blank" rel="noopener">Marak Technologies Pvt. Ltd.</a></span>
             </div>
         </div>
     </footer>
