@@ -5217,3 +5217,105 @@ html {
     align-items: flex-start;
   }
 }
+
+/* ==========================================================================
+   19. OPENING ADMISSION POSTER POPUP MODAL (#image-popup)
+   ========================================================================== */
+.admission-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(6, 22, 12, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.admission-popup-backdrop.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.admission-popup-box {
+  position: relative;
+  max-width: 480px;
+  width: auto;
+  background: #FFFFFF;
+  padding: 8px;
+  border-radius: 16px;
+  border: 2px solid var(--color-tertiary);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+  transform: scale(0.92) translateY(16px);
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.admission-popup-backdrop.show .admission-popup-box {
+  transform: scale(1) translateY(0);
+}
+
+.admission-popup-link {
+  display: block;
+}
+
+.admission-popup-box img {
+  display: block;
+  max-width: 100%;
+  max-height: 84vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.popup-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.22s ease, background-color 0.22s ease;
+  z-index: 2;
+}
+
+.popup-close:hover {
+  background: var(--color-primary);
+  transform: scale(1.08);
+}
+
+@media (max-width: 540px) {
+  .admission-popup-backdrop {
+    padding: 16px;
+  }
+  .admission-popup-box {
+    max-width: 92vw;
+    padding: 6px;
+  }
+  .popup-close {
+    top: -12px;
+    right: -12px;
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+}
