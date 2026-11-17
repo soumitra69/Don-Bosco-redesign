@@ -1319,6 +1319,20 @@ ul {
   border-top-color: var(--color-secondary);
 }
 
+/* St. Xavier's Alternate Layout: Vision Card (Content on Left, Crest on Right) */
+.vm-horizontal-card.vm-card-reverse {
+  flex-direction: row-reverse;
+}
+
+.vm-horizontal-card.vm-card-reverse .vm-crest-side {
+  border-right: none;
+  border-left: 1px solid #d4e4db;
+}
+
+.vm-horizontal-card.vm-card-reverse.vm-card-burgundy .vm-crest-side {
+  border-left-color: #e8cad7;
+}
+
 /* Left Crest Column */
 .vm-crest-side {
   flex: 0 0 34%;
@@ -1585,13 +1599,16 @@ ul {
 }
 
 @media (max-width: 640px) {
-  .vm-horizontal-card {
+  .vm-horizontal-card,
+  .vm-horizontal-card.vm-card-reverse {
     flex-direction: column;
   }
-  .vm-crest-side {
+  .vm-crest-side,
+  .vm-horizontal-card.vm-card-reverse .vm-crest-side {
     flex: 0 0 auto;
     max-width: 100%;
     border-right: none;
+    border-left: none;
     border-bottom: 1px solid #dce8e0;
     padding: 24px 16px;
   }
