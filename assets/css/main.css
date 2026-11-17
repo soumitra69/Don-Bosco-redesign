@@ -382,25 +382,33 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
+  width: 100%;
 }
 
 .masthead-brand {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .masthead-brand img {
-  height: 76px;
+  height: 82px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.masthead-brand:hover img {
+  transform: scale(1.02);
 }
 
 .masthead-right-cluster {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
+  flex-shrink: 0;
 }
 
 /* Student Login Portal Pill Button */
