@@ -1249,11 +1249,9 @@ ul {
 }
 
 /* ==========================================================================
-   9. VISION, MISSION & AIMS SECTION (DEEP NAVY ARCHITECTURAL BAND)
+   9. VISION, MISSION & CHARTER SECTION (THE SALESIAN CHARTER & COMPASS STAGE)
    ========================================================================== */
-/* ==========================================================================
-   9. VISION & MISSION SECTION (PREMIUM EDITORIAL HERO-STYLE DUAL STAGE)
-   ========================================================================== */
+/* Shared dual-column grid preserved for subpages (e.g., vision-and-mission.html) */
 .vision-mission-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1261,250 +1259,547 @@ ul {
   align-items: stretch;
 }
 
-/* Horizontal Split Card Architecture (St. Xavier's / Don Bosco Side-by-Side Style) */
-/* ==========================================================================
-   9. VISION & MISSION SECTION (PREMIUM EDITORIAL HERO-STYLE DUAL STAGE)
-   ========================================================================== */
 .section-band-navy#vision-mission {
-  background: radial-gradient(circle at 18% 25%, #0e3d20 0%, #062413 55%, #03140a 100%);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212, 152, 0, 0.16) 0%, transparent 65%),
+    linear-gradient(135deg, #052612 0%, #093d1d 48%, #041d0e 100%);
   position: relative;
   overflow: hidden;
   border-top: 3px solid var(--color-tertiary);
   border-bottom: 3px solid var(--color-tertiary);
-  padding: 68px 0 74px;
+  padding: 68px 0 72px;
 }
 
 .section-band-navy#vision-mission::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(rgba(212, 152, 0, 0.08) 1.5px, transparent 1.5px),
-    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px, 16px 16px;
-  background-position: 0 0, 16px 16px;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 44px 44px;
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
-.vision-mission-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  align-items: stretch;
+.section-band-navy#vision-mission .container {
   position: relative;
   z-index: 2;
 }
 
-/* Horizontal Split Card Architecture (St. Xavier's / Don Bosco Side-by-Side Style) */
-.vm-horizontal-card {
-  background-color: #FFFFFF;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-top: 5px solid var(--color-primary);
-  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.32), 0 2px 8px rgba(0, 0, 0, 0.12);
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-}
-
-.vm-horizontal-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 26px 56px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(212, 152, 0, 0.35);
-}
-
-.vm-horizontal-card.vm-card-burgundy {
-  border-top-color: var(--color-secondary);
-}
-
-/* St. Xavier's Alternate Layout: Vision Card (Content on Left, Crest on Right) */
-.vm-horizontal-card.vm-card-reverse {
-  flex-direction: row-reverse;
-}
-
-.vm-horizontal-card.vm-card-reverse .vm-crest-side {
-  border-right: none;
-  border-left: 1px solid #d4e4db;
-}
-
-.vm-horizontal-card.vm-card-reverse.vm-card-burgundy .vm-crest-side {
-  border-left-color: #e8cad7;
-}
-
-/* Left Crest Column */
-.vm-crest-side {
-  flex: 0 0 32%;
-  max-width: 32%;
-  background: linear-gradient(180deg, #f3f8f5 0%, #e5f0ea 100%);
-  border-right: 1px solid #d4e4db;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 14px;
-  position: relative;
+/* Section Stage Header */
+.vm-stage-header {
   text-align: center;
-}
-
-.vm-card-burgundy .vm-crest-side {
-  background: linear-gradient(180deg, #fcf3f6 0%, #f3e1e8 100%);
-  border-right-color: #e8cad7;
-}
-
-.vm-crest-wrap {
-  width: 82px;
-  height: 82px;
-  border-radius: 50%;
-  background: #FFFFFF;
-  padding: 10px;
-  box-shadow: 0 6px 18px rgba(11, 94, 40, 0.14), inset 0 0 0 1px rgba(212, 152, 0, 0.3);
-  border: 2px solid var(--color-tertiary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 8px;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.vm-card-burgundy .vm-crest-wrap {
-  box-shadow: 0 6px 18px rgba(107, 11, 55, 0.14), inset 0 0 0 1px rgba(212, 152, 0, 0.3);
-}
-
-.vm-horizontal-card:hover .vm-crest-wrap {
-  transform: scale(1.08) rotate(4deg);
-}
-
-.vm-crest-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.vm-crest-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-oswald);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  background: #FFFFFF;
-  padding: 4px 12px;
-  border-radius: 50px;
-  border: 1.5px solid #cce3d4;
-  box-shadow: 0 2px 8px rgba(11, 94, 40, 0.12);
-}
-
-.vm-crest-tag.crest-tag-burgundy {
-  color: var(--color-secondary);
-  border-color: #ebd0dc;
-  box-shadow: 0 2px 8px rgba(107, 11, 55, 0.12);
-}
-
-.vm-crest-tag i {
-  color: var(--color-tertiary);
-  font-size: 10.5px;
-}
-
-/* Right Content Column */
-.vm-content-side {
-  flex: 0 0 68%;
-  max-width: 68%;
-  padding: 20px 24px;
+  max-width: 720px;
+  margin: 0 auto 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background: #FFFFFF;
-}
-
-.vm-editorial-title {
-  font-family: var(--font-serif);
-  font-size: 22px;
-  font-weight: 700;
-  color: #1e3a8a;
-  line-height: 1.25;
-  margin: 0 0 10px 0;
-  letter-spacing: -0.01em;
-}
-
-.vm-editorial-title.title-burgundy {
-  color: #1e3a8a;
-}
-
-.vm-editorial-desc {
-  font-family: var(--font-system);
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: #2b3940;
-  margin: 0 0 14px 0;
-}
-
-.vm-editorial-desc strong {
-  color: #0f172a;
-}
-
-/* Card Bottom Row */
-.vm-card-bottom-row {
-  display: flex;
   align-items: center;
-  margin-top: 6px;
 }
 
-/* Premium Read More Action Button */
-.vm-readmore-btn {
+.vm-stage-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, var(--color-primary), #07471f);
-  color: #FFFFFF !important;
   font-family: var(--font-oswald);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 7px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 12px rgba(11, 94, 40, 0.28);
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
+  color: var(--color-tertiary-80);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(245, 184, 0, 0.4);
+  padding: 6px 16px;
+  border-radius: var(--rounded-full);
+  margin-bottom: 14px;
+  backdrop-filter: blur(6px);
 }
 
-.vm-readmore-btn i {
-  font-size: 10px;
+.vm-stage-header h2 {
+  font-family: var(--font-oswald);
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.vm-stage-sub {
+  font-family: var(--font-system);
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0;
+}
+
+.vm-gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.vm-gold-divider span {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-tertiary), transparent);
+}
+
+.vm-gold-divider i {
+  font-size: 11px;
+  color: var(--color-tertiary-80);
+}
+
+/* Dual Architectural Charter Cards */
+.vm-charter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.vm-charter-card {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.vm-charter-card:hover,
+.vm-charter-card.reveal-on-scroll.is-visible:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.44), 0 0 0 2px rgba(245, 184, 0, 0.55);
+}
+
+/* Top Architectural Banner inside Card */
+.vm-card-banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 28px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid var(--color-tertiary);
+}
+
+.vm-theme-emerald .vm-card-banner {
+  background: linear-gradient(135deg, #0b5e28 0%, #073d19 100%);
+}
+
+.vm-theme-burgundy .vm-card-banner {
+  background: linear-gradient(135deg, #6b0b37 0%, #470624 100%);
+}
+
+.vm-card-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 90% 20%, rgba(245, 184, 0, 0.16) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.vm-emblem-medallion {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid var(--color-tertiary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), inset 0 0 12px rgba(245, 184, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vm-charter-card:hover .vm-emblem-medallion {
+  transform: scale(1.06) rotate(4deg);
+}
+
+.vm-banner-titles {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.vm-banner-eyebrow {
+  font-family: var(--font-oswald);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-tertiary-80);
+  margin-bottom: 2px;
+}
+
+.vm-banner-titles h3 {
+  font-family: var(--font-serif);
+  font-size: 25px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin: 0 0 3px 0;
+}
+
+.vm-banner-sub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+.vm-watermark-num {
+  position: absolute;
+  right: 20px;
+  bottom: -14px;
+  font-family: var(--font-oswald);
+  font-size: 84px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.08);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Charter Body */
+.vm-card-body {
+  padding: 24px 28px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.vm-charter-quote {
+  position: relative;
+  background: #f7faf8;
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 12px 12px 0;
+  padding: 16px 20px 16px 22px;
+  margin: 0 0 20px 0;
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #1a2920;
+  font-style: italic;
+}
+
+.vm-theme-burgundy .vm-charter-quote {
+  background: #fdf8fa;
+  border-left-color: var(--color-secondary);
+}
+
+.vm-charter-quote strong {
+  color: var(--color-on-surface);
+  font-style: normal;
+}
+
+.vm-quote-icon {
+  display: block;
+  font-size: 16px;
   color: var(--color-tertiary);
+  margin-bottom: 6px;
+  font-style: normal;
+}
+
+/* 3 Core Pillars Mini Grid */
+.vm-pillars-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: auto;
+}
+
+.vm-pillar-chip {
+  background: #FFFFFF;
+  border: 1px solid #e2ece5;
+  border-radius: 10px;
+  padding: 11px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.vm-theme-burgundy .vm-pillar-chip {
+  border-color: #efdde4;
+}
+
+.vm-pillar-chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  box-shadow: 0 6px 14px rgba(11, 94, 40, 0.09);
+}
+
+.vm-theme-burgundy .vm-pillar-chip:hover {
+  border-color: var(--color-secondary);
+  box-shadow: 0 6px 14px rgba(107, 11, 55, 0.09);
+}
+
+.vm-pillar-chip i {
+  font-size: 14px;
+  color: var(--color-primary);
+  background: var(--color-primary-10);
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.vm-theme-burgundy .vm-pillar-chip i {
+  color: var(--color-secondary);
+  background: var(--color-secondary-10);
+}
+
+.vm-pillar-chip strong {
+  display: block;
+  font-family: var(--font-oswald);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-on-surface);
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.vm-pillar-chip span {
+  display: block;
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: var(--color-muted);
+}
+
+/* Charter Card Footer */
+.vm-card-footer {
+  padding: 14px 28px;
+  background: #f9fbfa;
+  border-top: 1px solid #e9f0ec;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.vm-theme-burgundy .vm-card-footer {
+  background: #fcf9fa;
+  border-top-color: #f0e4e9;
+}
+
+.vm-footer-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #55665c;
+}
+
+.vm-footer-meta i {
+  color: var(--color-tertiary);
+  font-size: 13px;
+}
+
+.vm-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #FFFFFF !important;
+  font-family: var(--font-oswald);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: var(--rounded-full);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vm-action-btn i {
+  font-size: 10.5px;
+  color: var(--color-tertiary-80);
   transition: transform 0.25s ease;
 }
 
-.vm-readmore-btn:hover {
+.vm-action-btn.btn-emerald {
+  background: linear-gradient(135deg, var(--color-primary), #07471f);
+  box-shadow: 0 4px 12px rgba(11, 94, 40, 0.28);
+}
+
+.vm-action-btn.btn-emerald:hover {
   background: linear-gradient(135deg, #07471f, var(--color-primary));
-  color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(11, 94, 40, 0.38), 0 0 0 1px rgba(212, 152, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(11, 94, 40, 0.38);
 }
 
-.vm-readmore-btn:hover i {
-  transform: translateX(4px);
-}
-
-.vm-readmore-btn.btn-burgundy {
+.vm-action-btn.btn-burgundy {
   background: linear-gradient(135deg, var(--color-secondary), #4f0827);
   box-shadow: 0 4px 12px rgba(107, 11, 55, 0.28);
 }
 
-.vm-readmore-btn.btn-burgundy:hover {
+.vm-action-btn.btn-burgundy:hover {
   background: linear-gradient(135deg, #4f0827, var(--color-secondary));
-  box-shadow: 0 8px 20px rgba(107, 11, 55, 0.38), 0 0 0 1px rgba(212, 152, 0, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(107, 11, 55, 0.38);
 }
 
-/* Responsive Stacking */
+.vm-action-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* Bottom Foundation Ribbon: The Preventive System */
+.vm-preventive-ribbon {
+  margin-top: 28px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 152, 0, 0.38);
+  border-radius: 16px;
+  padding: 20px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.vm-prev-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 0 0 auto;
+  max-width: 280px;
+}
+
+.vm-prev-crest {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid var(--color-tertiary);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.vm-prev-crest img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.vm-prev-eyebrow {
+  display: block;
+  font-family: var(--font-oswald);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-tertiary-80);
+  margin-bottom: 2px;
+}
+
+.vm-prev-heading h4 {
+  font-family: var(--font-serif);
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.vm-prev-triad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  flex: 1;
+}
+
+.vm-triad-item {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.vm-triad-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(245, 184, 0, 0.5);
+}
+
+.triad-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(245, 184, 0, 0.16);
+  border: 1px solid rgba(245, 184, 0, 0.45);
+  color: var(--color-tertiary-80);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.vm-triad-item strong {
+  display: block;
+  font-family: var(--font-oswald);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-tertiary-80);
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.vm-triad-item span {
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+/* Responsive Breakpoints for Vision & Mission Stage */
+@media (max-width: 1100px) {
+  .vm-preventive-ribbon {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+  .vm-prev-brand {
+    max-width: 100%;
+  }
+  .vm-pillars-mini-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 1024px) {
   .vision-mission-grid {
     grid-template-columns: 1fr;
@@ -1512,29 +1807,46 @@ ul {
   }
 }
 
+@media (max-width: 991px) {
+  .vm-charter-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .vm-pillars-mini-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .vm-prev-triad {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 640px) {
-  .vm-horizontal-card,
-  .vm-horizontal-card.vm-card-reverse {
-    flex-direction: column;
+  .section-band-navy#vision-mission {
+    padding: 52px 0 56px;
   }
-  .vm-crest-side,
-  .vm-horizontal-card.vm-card-reverse .vm-crest-side {
-    flex: 0 0 auto;
-    max-width: 100%;
-    border-right: none;
-    border-left: none;
-    border-bottom: 1px solid #dce8e0;
-    padding: 24px 16px;
+  .vm-card-banner {
+    padding: 18px 20px;
+    gap: 14px;
   }
-  .vm-content-side {
-    flex: 0 0 auto;
-    max-width: 100%;
-    padding: 22px 18px 18px;
+  .vm-emblem-medallion {
+    width: 56px;
+    height: 56px;
   }
-  .vm-crest-wrap {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 12px;
+  .vm-banner-titles h3 {
+    font-size: 21px;
+  }
+  .vm-card-body {
+    padding: 18px 20px 16px;
+  }
+  .vm-pillars-mini-grid {
+    grid-template-columns: 1fr;
+  }
+  .vm-card-footer {
+    padding: 14px 20px;
+    flex-wrap: wrap;
+  }
+  .vm-preventive-ribbon {
+    padding: 18px;
   }
 }
 
