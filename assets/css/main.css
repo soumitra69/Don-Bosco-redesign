@@ -522,7 +522,7 @@ ul {
 .navbar-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
   position: relative;
   min-height: 52px;
@@ -535,7 +535,7 @@ ul {
   margin: 0;
   padding: 0;
   gap: 2px;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
 }
 
 .nav-item {
@@ -640,7 +640,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-left: 14px;
+  margin-left: 20px;
 }
 
 .nav-cta-btn {
