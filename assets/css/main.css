@@ -4005,41 +4005,7 @@ li.event:hover .info p.title {
 }
 
 .gallery-card:hover img {
-  transform: scale(1.06);
-}
-
-.gallery-zoom-badge {
-  position: absolute;
-  inset: 0;
-  background: rgba(6, 56, 23, 0.42);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.gallery-zoom-badge i {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--color-tertiary);
-  color: #063817;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-  transform: scale(0.8);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.gallery-card:hover .gallery-zoom-badge {
-  opacity: 1;
-}
-
-.gallery-card:hover .gallery-zoom-badge i {
-  transform: scale(1);
+  transform: scale(1.05);
 }
 
 .gallery-caption {
