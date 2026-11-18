@@ -5819,13 +5819,15 @@ html {
 
 .founder-editorial-sec .editorial-grid-row {
   display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: clamp(24px, 3.5vw, 48px);
+  grid-template-columns: 380px 1fr;
+  gap: clamp(28px, 4vw, 52px);
   align-items: start;
 }
 
 .founder-editorial-sec .editorial-col-photo {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .founder-editorial-sec .editorial-col-text {
@@ -5919,44 +5921,45 @@ html {
   text-align: left;
 }
 
-/* Don Bosco's Tips to School Children Box */
+/* Don Bosco's Tips to School Children Box (Placed Underneath Founder Photo Card) */
 .founder-tips-box {
   background-color: #f7faf8;
   border: 1.5px solid #d6e5d9;
   border-radius: 14px;
-  padding: 24px 26px;
-  margin-top: 26px;
+  padding: 18px 18px;
+  margin-top: 20px;
   box-shadow: 0 6px 20px rgba(11, 94, 40, 0.06);
 }
 
 .founder-tips-head {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
+  gap: 10px;
+  margin-bottom: 14px;
   border-bottom: 2px solid var(--color-tertiary);
-  padding-bottom: 12px;
+  padding-bottom: 10px;
 }
 
 .founder-tips-head i {
-  font-size: 22px;
+  font-size: 20px;
   color: var(--color-secondary);
 }
 
 .founder-tips-head h4 {
   font-family: var(--font-oswald);
-  font-size: 19px;
+  font-size: 16.5px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--color-primary);
   margin: 0;
+  line-height: 1.25;
 }
 
 .founder-tips-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -5965,14 +5968,14 @@ html {
 .founder-tips-list li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
+  gap: 9px;
+  font-size: 13px;
   line-height: 1.45;
   color: #1f2d23;
   background: #FFFFFF;
   border: 1px solid #e1ebe3;
   border-radius: 8px;
-  padding: 10px 14px;
+  padding: 9px 12px;
   transition: all 0.2s ease;
 }
 
@@ -5984,7 +5987,7 @@ html {
 
 .founder-tips-list li i {
   color: var(--color-primary);
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 2px;
   flex-shrink: 0;
 }
@@ -5999,11 +6002,8 @@ html {
     gap: 32px;
   }
   .founder-editorial-sec .editorial-col-photo {
-    max-width: 360px;
+    max-width: 480px;
     margin: 0 auto;
-  }
-  .founder-tips-list {
-    grid-template-columns: 1fr;
   }
 }
 
