@@ -5813,6 +5813,25 @@ html {
 }
 
 /* Founder Portrait & Caption Card */
+.founder-editorial-sec {
+  padding: 48px 0 56px;
+}
+
+.founder-editorial-sec .editorial-grid-row {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: clamp(24px, 3.5vw, 48px);
+  align-items: start;
+}
+
+.founder-editorial-sec .editorial-col-photo {
+  width: 100%;
+}
+
+.founder-editorial-sec .editorial-col-text {
+  width: 100%;
+}
+
 .founder-caption-card {
   margin-top: 18px;
   background: var(--color-neutral);
@@ -5850,6 +5869,142 @@ html {
   background-color: var(--color-secondary-10);
   padding: 3px 12px;
   border-radius: var(--rounded-full);
+}
+
+/* Founder Authentic Biography Article Layout */
+.founder-bio-article {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #2c3830;
+}
+
+.founder-bio-article p {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.founder-bio-article p.lead-text {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: #141f17;
+  border-left: 3px solid var(--color-primary);
+  padding-left: 14px;
+  margin-bottom: 18px;
+}
+
+.founder-highlight-card {
+  background: linear-gradient(135deg, rgba(11, 94, 40, 0.06) 0%, rgba(245, 184, 0, 0.06) 100%);
+  border: 1px solid rgba(11, 94, 40, 0.18);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--rounded-md);
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+.founder-highlight-card strong {
+  font-family: var(--font-oswald);
+  font-size: 15px;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.founder-highlight-card p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #2c3830;
+  text-align: left;
+}
+
+/* Don Bosco's Tips to School Children Box */
+.founder-tips-box {
+  background-color: #f7faf8;
+  border: 1.5px solid #d6e5d9;
+  border-radius: 14px;
+  padding: 24px 26px;
+  margin-top: 26px;
+  box-shadow: 0 6px 20px rgba(11, 94, 40, 0.06);
+}
+
+.founder-tips-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  border-bottom: 2px solid var(--color-tertiary);
+  padding-bottom: 12px;
+}
+
+.founder-tips-head i {
+  font-size: 22px;
+  color: var(--color-secondary);
+}
+
+.founder-tips-head h4 {
+  font-family: var(--font-oswald);
+  font-size: 19px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.founder-tips-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.founder-tips-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #1f2d23;
+  background: #FFFFFF;
+  border: 1px solid #e1ebe3;
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: all 0.2s ease;
+}
+
+.founder-tips-list li:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(11, 94, 40, 0.08);
+}
+
+.founder-tips-list li i {
+  color: var(--color-primary);
+  font-size: 14px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.founder-tips-list li strong {
+  color: var(--color-primary);
+}
+
+@media (max-width: 991px) {
+  .founder-editorial-sec .editorial-grid-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .founder-editorial-sec .editorial-col-photo {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .founder-tips-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Founder Quote Banner in Editorial Column */
