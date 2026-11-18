@@ -1190,22 +1190,46 @@ ul {
   line-height: 1.25;
 }
 
+.about-content-header {
+  margin-bottom: 12px !important;
+}
+
+.about-content-header h2 {
+  font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1.22;
+  margin-bottom: 6px;
+}
+
+.about-lead-p {
+  font-size: 14.5px;
+  line-height: 1.48;
+  color: var(--color-on-surface);
+  margin-bottom: 8px;
+}
+
+.about-sub-p {
+  font-size: 13px;
+  line-height: 1.42;
+  color: var(--color-muted);
+  margin-bottom: 14px;
+}
+
 /* 4 Institutional Hallmarks with Authentic PNG Icons */
 .hallmarks-grid-2x2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin: 24px 0;
+  gap: 10px;
+  margin: 0 0 16px 0;
 }
 
 .hallmark-box {
   background-color: var(--color-neutral);
   border: 1px solid var(--color-border);
-  border-radius: var(--rounded-lg);
-  padding: 14px 16px;
+  border-radius: var(--rounded-md);
+  padding: 8px 12px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   transition: border-color var(--transition-snappy), transform var(--transition-snappy);
 }
 
@@ -1215,16 +1239,16 @@ ul {
 }
 
 .hallmark-thumb {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--rounded-md);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--rounded-sm);
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 6px;
+  padding: 5px;
 }
 
 .hallmark-thumb img {
@@ -1236,15 +1260,31 @@ ul {
 .hallmark-info strong {
   display: block;
   font-family: var(--font-oswald);
-  font-size: 15px;
+  font-size: 13.5px;
   color: var(--color-primary);
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  line-height: 1.2;
 }
 
 .hallmark-info span {
-  font-size: 12.5px;
+  font-size: 11.5px;
   color: var(--color-muted);
+  line-height: 1.2;
+}
+
+.about-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.about-actions-row .btn-primary,
+.about-actions-row .btn-secondary {
+  padding: 8px 18px;
+  font-size: 13px;
 }
 
 /* ==========================================================================
