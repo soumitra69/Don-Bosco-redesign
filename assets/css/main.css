@@ -7490,13 +7490,13 @@ html {
     gap: 14px;
   }
 
-  /* Home Page Images: Full photo visibility without edge crops */
+  /* Home Page Images: Full box display & clean edge-to-edge coverage */
   .about-main-frame img,
   .school-collage-frame img {
     width: 100% !important;
     height: auto !important;
     max-height: none !important;
-    object-fit: contain !important;
+    object-fit: cover !important;
     display: block !important;
     border-radius: var(--rounded-md);
   }
@@ -7504,49 +7504,54 @@ html {
   .gallery-card {
     border-radius: var(--rounded-md);
     overflow: hidden;
-    background: #062b13;
   }
 
   .gallery-card img {
-    height: auto !important;
-    aspect-ratio: 4 / 3 !important;
+    height: 220px !important;
     width: 100% !important;
-    object-fit: contain !important;
-    background-color: #062b13 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
     display: block !important;
   }
 
   .event-slide-media {
-    height: auto !important;
-    aspect-ratio: 16 / 10 !important;
-    background-color: #062b13 !important;
+    height: 210px !important;
+    width: 100% !important;
+    overflow: hidden !important;
   }
 
   .event-slide-media img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain !important;
-    background-color: #062b13 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
   }
 
   .leader-media-side {
-    height: auto !important;
-    aspect-ratio: 4 / 3 !important;
-    background-color: #062b13 !important;
+    height: 250px !important;
+    width: 100% !important;
+    aspect-ratio: auto !important;
+    overflow: hidden !important;
+  }
+
+  .leader-media-wrapper {
+    height: 100% !important;
+    width: 100% !important;
   }
 
   .leader-media-wrapper img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain !important;
-    background-color: #062b13 !important;
+    object-fit: cover !important;
+    object-position: center 15% !important;
   }
 
   img[src*="Admission Poster"] {
     width: 100% !important;
     height: auto !important;
-    max-height: none !important;
+    max-height: 480px !important;
     object-fit: contain !important;
+    background-color: transparent !important;
   }
 
   /* Full Width Action Buttons on Mobile */
