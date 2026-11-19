@@ -116,77 +116,123 @@
     resetTimer();
   }
 
-  /* 0. New Navbar toggle for dbchsstura.in-design system */
+  /* 0. New Navbar toggle for mobile and responsive navigation */
   function initNewNavbar() {
     var navToggle = document.getElementById('nav-toggle');
     var navMenu = document.getElementById('nav-menu');
     if (!navToggle || !navMenu) return;
 
-    navToggle.addEventListener('click', function () {
-      var isOpen = navMenu.classList.toggle('active');
-      navToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
-      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    var navItems = navMenu.querySelectorAll('.nav-item');
+
+    function isMobileView() {
+      return window.innerWidth <= 991 || (navToggle && window.getComputedStyle(navToggle).display !== 'none');
+    }
+
+    function closeMobileMenu() {
+      navMenu.classList.remove('active');
+      navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      navToggle.setAttribute('aria-expanded', 'false');
+      navItems.forEach(function (item) {
+        item.classList.remove('open-mobile');
+        var trigger = item.querySelector(':scope > a');
+        if (trigger) {
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // 1. Hamburger button click handler - reliable, prevents race conditions
+    navToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var willOpen = !navMenu.classList.contains('active');
+      if (willOpen) {
+        navMenu.classList.add('active');
+        navToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        navToggle.setAttribute('aria-expanded', 'true');
+      } else {
+        closeMobileMenu();
+      }
     });
 
-    // Mobile submenu toggle on clicking parent nav-item
-    var navItems = navMenu.querySelectorAll('.nav-item');
+    // 2. Separate dropdown parents from direct top-level links
     navItems.forEach(function (item) {
       var trigger = item.querySelector(':scope > a, :scope > span.nav-label');
       var dropdown = item.querySelector('.dropdown-menu');
+
       if (dropdown && trigger) {
+        // Dropdown parent: toggle accordion on mobile
+        trigger.setAttribute('data-has-children', 'true');
+        trigger.setAttribute('aria-haspopup', 'true');
+        trigger.setAttribute('aria-expanded', 'false');
+
         trigger.addEventListener('click', function (e) {
-          if (window.innerWidth <= 991) {
+          if (isMobileView()) {
             e.preventDefault();
+            e.stopPropagation();
+
             var wasOpen = item.classList.contains('open-mobile');
+
+            // Accordion behavior: close other open dropdowns
             navItems.forEach(function (other) {
-              other.classList.remove('open-mobile');
+              if (other !== item) {
+                other.classList.remove('open-mobile');
+                var otherTrigger = other.querySelector(':scope > a');
+                if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+              }
             });
-            if (!wasOpen) {
+
+            if (wasOpen) {
+              item.classList.remove('open-mobile');
+              trigger.setAttribute('aria-expanded', 'false');
+            } else {
               item.classList.add('open-mobile');
+              trigger.setAttribute('aria-expanded', 'true');
             }
+          }
+        });
+      } else if (trigger) {
+        // Direct top-level standalone link (Home, Transport, Contact)
+        trigger.addEventListener('click', function () {
+          if (isMobileView()) {
+            closeMobileMenu();
           }
         });
       }
     });
 
-    // Close menu when clicking any dropdown destination link
-    var directLinks = navMenu.querySelectorAll('.dropdown-menu a, .nav-item > a:not([data-has-children])');
-    directLinks.forEach(function (link) {
+    // 3. Sub-links inside dropdown menus: clicking navigates and closes mobile menu
+    var subLinks = navMenu.querySelectorAll('.dropdown-menu a');
+    subLinks.forEach(function (link) {
       link.addEventListener('click', function () {
-        if (window.innerWidth <= 991) {
-          navMenu.classList.remove('active');
-          navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-          navToggle.setAttribute('aria-expanded', 'false');
-          navItems.forEach(function (other) {
-            other.classList.remove('open-mobile');
-          });
+        if (isMobileView()) {
+          closeMobileMenu();
         }
       });
     });
 
-    // Close mobile menu when clicking outside
+    // 4. Click outside to close mobile navigation
     document.addEventListener('click', function (e) {
-      if (window.innerWidth <= 991 && navMenu.classList.contains('active')) {
-        if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-          navMenu.classList.remove('active');
-          navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-          navToggle.setAttribute('aria-expanded', 'false');
-          navItems.forEach(function (other) {
-            other.classList.remove('open-mobile');
-          });
+      if (navMenu.classList.contains('active')) {
+        var isClickInsideMenu = navMenu.contains(e.target);
+        var isClickOnToggle = navToggle === e.target || navToggle.contains(e.target) || (e.target.closest && e.target.closest('#nav-toggle'));
+        if (!isClickInsideMenu && !isClickOnToggle) {
+          closeMobileMenu();
         }
       }
     });
 
-    // Close mobile menu on Escape key
+    // 5. Escape key to close mobile navigation
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
-        navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-        navToggle.setAttribute('aria-expanded', 'false');
-        navItems.forEach(function (other) {
-          other.classList.remove('open-mobile');
-        });
+        closeMobileMenu();
+      }
+    });
+
+    // 6. Window resize handler: reset mobile active classes if resized to desktop
+    window.addEventListener('resize', function () {
+      if (!isMobileView() && navMenu.classList.contains('active')) {
+        closeMobileMenu();
       }
     });
   }
