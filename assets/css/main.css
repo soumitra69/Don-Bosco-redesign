@@ -932,7 +932,7 @@ ul {
   height: 38px;
   border-radius: 0;
   background-color: transparent;
-  color: #e60028; /* Vivid red matching brand action icons */
+  color: #0b5e28; /* Official Don Bosco Emerald Green */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -943,17 +943,17 @@ ul {
 
 .quick-access-icon i {
   font-size: 26px;
-  color: #e60028;
+  color: #0b5e28;
 }
 
 .quick-access-item:hover .quick-access-icon {
   background-color: transparent;
-  color: #c00022;
+  color: #073d19;
   transform: scale(1.08);
 }
 
 .quick-access-item:hover .quick-access-icon i {
-  color: #c00022;
+  color: #073d19;
 }
 
 .quick-access-text {
@@ -965,12 +965,12 @@ ul {
 }
 
 .quick-access-text strong {
-  font-family: var(--font-system);
+  font-family: var(--font-oswald);
   font-size: 14.5px;
-  font-weight: 700;
-  color: #0b2e68; /* Deep Royal Navy Blue matching reference */
-  text-transform: none;
-  letter-spacing: normal;
+  font-weight: 600;
+  color: #0b5e28; /* Official Don Bosco Emerald Green */
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
@@ -979,14 +979,14 @@ ul {
 }
 
 .quick-access-item:hover .quick-access-text strong {
-  color: #0056b3;
+  color: #d49800; /* Sunburst Gold on hover */
 }
 
 .quick-access-text span {
   font-family: var(--font-system);
   font-size: 11.5px;
-  color: #0056b3; /* Secondary blue matching reference */
-  font-weight: 400;
+  color: #4a594e; /* Academic Secondary Slate/Olive Copy */
+  font-weight: 500;
   line-height: 1.25;
   margin-top: 2px;
   white-space: nowrap;
@@ -7020,7 +7020,7 @@ html {
     height: 38px !important;
     min-width: 38px !important;
     background: transparent !important;
-    color: #e60028 !important; /* Authentic vivid Salesian red from reference */
+    color: #0b5e28 !important; /* Official Don Bosco Emerald Green */
     font-size: 26px !important;
     display: flex !important;
     align-items: center !important;
@@ -7030,7 +7030,7 @@ html {
 
   .quick-access-icon i {
     font-size: 26px !important;
-    color: #e60028 !important;
+    color: #0b5e28 !important;
   }
 
   .quick-access-text {
@@ -7042,12 +7042,12 @@ html {
   }
 
   .quick-access-text strong {
-    font-family: var(--font-system) !important;
+    font-family: var(--font-oswald) !important;
     font-size: 14px !important;
-    font-weight: 700 !important;
-    color: #0b2e68 !important; /* Deep Royal Navy Blue from reference design */
-    text-transform: none !important;
-    letter-spacing: normal !important;
+    font-weight: 600 !important;
+    color: #0b5e28 !important; /* Official Don Bosco Emerald Green */
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
     line-height: 1.2 !important;
     white-space: normal !important;
     overflow: visible !important;
@@ -7057,10 +7057,10 @@ html {
   .quick-access-text span {
     font-family: var(--font-system) !important;
     font-size: 11.5px !important;
-    font-weight: 400 !important;
-    color: #0056b3 !important; /* Refined secondary blue subtitle from reference */
+    font-weight: 500 !important;
+    color: #4a594e !important; /* Academic Secondary Slate/Olive Copy */
     line-height: 1.25 !important;
-    margin-top: 3px !important;
+    margin-top: 2px !important;
     white-space: normal !important;
     overflow: visible !important;
     text-overflow: clip !important;
