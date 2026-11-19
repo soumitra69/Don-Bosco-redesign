@@ -909,42 +909,51 @@ ul {
   align-items: center;
   gap: 12px;
   padding: 8px 12px;
-  background: var(--color-surface);
-  border: 1px solid rgba(11, 94, 40, 0.22);
-  border-radius: var(--rounded-lg);
+  background: transparent;
+  border: none;
+  border-radius: 0;
   text-decoration: none;
   transition: all var(--transition-snappy);
   white-space: nowrap;
   flex: 1 1 0;
   min-width: 0;
   justify-content: flex-start;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: none;
 }
 
 .quick-access-item:hover {
-  background-color: #f7faf7;
-  border-color: var(--color-primary);
+  background-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(11, 94, 40, 0.12);
+  box-shadow: none;
 }
 
 .quick-access-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--rounded-md);
-  background-color: #fcf4f7;
-  color: #7b113a;
+  width: 38px;
+  height: 38px;
+  border-radius: 0;
+  background-color: transparent;
+  color: #e60028; /* Vivid red matching brand action icons */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 26px;
   flex-shrink: 0;
-  transition: all var(--transition-snappy);
+  transition: transform var(--transition-snappy);
+}
+
+.quick-access-icon i {
+  font-size: 26px;
+  color: #e60028;
 }
 
 .quick-access-item:hover .quick-access-icon {
-  background-color: var(--color-secondary);
-  color: #FFFFFF;
+  background-color: transparent;
+  color: #c00022;
+  transform: scale(1.08);
+}
+
+.quick-access-item:hover .quick-access-icon i {
+  color: #c00022;
 }
 
 .quick-access-text {
@@ -956,22 +965,27 @@ ul {
 }
 
 .quick-access-text strong {
-  font-family: var(--font-oswald);
-  font-size: 14px;
+  font-family: var(--font-system);
+  font-size: 14.5px;
   font-weight: 700;
-  color: var(--color-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  line-height: 1.15;
+  color: #0b2e68; /* Deep Royal Navy Blue matching reference */
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: color 0.2s ease;
+}
+
+.quick-access-item:hover .quick-access-text strong {
+  color: #0056b3;
 }
 
 .quick-access-text span {
   font-family: var(--font-system);
-  font-size: 11px;
-  color: #555555;
+  font-size: 11.5px;
+  color: #0056b3; /* Secondary blue matching reference */
   font-weight: 400;
   line-height: 1.25;
   margin-top: 2px;
@@ -6749,8 +6763,10 @@ html {
   }
 
   .masthead-brand img {
-    height: 48px;
-    max-width: 180px;
+    height: 52px;
+    max-width: 220px;
+    width: auto;
+    object-fit: contain;
   }
 
   .masthead-social-links {
@@ -7633,8 +7649,10 @@ html {
   }
 
   .masthead-brand img {
-    height: 40px;
-    max-width: 150px;
+    height: 44px;
+    max-width: 175px;
+    width: auto;
+    object-fit: contain;
   }
 
   .masthead-login-btn {
