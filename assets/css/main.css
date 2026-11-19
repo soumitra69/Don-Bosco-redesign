@@ -4816,12 +4816,14 @@ html {
   /* Hero Banner Mobile Clean Non-Blurred Crisp Display */
   .hero-stage {
     min-height: 480px;
+    height: 65vh;
+    max-height: 540px;
     padding: 0;
     justify-content: flex-end;
   }
   .hero-bg-slide {
     background-size: cover;
-    background-position: center center;
+    background-position: center 25%;
     filter: none !important;
     -webkit-filter: none !important;
   }
@@ -6755,7 +6757,14 @@ html {
 
   /* Hero Mobile */
   .hero-stage {
-    min-height: 440px;
+    min-height: 480px;
+    height: 65vh;
+    max-height: 540px;
+  }
+
+  .hero-bg-slide {
+    background-size: cover;
+    background-position: center 25% !important;
   }
 
   .hero-title {
@@ -7339,7 +7348,14 @@ html {
   }
 
   .hero-stage {
-    min-height: 400px;
+    min-height: 460px;
+    height: 65vh;
+    max-height: 520px;
+  }
+
+  .hero-bg-slide {
+    background-size: cover;
+    background-position: center 20% !important;
   }
 
   /* Bottom bar slider caption badge on 375px/compact screens */
