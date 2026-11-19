@@ -7273,6 +7273,37 @@ html {
     font-size: 20px;
   }
 
+  /* Two banner action buttons side by side on 375px/compact screens */
+  .hero-action-cluster {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-action-cluster a {
+    flex: 1 1 50% !important;
+    width: auto !important;
+    padding: 9px 6px !important;
+    font-size: 11px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    line-height: 1.25 !important;
+    gap: 5px !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-action-cluster a i {
+    font-size: 11px !important;
+    flex-shrink: 0 !important;
+  }
+
   .hero-stage {
     min-height: 400px;
   }
