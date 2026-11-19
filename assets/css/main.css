@@ -890,40 +890,45 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0;
+  padding: 14px 0;
   width: 100%;
-  gap: 4px;
+  gap: 12px;
 }
 
 .quick-access-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px 8px;
-  border-radius: var(--rounded-md);
+  gap: 12px;
+  padding: 8px 12px;
+  background: var(--color-surface);
+  border: 1px solid rgba(11, 94, 40, 0.22);
+  border-radius: var(--rounded-lg);
   text-decoration: none;
   transition: all var(--transition-snappy);
   white-space: nowrap;
   flex: 1 1 0;
   min-width: 0;
   justify-content: flex-start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .quick-access-item:hover {
-  background-color: var(--color-neutral);
+  background-color: #f7faf7;
+  border-color: var(--color-primary);
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(11, 94, 40, 0.12);
 }
 
 .quick-access-icon {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border-radius: var(--rounded-md);
-  background-color: var(--color-secondary-10);
-  color: var(--color-secondary);
+  background-color: #fcf4f7;
+  color: #7b113a;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 18px;
   flex-shrink: 0;
   transition: all var(--transition-snappy);
 }
@@ -943,11 +948,11 @@ ul {
 
 .quick-access-text strong {
   font-family: var(--font-oswald);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--color-primary);
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   line-height: 1.15;
   white-space: nowrap;
   overflow: hidden;
@@ -956,9 +961,10 @@ ul {
 
 .quick-access-text span {
   font-family: var(--font-system);
-  font-size: 10.5px;
-  color: var(--color-muted);
-  line-height: 1.2;
+  font-size: 11px;
+  color: #555555;
+  font-weight: 400;
+  line-height: 1.25;
   margin-top: 2px;
   white-space: nowrap;
   overflow: hidden;
@@ -966,11 +972,7 @@ ul {
 }
 
 .quick-access-divider {
-  width: 1px;
-  height: 32px;
-  background-color: var(--color-border);
-  flex-shrink: 0;
-  opacity: 0.8;
+  display: none;
 }
 
 /* Responsive Handling: On medium screens, allow clean horizontal scrolling with visible scroll indicator or clean wrap */
@@ -6803,30 +6805,37 @@ html {
   }
 
   .quick-access-grid {
-    padding: 10px 4px;
-    gap: 8px;
+    padding: 12px 4px;
+    gap: 10px;
   }
 
   .quick-access-item {
     padding: 8px 12px;
-    min-width: 135px;
-    background: #fbfdfc;
-    border: 1px solid var(--color-border);
-    border-radius: var(--rounded-md);
+    min-width: 140px;
+    background: #ffffff;
+    border: 1px solid rgba(11, 94, 40, 0.22);
+    border-radius: var(--rounded-lg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    gap: 10px;
   }
 
   .quick-access-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 13px;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--rounded-md);
+    background-color: #fcf4f7;
+    color: #7b113a;
+    font-size: 15px;
   }
 
   .quick-access-text strong {
-    font-size: 12px;
+    font-size: 12.5px;
+    color: var(--color-primary);
   }
 
   .quick-access-text span {
     font-size: 10px;
+    color: #555555;
   }
 
   /* About Us Section */
