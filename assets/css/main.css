@@ -7275,28 +7275,53 @@ html {
 
   /* Two banner action buttons side by side on 375px/compact screens */
   .hero-action-cluster {
+    display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
-    align-items: stretch !important;
+    align-items: center !important;
+    justify-content: center !important;
     gap: 8px !important;
     width: 100% !important;
     max-width: 100% !important;
   }
 
+  .hero-action-cluster .btn-crimson,
+  .hero-action-cluster .btn-secondary,
   .hero-action-cluster a {
     flex: 1 1 50% !important;
-    width: auto !important;
-    padding: 9px 6px !important;
-    font-size: 11px !important;
-    min-height: 44px !important;
+    width: 50% !important;
+    max-width: 50% !important;
+    padding: 8px 10px !important;
+    border-radius: var(--rounded-full) !important;
+    min-height: 48px !important;
+    height: auto !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    text-align: center !important;
-    line-height: 1.25 !important;
-    gap: 5px !important;
-    white-space: normal !important;
+    gap: 6px !important;
     box-sizing: border-box !important;
+  }
+
+  .hero-action-cluster a span {
+    font-size: 9.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.25 !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    display: block !important;
+  }
+
+  .hero-action-cluster .btn-crimson {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-surface) !important;
+    border: 1.5px solid var(--color-secondary) !important;
+  }
+
+  .hero-action-cluster .btn-secondary {
+    background-color: var(--color-surface) !important;
+    color: var(--color-primary) !important;
+    border: 2px solid var(--color-primary) !important;
   }
 
   .hero-action-cluster a i {
