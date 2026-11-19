@@ -207,22 +207,53 @@
          4. FULL-AREA AUTO-SLIDING HERO BANNER (8 AUTHENTIC IMAGES + ZERO BLUR)
          ========================================================================== -->
     <section class="hero-stage" id="hero">
-        <!-- Full Area Background Sliding Track -->
-        <div class="hero-bg-slider" id="hero-bg-slider">
-            <div class="hero-bg-slide active" style="background-image: url('assets/images/new-img21.png');"></div>
-            <div class="hero-bg-slide" style="background-image: url('assets/images/new-img22.png');"></div>
-            <div class="hero-bg-slide" style="background-image: url('assets/images/new-img23.png');"></div>
-            <div class="hero-bg-slide" style="background-image: url('assets/images/new-img24.png');"></div>
-            <div class="hero-bg-slide" style="background-image: url('assets/images/independence-day2.jpeg');"></div>
-            <div class="hero-bg-slide" style="background-image: url('assets/images/event/yoga3.jpeg');"></div>
-            <div class="hero-bg-slide" style="background-image: url('assets/images/event/plant1.jpeg');"></div>
-            <div class="hero-bg-slide" style="background-image: url('assets/images/banner/tree.jpeg');"></div>
+        <!-- Media Wrap: Holds Background Slider, Controls & Bottom Caption Bar -->
+        <div class="hero-stage-media-wrap">
+            <!-- Full Area Background Sliding Track -->
+            <div class="hero-bg-slider" id="hero-bg-slider">
+                <div class="hero-bg-slide active" style="background-image: url('assets/images/new-img21.png');"></div>
+                <div class="hero-bg-slide" style="background-image: url('assets/images/new-img22.png');"></div>
+                <div class="hero-bg-slide" style="background-image: url('assets/images/new-img23.png');"></div>
+                <div class="hero-bg-slide" style="background-image: url('assets/images/new-img24.png');"></div>
+                <div class="hero-bg-slide" style="background-image: url('assets/images/independence-day2.jpeg');"></div>
+                <div class="hero-bg-slide" style="background-image: url('assets/images/event/yoga3.jpeg');"></div>
+                <div class="hero-bg-slide" style="background-image: url('assets/images/event/plant1.jpeg');"></div>
+                <div class="hero-bg-slide" style="background-image: url('assets/images/banner/tree.jpeg');"></div>
+            </div>
+
+            <!-- Subtle Left Gradient Scrim for 100% Crisp Text & Unobstructed Photography -->
+            <div class="hero-stage-overlay"></div>
+
+            <!-- Full Stage Slider Navigation Controls -->
+            <button type="button" class="hero-stage-arrow hero-stage-prev" id="hero-prev" aria-label="Previous Slide">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button type="button" class="hero-stage-arrow hero-stage-next" id="hero-next" aria-label="Next Slide">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <!-- Slide Indicators & Active Caption -->
+            <div class="hero-stage-bottom-bar">
+                <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+                    <div class="hero-slide-caption" id="hero-caption-text">
+                        <i class="fa-solid fa-camera"></i>
+                        <span id="hero-caption-label">Academic Excellence &bull; Classroom Learning</span>
+                    </div>
+                    <div class="hero-stage-dots" id="hero-slider-dots">
+                        <span class="hero-stage-dot active" data-index="0"></span>
+                        <span class="hero-stage-dot" data-index="1"></span>
+                        <span class="hero-stage-dot" data-index="2"></span>
+                        <span class="hero-stage-dot" data-index="3"></span>
+                        <span class="hero-stage-dot" data-index="4"></span>
+                        <span class="hero-stage-dot" data-index="5"></span>
+                        <span class="hero-stage-dot" data-index="6"></span>
+                        <span class="hero-stage-dot" data-index="7"></span>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Subtle Left Gradient Scrim for 100% Crisp Text & Unobstructed Photography -->
-        <div class="hero-stage-overlay"></div>
-
-        <!-- Static Foreground Editorial Content (Never changes during slide transitions) -->
+        <!-- Static Foreground Editorial Content -->
         <div class="container hero-content-container">
             <div class="hero-content-wrapper">
                 <h1 class="hero-title">
@@ -237,34 +268,6 @@
                         <i class="fa-regular fa-file-pdf"></i>
                         <span>Notice Board &amp; Timetables</span>
                     </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Full Stage Slider Navigation Controls -->
-        <button type="button" class="hero-stage-arrow hero-stage-prev" id="hero-prev" aria-label="Previous Slide">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button type="button" class="hero-stage-arrow hero-stage-next" id="hero-next" aria-label="Next Slide">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-        <!-- Slide Indicators & Active Caption -->
-        <div class="hero-stage-bottom-bar">
-            <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
-                <div class="hero-slide-caption" id="hero-caption-text">
-                    <i class="fa-solid fa-camera"></i>
-                    <span id="hero-caption-label">Academic Excellence &bull; Classroom Learning</span>
-                </div>
-                <div class="hero-stage-dots" id="hero-slider-dots">
-                    <span class="hero-stage-dot active" data-index="0"></span>
-                    <span class="hero-stage-dot" data-index="1"></span>
-                    <span class="hero-stage-dot" data-index="2"></span>
-                    <span class="hero-stage-dot" data-index="3"></span>
-                    <span class="hero-stage-dot" data-index="4"></span>
-                    <span class="hero-stage-dot" data-index="5"></span>
-                    <span class="hero-stage-dot" data-index="6"></span>
-                    <span class="hero-stage-dot" data-index="7"></span>
                 </div>
             </div>
         </div>
