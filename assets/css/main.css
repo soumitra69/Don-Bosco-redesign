@@ -1373,6 +1373,7 @@ ul {
   border-radius: var(--rounded-full);
   margin-bottom: 14px;
   backdrop-filter: blur(6px);
+  white-space: nowrap;
 }
 
 .vm-stage-header h2 {
@@ -7691,5 +7692,21 @@ html {
   .btn-secondary {
     font-size: 12px;
     padding: 10px 14px;
+  }
+
+  /* Salesian Educational Charter Badge: 1 Line on Mobile & 375px screens */
+  .vm-stage-badge {
+    white-space: nowrap !important;
+    font-size: clamp(8px, 2.5vw, 10px) !important;
+    letter-spacing: 0.05em !important;
+    padding: 5px 10px !important;
+    max-width: 95% !important;
+    box-sizing: border-box !important;
+    gap: 5px !important;
+  }
+
+  .vm-stage-badge i {
+    font-size: 10px !important;
+    flex-shrink: 0 !important;
   }
 }
