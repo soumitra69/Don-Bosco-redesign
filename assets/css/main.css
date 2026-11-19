@@ -6897,6 +6897,57 @@ html {
     box-sizing: border-box !important;
   }
 
+  .hero-action-cluster .btn-text-block {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+  }
+
+  .hero-action-cluster .btn-line-1 {
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    display: block !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-action-cluster .btn-line-2 {
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    display: block !important;
+    white-space: nowrap !important;
+    margin-top: 1px !important;
+  }
+
+  .hero-action-cluster .btn-crimson .btn-line-1,
+  .hero-action-cluster .btn-crimson .btn-line-2 {
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .hero-action-cluster .btn-secondary .btn-line-1,
+  .hero-action-cluster .btn-secondary .btn-line-2 {
+    color: #0b5e28 !important; /* High-contrast emerald green */
+  }
+
+  .hero-action-cluster .btn-crimson {
+    background-color: #6b0b37 !important; /* Salesian burgundy */
+    border: 2px solid #8c144a !important;
+    box-shadow: 0 4px 12px rgba(107, 11, 55, 0.4) !important;
+  }
+
+  .hero-action-cluster .btn-secondary {
+    background-color: #FFFFFF !important;
+    border: 2px solid #0b5e28 !important;
+    box-shadow: 0 4px 12px rgba(11, 94, 40, 0.2) !important;
+  }
+
   .hero-stage-bottom-bar {
     padding: 6px 14px;
   }
@@ -7513,7 +7564,7 @@ html {
     flex: 1 1 50% !important;
     width: 50% !important;
     max-width: 50% !important;
-    padding: 8px 10px !important;
+    padding: 8px 8px !important;
     border-radius: var(--rounded-full) !important;
     min-height: 48px !important;
     height: auto !important;
@@ -7524,26 +7575,46 @@ html {
     box-sizing: border-box !important;
   }
 
-  .hero-action-cluster a span {
+  .hero-action-cluster .btn-line-1 {
     font-size: 9.5px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.02em !important;
-    line-height: 1.25 !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.03em !important;
     text-transform: uppercase !important;
-    text-align: center !important;
     display: block !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-action-cluster .btn-line-2 {
+    font-size: 9.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    display: block !important;
+    white-space: nowrap !important;
+    margin-top: 1px !important;
+  }
+
+  .hero-action-cluster .btn-crimson .btn-line-1,
+  .hero-action-cluster .btn-crimson .btn-line-2 {
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .hero-action-cluster .btn-secondary .btn-line-1,
+  .hero-action-cluster .btn-secondary .btn-line-2 {
+    color: #0b5e28 !important;
   }
 
   .hero-action-cluster .btn-crimson {
-    background-color: var(--color-secondary) !important;
-    color: var(--color-surface) !important;
-    border: 1.5px solid var(--color-secondary) !important;
+    background-color: #6b0b37 !important;
+    border: 2px solid #8c144a !important;
+    box-shadow: 0 4px 12px rgba(107, 11, 55, 0.4) !important;
   }
 
   .hero-action-cluster .btn-secondary {
-    background-color: var(--color-surface) !important;
-    color: var(--color-primary) !important;
-    border: 2px solid var(--color-primary) !important;
+    background-color: #FFFFFF !important;
+    border: 2px solid #0b5e28 !important;
+    box-shadow: 0 4px 12px rgba(11, 94, 40, 0.2) !important;
   }
 
   .hero-action-cluster a i {
