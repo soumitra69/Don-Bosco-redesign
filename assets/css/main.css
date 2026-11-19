@@ -6905,43 +6905,97 @@ html {
     display: none; /* Hide on mobile so dots stay centered */
   }
 
-  /* Quick Access Strip */
+  /* Quick Access Strip: 2-Column Clean Institutional Grid on Mobile matching reference */
+  .quick-access-strip {
+    background-color: #FFFFFF !important;
+    padding: 16px 0 20px 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .quick-access-strip .container {
+    padding: 0 16px !important;
+  }
+
+  .quick-access-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px 14px !important;
+    padding: 4px 0 !important;
+    overflow-x: visible !important;
+  }
+
   .quick-access-divider {
     display: none !important;
   }
 
-  .quick-access-grid {
-    padding: 12px 4px;
-    gap: 10px;
+  .quick-access-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 4px 0 !important;
+    min-width: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
   }
 
-  .quick-access-item {
-    padding: 8px 12px;
-    min-width: 140px;
-    background: #ffffff;
-    border: 1px solid rgba(11, 94, 40, 0.22);
-    border-radius: var(--rounded-lg);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-    gap: 10px;
+  .quick-access-item:hover {
+    background: transparent !important;
+    transform: none !important;
+    box-shadow: none !important;
   }
 
   .quick-access-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: var(--rounded-md);
-    background-color: #fcf4f7;
-    color: #7b113a;
-    font-size: 15px;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    background: transparent !important;
+    color: #e60028 !important; /* Authentic vivid Salesian red from reference */
+    font-size: 26px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 0 !important;
+  }
+
+  .quick-access-icon i {
+    font-size: 26px !important;
+    color: #e60028 !important;
+  }
+
+  .quick-access-text {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-align: left !important;
   }
 
   .quick-access-text strong {
-    font-size: 12.5px;
-    color: var(--color-primary);
+    font-family: var(--font-system) !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #0b2e68 !important; /* Deep Royal Navy Blue from reference design */
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
   }
 
   .quick-access-text span {
-    font-size: 10px;
-    color: #555555;
+    font-family: var(--font-system) !important;
+    font-size: 11.5px !important;
+    font-weight: 400 !important;
+    color: #0056b3 !important; /* Refined secondary blue subtitle from reference */
+    line-height: 1.25 !important;
+    margin-top: 3px !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
   }
 
   /* About Us Section */
