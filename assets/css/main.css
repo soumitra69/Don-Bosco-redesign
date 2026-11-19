@@ -6367,3 +6367,866 @@ html {
     font-size: 20px;
   }
 }
+
+/* ==========================================================================
+   FORMAL ACADEMIC SYSTEM: COMPREHENSIVE TABLET & MOBILE RESPONSIVE ENGINE
+   Strictly scoped to tablets & mobile viewports (<= 1024px).
+   Desktop & Laptop viewports (>= 1025px) remain 100% untouched.
+   ========================================================================== */
+
+/* 1. Global Touch & Viewport Stability */
+@media (max-width: 1024px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 clamp(14px, 3vw, 24px);
+    box-sizing: border-box;
+  }
+
+  /* Section Headings Scaling */
+  .section-header-academic h2 {
+    font-size: clamp(24px, 3.8vw, 32px);
+    line-height: 1.25;
+  }
+
+  .section-header-academic .lead-sub {
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+
+  /* Tablet Grids */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+  }
+
+  .facilities-grid-8 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px;
+  }
+
+  .dispatch-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px;
+  }
+
+  .why-choose-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+  }
+
+  .admissions-box {
+    grid-template-columns: 1fr !important;
+    gap: 28px;
+    padding: 32px 28px;
+  }
+
+  .footer-strip-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 28px;
+  }
+}
+
+/* 2. Tablet Portrait (<= 991px) */
+@media (max-width: 991px) {
+  /* Topbar Announcement Strip */
+  .topbar-announcement {
+    min-height: auto;
+    padding: 7px 0;
+  }
+
+  .topbar-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .topbar-left {
+    justify-content: center;
+    font-size: 11.5px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .topbar-badge {
+    padding: 2px 8px;
+    font-size: 10.5px;
+  }
+
+  .topbar-right {
+    justify-content: center;
+    gap: 14px;
+    font-size: 11.5px;
+    flex-wrap: wrap;
+  }
+
+  /* Masthead Header */
+  .site-masthead {
+    padding: 10px 0;
+  }
+
+  .masthead-wrapper {
+    gap: 12px;
+  }
+
+  .masthead-brand img {
+    height: 58px;
+    max-width: 220px;
+  }
+
+  .masthead-cbse-badge {
+    display: none !important;
+  }
+
+  .masthead-right-cluster {
+    gap: 10px;
+  }
+
+  .masthead-login-btn {
+    padding: 7px 14px;
+    font-size: 12.5px;
+  }
+
+  .masthead-helpline .helpline-text span {
+    font-size: 10px;
+  }
+
+  .masthead-helpline .helpline-text strong {
+    font-size: 14px;
+  }
+
+  /* Main Navigation Bar & Mobile Accordion */
+  .main-navbar {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .navbar-inner {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .mobile-nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--rounded-sm);
+    color: #FFFFFF;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+  }
+
+  .mobile-nav-toggle:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .nav-right-action {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    background-color: var(--color-primary);
+    border-top: 2px solid var(--color-tertiary);
+    flex-direction: column;
+    padding: 8px 0 16px 0;
+    max-height: 80vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+  }
+
+  .nav-item {
+    width: 100%;
+    position: relative;
+  }
+
+  .nav-item > a {
+    width: 100%;
+    padding: 13px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    box-sizing: border-box;
+    white-space: normal;
+  }
+
+  .nav-item > a:hover,
+  .nav-item > a.active {
+    background-color: var(--color-primary-80);
+    color: var(--color-tertiary);
+  }
+
+  .nav-item .dropdown-arrow {
+    font-size: 11px;
+    transition: transform 0.25s ease;
+  }
+
+  .nav-item.open-mobile .dropdown-arrow {
+    transform: rotate(180deg);
+    color: var(--color-tertiary);
+  }
+
+  .dropdown-menu {
+    position: static !important;
+    display: none;
+    background-color: #074520;
+    border: none !important;
+    border-radius: 0;
+    box-shadow: none !important;
+    padding: 4px 0 8px 0;
+    width: 100%;
+  }
+
+  .nav-item.open-mobile .dropdown-menu {
+    display: block !important;
+  }
+
+  .dropdown-menu a {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 10px 24px 10px 32px;
+    font-size: 13px;
+    border-left: 3px solid transparent;
+    display: block;
+  }
+
+  .dropdown-menu a:hover,
+  .dropdown-menu a.active {
+    color: var(--color-tertiary);
+    background-color: var(--color-primary-80);
+    border-left-color: var(--color-tertiary);
+  }
+
+  /* Hero Stage */
+  .hero-stage {
+    min-height: 500px;
+  }
+
+  .hero-title {
+    font-size: clamp(26px, 3.8vw, 34px);
+  }
+
+  .hero-content-container {
+    padding-bottom: 54px;
+  }
+
+  /* Section Layouts */
+  .about-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+  }
+
+  .vm-charter-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  .leadership-dual-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+}
+
+/* 3. Mobile Viewports (<= 768px) */
+@media (max-width: 768px) {
+  /* Topbar Mobile Streamlining */
+  .topbar-right > span {
+    display: none !important; /* Hide long office hours text so phone/email fit neatly on mobile */
+  }
+
+  .topbar-left {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .topbar-right {
+    gap: 12px;
+    font-size: 11px;
+  }
+
+  /* Masthead Mobile */
+  .site-masthead {
+    padding: 8px 0;
+  }
+
+  .masthead-wrapper {
+    gap: 10px;
+  }
+
+  .masthead-brand img {
+    height: 48px;
+    max-width: 180px;
+  }
+
+  .masthead-social-links {
+    display: none !important;
+  }
+
+  .masthead-helpline .helpline-text {
+    display: none !important;
+  }
+
+  .masthead-helpline .icon-circle {
+    width: 36px;
+    height: 36px;
+    background-color: var(--color-primary-10);
+    border: 1px solid var(--color-border);
+  }
+
+  .masthead-helpline .icon-circle img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .masthead-login-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    gap: 5px;
+  }
+
+  .nav-cta-btn {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+
+  /* Hero Mobile */
+  .hero-stage {
+    min-height: 440px;
+  }
+
+  .hero-title {
+    font-size: clamp(22px, 5.5vw, 26px);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .hero-content-container {
+    padding-top: 20px;
+    padding-bottom: 56px;
+  }
+
+  .hero-action-cluster {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .hero-action-cluster a {
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
+    padding: 11px 18px;
+    font-size: 12.5px;
+    box-sizing: border-box;
+  }
+
+  .hero-stage-arrow {
+    display: none !important;
+  }
+
+  .hero-stage-bottom-bar {
+    padding: 6px 14px;
+  }
+
+  .hero-caption-label {
+    display: none; /* Hide on mobile so dots stay centered */
+  }
+
+  /* Quick Access Strip */
+  .quick-access-divider {
+    display: none !important;
+  }
+
+  .quick-access-grid {
+    padding: 10px 4px;
+    gap: 8px;
+  }
+
+  .quick-access-item {
+    padding: 8px 12px;
+    min-width: 135px;
+    background: #fbfdfc;
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-md);
+  }
+
+  .quick-access-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .quick-access-text strong {
+    font-size: 12px;
+  }
+
+  .quick-access-text span {
+    font-size: 10px;
+  }
+
+  /* About Us Section */
+  .about-main-frame img {
+    max-height: 280px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .about-secondary-frame {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+
+  .hallmarks-grid-2x2 {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+
+  /* Leadership Cards */
+  .leader-card-inner,
+  .leader-card-inner.reverse-media {
+    flex-direction: column !important;
+    min-height: auto;
+    max-height: none;
+  }
+
+  .leader-media-side {
+    height: 220px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+  }
+
+  .leader-media-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
+  .leader-content-side {
+    padding: 16px 16px 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 auto !important;
+    box-sizing: border-box;
+  }
+
+  .leader-ref-heading {
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+
+  .leader-ref-summary {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+
+  .leader-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .leader-ref-btn {
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Vision & Mission Cards */
+  .vm-card-banner {
+    padding: 16px 18px;
+    gap: 12px;
+  }
+
+  .vm-emblem-medallion {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+
+  .vm-banner-titles h3 {
+    font-size: 19px;
+  }
+
+  .vm-card-body {
+    padding: 16px;
+  }
+
+  .vm-charter-quote {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+
+  .vm-pillars-mini-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px;
+  }
+
+  .vm-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    text-align: center;
+    padding: 14px 16px;
+  }
+
+  .vm-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Notice Board & Events */
+  .notice-board-card {
+    border-radius: var(--rounded-md);
+  }
+
+  .notice-board-head {
+    padding: 12px 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .notice-filter-bar {
+    padding: 8px 12px;
+    gap: 6px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .notice-filter-btn {
+    flex: 0 0 auto;
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .event-list {
+    padding: 8px 10px;
+    gap: 7px;
+  }
+
+  .event {
+    padding: 8px 10px;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .date {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .date .month {
+    font-size: 9px;
+  }
+
+  .date .day {
+    font-size: 14px;
+  }
+
+  .info .title {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .notice-pdf-btn {
+    padding: 6px 10px;
+    font-size: 10.5px;
+  }
+
+  .event-slide-card {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+  }
+
+  .events-bottom-bar {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 8px;
+  }
+
+  /* Why Choose Us Section */
+  .why-choose-title {
+    font-size: 24px;
+  }
+
+  .why-choose-sub {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .why-choose-stat-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .why-choose-stat-card .stat-divider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+  }
+
+  .accordion-card .accordion-trigger {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .acc-title {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .acc-num {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .acc-inner p {
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+
+  /* Admissions Section */
+  .admissions-box {
+    padding: 20px 16px !important;
+    border-radius: var(--rounded-md);
+  }
+
+  .admissions-steps {
+    gap: 8px;
+  }
+
+  .adm-step-item {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  /* Footer Section */
+  .footer-top-strip {
+    padding: 12px 0;
+    margin-bottom: 20px;
+  }
+
+  .footer-strip-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+
+  .strip-cta .footer-strip-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  .footer-brand-text h3 {
+    font-size: 20px;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    font-size: 11.5px;
+    padding: 18px 0;
+  }
+}
+
+/* 4. Small Mobile Phones (<= 576px) */
+@media (max-width: 576px) {
+  /* Grids to 1 Column for Maximum Legibility & Zero Squeeze */
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 14px 16px;
+    gap: 14px;
+  }
+
+  .stat-number {
+    font-size: 26px;
+  }
+
+  .facilities-grid-8 {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .facility-badge-card {
+    padding: 14px 14px;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .facility-icon-circle {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .facility-icon-circle img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .facility-text h3 {
+    font-size: 15.5px;
+    margin-bottom: 3px;
+  }
+
+  .facility-text p {
+    font-size: 12.5px;
+    line-height: 1.45;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  .gallery-card img {
+    height: 210px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Full Width Action Buttons on Mobile */
+  .about-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .about-actions-row .btn-primary,
+  .about-actions-row .btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  #admissions .btn-crimson,
+  #admissions .btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .section-band-white,
+  .section-band-neutral {
+    padding: 38px 0;
+  }
+
+  /* Floating Widgets on Mobile */
+  .floating-widget-cluster {
+    bottom: 12px;
+    right: 12px;
+    gap: 8px;
+  }
+
+  .scroll-to-top-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 13px;
+  }
+
+  .floating-toggle-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+}
+
+/* 5. Extra Compact Mobile Viewports (<= 380px) */
+@media (max-width: 380px) {
+  .masthead-brand img {
+    height: 40px;
+    max-width: 150px;
+  }
+
+  .masthead-login-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .nav-cta-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .hero-title {
+    font-size: 20px;
+  }
+
+  .hero-stage {
+    min-height: 400px;
+  }
+
+  .btn-crimson,
+  .btn-primary,
+  .btn-secondary {
+    font-size: 12px;
+    padding: 10px 14px;
+  }
+}

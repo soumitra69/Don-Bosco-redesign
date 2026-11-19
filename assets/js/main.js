@@ -163,6 +163,32 @@
         }
       });
     });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function (e) {
+      if (window.innerWidth <= 991 && navMenu.classList.contains('active')) {
+        if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+          navMenu.classList.remove('active');
+          navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+          navToggle.setAttribute('aria-expanded', 'false');
+          navItems.forEach(function (other) {
+            other.classList.remove('open-mobile');
+          });
+        }
+      }
+    });
+
+    // Close mobile menu on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        navToggle.setAttribute('aria-expanded', 'false');
+        navItems.forEach(function (other) {
+          other.classList.remove('open-mobile');
+        });
+      }
+    });
   }
 
   /* 0.2 Interactive Why Should You Choose Accordion */
