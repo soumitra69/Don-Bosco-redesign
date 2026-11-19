@@ -7120,48 +7120,139 @@ html {
     justify-content: center;
   }
 
-  /* Vision & Mission Cards */
+  /* Vision & Mission Cards - Compact mobile height */
+  .section-band-navy#vision-mission {
+    padding: 36px 0 40px !important;
+  }
+
+  .vm-stage-header {
+    margin-bottom: 20px !important;
+  }
+
+  .vm-stage-header h2 {
+    font-size: 24px !important;
+    margin: 8px 0 6px !important;
+  }
+
+  .vm-stage-sub {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .vm-gold-divider {
+    margin-top: 10px !important;
+  }
+
+  .vm-charter-grid {
+    gap: 16px !important;
+  }
+
+  .vm-charter-card {
+    border-radius: 14px !important;
+  }
+
   .vm-card-banner {
-    padding: 16px 18px;
-    gap: 12px;
+    padding: 12px 14px !important;
+    gap: 10px !important;
   }
 
   .vm-emblem-medallion {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
+    width: 38px !important;
+    height: 38px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .vm-emblem-medallion svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .vm-banner-eyebrow {
+    font-size: 9.5px !important;
+    margin-bottom: 1px !important;
   }
 
   .vm-banner-titles h3 {
-    font-size: 19px;
+    font-size: 17px !important;
+    margin: 0 0 2px 0 !important;
+  }
+
+  .vm-banner-sub {
+    font-size: 11.5px !important;
+  }
+
+  .vm-watermark-num {
+    display: none !important;
   }
 
   .vm-card-body {
-    padding: 16px;
+    padding: 12px 14px !important;
   }
 
   .vm-charter-quote {
-    font-size: 13.5px;
-    line-height: 1.55;
-    margin-bottom: 14px;
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 10px !important;
+    padding: 8px 10px 8px 12px !important;
+    border-radius: 0 8px 8px 0 !important;
+  }
+
+  .vm-quote-icon {
+    font-size: 12px !important;
+    margin-bottom: 3px !important;
   }
 
   .vm-pillars-mini-grid {
     grid-template-columns: 1fr !important;
-    gap: 8px;
+    gap: 6px !important;
+  }
+
+  .vm-pillar-chip {
+    padding: 6px 10px !important;
+    gap: 8px !important;
+    border-radius: 8px !important;
+  }
+
+  .vm-pillar-chip i {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 12px !important;
+    border-radius: 5px !important;
+  }
+
+  .vm-pillar-chip strong {
+    font-size: 11.5px !important;
+    margin-bottom: 1px !important;
+  }
+
+  .vm-pillar-chip span {
+    font-size: 10.5px !important;
+    line-height: 1.25 !important;
   }
 
   .vm-card-footer {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    text-align: center;
-    padding: 14px 16px;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    text-align: left !important;
+    padding: 10px 14px !important;
+  }
+
+  .vm-footer-meta {
+    font-size: 11px !important;
+  }
+
+  .vm-footer-meta i {
+    font-size: 12px !important;
   }
 
   .vm-action-btn {
-    width: 100%;
-    justify-content: center;
+    width: auto !important;
+    padding: 6px 14px !important;
+    font-size: 11px !important;
+    gap: 5px !important;
   }
 
   /* Notice Board & Events */
