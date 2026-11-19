@@ -605,8 +605,10 @@ ul {
   border-bottom: 2px solid var(--color-tertiary);
 }
 
-.nav-item:hover .dropdown-menu {
-  display: block;
+@media (min-width: 992px) {
+  .nav-item:hover .dropdown-menu {
+    display: block;
+  }
 }
 
 .dropdown-menu li {

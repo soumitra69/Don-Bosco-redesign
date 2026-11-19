@@ -171,21 +171,18 @@
             e.preventDefault();
             e.stopPropagation();
 
-            var wasOpen = item.classList.contains('open-mobile');
+            var isOpen = item.classList.contains('open-mobile');
 
-            // Accordion behavior: close other open dropdowns
+            // Close all dropdowns
             navItems.forEach(function (other) {
-              if (other !== item) {
-                other.classList.remove('open-mobile');
-                var otherTrigger = other.querySelector(':scope > a');
-                if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
-              }
+              other.classList.remove('open-mobile');
+              var otherTrigger = other.querySelector(':scope > a, :scope > span.nav-label');
+              if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
             });
 
-            if (wasOpen) {
-              item.classList.remove('open-mobile');
-              trigger.setAttribute('aria-expanded', 'false');
-            } else {
+            // If it was not open before, open it now (toggle to open).
+            // If it was already open, leaving it removed above closes it!
+            if (!isOpen) {
               item.classList.add('open-mobile');
               trigger.setAttribute('aria-expanded', 'true');
             }
