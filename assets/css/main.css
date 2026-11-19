@@ -6801,9 +6801,9 @@ html {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
-    aspect-ratio: 16 / 9.5 !important;
-    min-height: 215px !important;
-    max-height: 320px !important;
+    aspect-ratio: 1 / 1 !important;
+    min-height: 290px !important;
+    max-height: 480px !important;
     height: auto !important;
     overflow: hidden !important;
     background-color: #05220f !important;
@@ -6821,7 +6821,7 @@ html {
     inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    background-size: contain !important;
+    background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
     background-color: #05220f !important;
@@ -7728,9 +7728,9 @@ html {
   }
 
   .hero-stage-media-wrap {
-    aspect-ratio: 16 / 9.5 !important;
-    min-height: 205px !important;
-    max-height: 290px !important;
+    aspect-ratio: 1 / 1 !important;
+    min-height: 280px !important;
+    max-height: 420px !important;
   }
 
   /* Bottom bar slider caption badge on 375px/compact screens */
