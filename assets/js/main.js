@@ -118,41 +118,47 @@
 
   /* 0. New Navbar toggle for mobile and responsive navigation */
   function initNewNavbar() {
-    var navToggle = document.getElementById('nav-toggle');
+    var navToggles = document.querySelectorAll('.mobile-nav-toggle, #nav-toggle');
     var navMenu = document.getElementById('nav-menu');
-    if (!navToggle || !navMenu) return;
+    if (navToggles.length === 0 || !navMenu) return;
 
     var navItems = navMenu.querySelectorAll('.nav-item');
 
     function isMobileView() {
-      return window.innerWidth <= 991 || (navToggle && window.getComputedStyle(navToggle).display !== 'none');
+      return window.innerWidth <= 991;
     }
 
     function closeMobileMenu() {
       navMenu.classList.remove('active');
-      navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-      navToggle.setAttribute('aria-expanded', 'false');
+      navToggles.forEach(function (toggle) {
+        toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        toggle.setAttribute('aria-expanded', 'false');
+      });
       navItems.forEach(function (item) {
         item.classList.remove('open-mobile');
-        var trigger = item.querySelector(':scope > a');
+        var trigger = item.querySelector(':scope > a, :scope > span.nav-label');
         if (trigger) {
           trigger.setAttribute('aria-expanded', 'false');
         }
       });
     }
 
-    // 1. Hamburger button click handler - reliable, prevents race conditions
-    navToggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      var willOpen = !navMenu.classList.contains('active');
-      if (willOpen) {
-        navMenu.classList.add('active');
-        navToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-        navToggle.setAttribute('aria-expanded', 'true');
-      } else {
-        closeMobileMenu();
-      }
+    // 1. Hamburger button click handlers
+    navToggles.forEach(function (toggle) {
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var willOpen = !navMenu.classList.contains('active');
+        if (willOpen) {
+          navMenu.classList.add('active');
+          navToggles.forEach(function (t) {
+            t.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            t.setAttribute('aria-expanded', 'true');
+          });
+        } else {
+          closeMobileMenu();
+        }
+      });
     });
 
     // 2. Separate dropdown parents from direct top-level links
@@ -212,7 +218,12 @@
     document.addEventListener('click', function (e) {
       if (navMenu.classList.contains('active')) {
         var isClickInsideMenu = navMenu.contains(e.target);
-        var isClickOnToggle = navToggle === e.target || navToggle.contains(e.target) || (e.target.closest && e.target.closest('#nav-toggle'));
+        var isClickOnToggle = false;
+        navToggles.forEach(function (t) {
+          if (t === e.target || t.contains(e.target) || (e.target.closest && e.target.closest('.mobile-nav-toggle'))) {
+            isClickOnToggle = true;
+          }
+        });
         if (!isClickInsideMenu && !isClickOnToggle) {
           closeMobileMenu();
         }
