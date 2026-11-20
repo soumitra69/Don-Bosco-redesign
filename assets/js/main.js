@@ -8,6 +8,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     initDataBackgrounds();
     initAdmissionPopup();
+    initStudentLoginPopup();
     initHeaderAndMobileNav();
     initHeroCarousel();
     initEventsSlider();
@@ -21,6 +22,113 @@
     initWhyChooseAccordion();
     initSanskaraFeatures();
   });
+
+  /* 0.0 Student Login Popup Modal (all pages, all screens) */
+  function initStudentLoginPopup() {
+    var PORTAL_URL = 'https://dbjabalpur.in/login';
+    var triggers = document.querySelectorAll('.masthead-login-btn, [data-student-login]');
+    if (triggers.length === 0) return;
+
+    var modal = document.createElement('div');
+    modal.className = 'slm-backdrop';
+    modal.id = 'student-login-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'slm-title');
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML =
+      '<div class="slm-box">' +
+        '<button type="button" class="slm-close" aria-label="Close login popup"><i class="fa-solid fa-xmark"></i></button>' +
+        '<div class="slm-head">' +
+          '<div class="slm-icon"><i class="fa-solid fa-user-graduate"></i></div>' +
+          '<h2 id="slm-title">Student Login</h2>' +
+          '<p>Don Bosco School, Kosamghat, Jabalpur</p>' +
+        '</div>' +
+        '<form class="slm-form" novalidate>' +
+          '<div class="slm-field">' +
+            '<label for="slm-user">Admission No. / Username</label>' +
+            '<div class="slm-input-wrap"><i class="fa-solid fa-id-card"></i>' +
+              '<input type="text" id="slm-user" name="username" autocomplete="username" placeholder="Enter admission no. or username" required>' +
+            '</div>' +
+          '</div>' +
+          '<div class="slm-field">' +
+            '<label for="slm-pass">Password</label>' +
+            '<div class="slm-input-wrap"><i class="fa-solid fa-lock"></i>' +
+              '<input type="password" id="slm-pass" name="password" autocomplete="current-password" placeholder="Enter password" required>' +
+              '<button type="button" class="slm-eye" aria-label="Show password"><i class="fa-regular fa-eye"></i></button>' +
+            '</div>' +
+          '</div>' +
+          '<div class="slm-row">' +
+            '<label class="slm-check"><input type="checkbox" name="remember"> Remember me</label>' +
+            '<a href="tel:8305211667" class="slm-forgot">Forgot password?</a>' +
+          '</div>' +
+          '<p class="slm-error" role="alert"></p>' +
+          '<button type="submit" class="slm-submit"><i class="fa-solid fa-right-to-bracket"></i> Login</button>' +
+        '</form>' +
+        '<div class="slm-foot">' +
+          '<a href="' + PORTAL_URL + '" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open full student portal</a>' +
+          '<span>Need help? Call <a href="tel:8305211667">+91-8305211667</a></span>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(modal);
+
+    var form = modal.querySelector('.slm-form');
+    var userInput = modal.querySelector('#slm-user');
+    var passInput = modal.querySelector('#slm-pass');
+    var errorEl = modal.querySelector('.slm-error');
+    var eyeBtn = modal.querySelector('.slm-eye');
+    var lastFocus = null;
+
+    function openModal(e) {
+      if (e) e.preventDefault();
+      lastFocus = document.activeElement;
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('slm-lock');
+      errorEl.textContent = '';
+      setTimeout(function () { userInput.focus(); }, 120);
+    }
+
+    function closeModal() {
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('slm-lock');
+      passInput.value = '';
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    triggers.forEach(function (t) { t.addEventListener('click', openModal); });
+    modal.querySelector('.slm-close').addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+    });
+
+    eyeBtn.addEventListener('click', function () {
+      var show = passInput.type === 'password';
+      passInput.type = show ? 'text' : 'password';
+      eyeBtn.innerHTML = show ? '<i class="fa-regular fa-eye-slash"></i>' : '<i class="fa-regular fa-eye"></i>';
+      eyeBtn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!userInput.value.trim()) {
+        errorEl.textContent = 'Please enter your admission number or username.';
+        userInput.focus();
+        return;
+      }
+      if (!passInput.value) {
+        errorEl.textContent = 'Please enter your password.';
+        passInput.focus();
+        return;
+      }
+      errorEl.textContent = '';
+      // Authentication is handled by the official school portal.
+      window.open(PORTAL_URL, '_blank', 'noopener');
+      closeModal();
+    });
+  }
 
   /* 0.1 Full-Area Hero Background Continuous Auto-Sliding Carousel */
   function initHeroImageSlider() {
