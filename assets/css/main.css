@@ -8369,3 +8369,22 @@ body.slm-lock {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7) !important;
   }
 }
+
+/* Mobile hero: remove empty blurred gap - box height fits image + text */
+@media (max-width: 768px) {
+  .hero-stage .hero-stage-media-wrap {
+    aspect-ratio: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    height: calc(56.25vw + 186px) !important;
+  }
+
+  .hero-stage .hero-content-container {
+    top: calc(56.25vw + 10px) !important;
+    bottom: auto !important;
+  }
+
+  .hero-bg-slide::after {
+    background-position: center top !important;
+  }
+}
