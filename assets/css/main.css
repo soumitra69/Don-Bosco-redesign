@@ -4864,9 +4864,9 @@ html {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
-    aspect-ratio: 1 / 1 !important;
-    min-height: 340px !important;
-    max-height: 480px !important;
+    aspect-ratio: 4 / 3 !important;
+    min-height: 270px !important;
+    max-height: 380px !important;
     height: auto !important;
     overflow: hidden !important;
     background-color: #05220f !important;
@@ -6800,15 +6800,36 @@ html {
     padding: 8px 0;
   }
 
+  .site-masthead .container {
+    padding-left: clamp(10px, 3.5vw, 16px) !important;
+    padding-right: clamp(10px, 3.5vw, 16px) !important;
+    box-sizing: border-box !important;
+  }
+
   .masthead-wrapper {
-    gap: 10px;
+    gap: 8px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-brand {
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   .masthead-brand img {
-    height: 52px;
-    max-width: 220px;
+    height: clamp(40px, 11vw, 52px);
+    max-width: 100%;
     width: auto;
     object-fit: contain;
+  }
+
+  .masthead-right-cluster {
+    display: flex !important;
+    align-items: center !important;
+    gap: clamp(6px, 2vw, 10px) !important;
+    flex-shrink: 0;
   }
 
   .masthead-social-links {
@@ -6829,12 +6850,15 @@ html {
     width: 36px !important;
     height: 36px !important;
     font-size: 18px !important;
+    flex-shrink: 0 !important;
   }
 
   .masthead-login-btn {
     padding: 6px 12px;
     font-size: 12px;
     gap: 5px;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
 
   .nav-cta-btn {
@@ -6859,9 +6883,9 @@ html {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
-    aspect-ratio: 1 / 1 !important;
-    min-height: 340px !important;
-    max-height: 480px !important;
+    aspect-ratio: 4 / 3 !important;
+    min-height: 270px !important;
+    max-height: 380px !important;
     height: auto !important;
     overflow: hidden !important;
     background-color: #05220f !important;
@@ -7793,9 +7817,9 @@ html {
   }
 
   .hero-stage-media-wrap {
-    aspect-ratio: 1 / 1 !important;
-    min-height: 320px !important;
-    max-height: 440px !important;
+    aspect-ratio: 4 / 3 !important;
+    min-height: 250px !important;
+    max-height: 350px !important;
   }
 
   /* Bottom bar slider caption badge on 375px/compact screens */
