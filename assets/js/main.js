@@ -154,6 +154,26 @@
     var slideInterval = null;
     var autoPlayDelay = 3500; // Auto-advance every 3.5 seconds
 
+    /* Per-slide image ratio -> CSS var so mobile banner fits every photo with no blur gap */
+    var heroWrap = document.querySelector('.hero-stage-media-wrap');
+    var heroRatios = [];
+    function applyHeroHeight(index) {
+      if (!heroWrap) return;
+      var r = heroRatios[index] || (16 / 9);
+      heroWrap.style.setProperty('--hero-img-h', (heroWrap.clientWidth / r).toFixed(1) + 'px');
+    }
+    slides.forEach(function (s, i) {
+      var m = (s.getAttribute('style') || '').match(/url\(['"]?([^'")]+)['"]?\)/);
+      if (!m) return;
+      var im = new Image();
+      im.onload = function () {
+        heroRatios[i] = im.naturalWidth / im.naturalHeight;
+        if (i === currentIndex) applyHeroHeight(i);
+      };
+      im.src = m[1];
+    });
+    window.addEventListener('resize', function () { applyHeroHeight(currentIndex); });
+
     function goToSlide(index) {
       if (index < 0) {
         index = slides.length - 1;
@@ -161,6 +181,7 @@
         index = 0;
       }
       currentIndex = index;
+      applyHeroHeight(currentIndex);
 
       for (var i = 0; i < slides.length; i++) {
         if (i === currentIndex) {

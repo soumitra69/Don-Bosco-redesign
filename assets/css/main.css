@@ -8388,3 +8388,16 @@ body.slm-lock {
     background-position: center top !important;
   }
 }
+
+/* Mobile hero: height follows each slide's own photo ratio (JS sets --hero-img-h) */
+@media (max-width: 768px) {
+  .hero-stage .hero-stage-media-wrap {
+    height: calc(var(--hero-img-h, 56.25vw) + 186px) !important;
+    transition: height 0.35s ease;
+  }
+
+  .hero-stage .hero-content-container {
+    top: calc(var(--hero-img-h, 56.25vw) + 10px) !important;
+    transition: top 0.35s ease;
+  }
+}
