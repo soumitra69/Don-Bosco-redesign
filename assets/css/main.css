@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    DON BOSCO SCHOOL, KOSAMGHAT, JABALPUR — INSTITUTIONAL DESIGN SYSTEM
    Specification: dbchsstura.in-design.md (Don Bosco Academic Architecture)
    100% Pure CSS3 | Authentic Institutional Aesthetics | Zero AI Template Tropes
@@ -4853,9 +4853,9 @@ html {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
-    aspect-ratio: 16 / 9.5 !important;
-    min-height: 215px !important;
-    max-height: 320px !important;
+    aspect-ratio: 4 / 3 !important;
+    min-height: 270px !important;
+    max-height: 380px !important;
     height: auto !important;
     overflow: hidden !important;
     background-color: #05220f !important;
@@ -4865,7 +4865,7 @@ html {
     inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    background-size: contain !important;
+    background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
     background-color: #05220f !important;
@@ -6761,22 +6761,11 @@ html {
   }
 
   .masthead-wrapper {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 8px;
-    width: 100%;
-  }
-
-  .masthead-brand {
-    display: flex !important;
-    align-items: center !important;
-    flex: 1 1 auto;
-    min-width: 0;
+    gap: 10px;
   }
 
   .masthead-brand img {
-    height: 48px;
+    height: 52px;
     max-width: 220px;
     width: auto;
     object-fit: contain;
@@ -6786,44 +6775,26 @@ html {
     display: none !important;
   }
 
-  .masthead-login-btn {
-    display: none !important;
-  }
-
-  .masthead-right-cluster {
-    display: flex !important;
-    align-items: center !important;
-    gap: 0;
-    flex-shrink: 0;
-  }
-
-  .masthead-helpline {
-    display: flex !important;
-    align-items: center !important;
-    text-decoration: none;
-  }
-
   .masthead-helpline .helpline-text {
     display: none !important;
   }
 
   .masthead-helpline .icon-circle {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background-color: #eaf7ed;
-    border: 1.5px solid #25d366;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.25);
-    transition: transform 0.2s ease;
+    width: 36px;
+    height: 36px;
+    background-color: var(--color-primary-10);
+    border: 1px solid var(--color-border);
   }
 
   .masthead-helpline .icon-circle img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
+    width: 18px;
+    height: 18px;
+  }
+
+  .masthead-login-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    gap: 5px;
   }
 
   .nav-cta-btn {
@@ -6848,9 +6819,9 @@ html {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
-    aspect-ratio: 16 / 9.5 !important;
-    min-height: 215px !important;
-    max-height: 320px !important;
+    aspect-ratio: 4 / 3 !important;
+    min-height: 270px !important;
+    max-height: 380px !important;
     height: auto !important;
     overflow: hidden !important;
     background-color: #05220f !important;
@@ -6868,7 +6839,7 @@ html {
     inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    background-size: contain !important;
+    background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
     background-color: #05220f !important;
@@ -7685,24 +7656,19 @@ html {
   }
 
   .masthead-brand img {
-    height: 42px;
+    height: 44px;
     max-width: 175px;
     width: auto;
     object-fit: contain;
   }
 
-  .masthead-helpline .icon-circle {
-    width: 40px;
-    height: 40px;
-  }
-
-  .masthead-helpline .icon-circle img {
-    width: 20px;
-    height: 20px;
+  .masthead-login-btn {
+    padding: 5px 10px;
+    font-size: 11px;
   }
 
   .nav-cta-btn {
-    padding: 6px 12px;
+    padding: 5px 10px;
     font-size: 11px;
   }
 
@@ -7787,9 +7753,9 @@ html {
   }
 
   .hero-stage-media-wrap {
-    aspect-ratio: 16 / 9.5 !important;
-    min-height: 205px !important;
-    max-height: 290px !important;
+    aspect-ratio: 4 / 3 !important;
+    min-height: 250px !important;
+    max-height: 350px !important;
   }
 
   /* Bottom bar slider caption badge on 375px/compact screens */
