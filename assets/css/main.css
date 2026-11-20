@@ -8282,3 +8282,13 @@ body.slm-lock {
     font-size: 12.5px;
   }
 }
+
+/* Admissions Section: justified body text (all screens) */
+#admissions .admissions-box > div:first-child > p,
+#admissions .adm-step-item span {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
