@@ -6761,11 +6761,22 @@ html {
   }
 
   .masthead-wrapper {
-    gap: 10px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .masthead-brand {
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .masthead-brand img {
-    height: 52px;
+    height: 48px;
     max-width: 220px;
     width: auto;
     object-fit: contain;
@@ -6775,26 +6786,44 @@ html {
     display: none !important;
   }
 
+  .masthead-login-btn {
+    display: none !important;
+  }
+
+  .masthead-right-cluster {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .masthead-helpline {
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none;
+  }
+
   .masthead-helpline .helpline-text {
     display: none !important;
   }
 
   .masthead-helpline .icon-circle {
-    width: 36px;
-    height: 36px;
-    background-color: var(--color-primary-10);
-    border: 1px solid var(--color-border);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #eaf7ed;
+    border: 1.5px solid #25d366;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.25);
+    transition: transform 0.2s ease;
   }
 
   .masthead-helpline .icon-circle img {
-    width: 18px;
-    height: 18px;
-  }
-
-  .masthead-login-btn {
-    padding: 6px 12px;
-    font-size: 12px;
-    gap: 5px;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
   }
 
   .nav-cta-btn {
@@ -7656,19 +7685,24 @@ html {
   }
 
   .masthead-brand img {
-    height: 44px;
+    height: 42px;
     max-width: 175px;
     width: auto;
     object-fit: contain;
   }
 
-  .masthead-login-btn {
-    padding: 5px 10px;
-    font-size: 11px;
+  .masthead-helpline .icon-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .masthead-helpline .icon-circle img {
+    width: 20px;
+    height: 20px;
   }
 
   .nav-cta-btn {
-    padding: 5px 10px;
+    padding: 6px 12px;
     font-size: 11px;
   }
 
