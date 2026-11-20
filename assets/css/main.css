@@ -4864,9 +4864,9 @@ html {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
-    aspect-ratio: 4 / 3 !important;
-    min-height: 270px !important;
-    max-height: 380px !important;
+    aspect-ratio: 1 / 1 !important;
+    min-height: 340px !important;
+    max-height: 480px !important;
     height: auto !important;
     overflow: hidden !important;
     background-color: #05220f !important;
@@ -6859,9 +6859,9 @@ html {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
-    aspect-ratio: 4 / 3 !important;
-    min-height: 270px !important;
-    max-height: 380px !important;
+    aspect-ratio: 1 / 1 !important;
+    min-height: 340px !important;
+    max-height: 480px !important;
     height: auto !important;
     overflow: hidden !important;
     background-color: #05220f !important;
@@ -7793,9 +7793,9 @@ html {
   }
 
   .hero-stage-media-wrap {
-    aspect-ratio: 4 / 3 !important;
-    min-height: 250px !important;
-    max-height: 350px !important;
+    aspect-ratio: 1 / 1 !important;
+    min-height: 320px !important;
+    max-height: 440px !important;
   }
 
   /* Bottom bar slider caption badge on 375px/compact screens */
