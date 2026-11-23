@@ -9206,3 +9206,98 @@ body.slm-lock {
   background: var(--color-primary-90, #144427);
   transform: translateY(-1px);
 }
+
+
+/* ==========================================================================
+   FACULTY PHOTO CARDS - FULL UNCLIPPED PHOTO PRESENTATION
+   ========================================================================== */
+.faculty-photo-card {
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: var(--rounded-md, 8px);
+  overflow: hidden;
+  background: var(--color-surface, #ffffff);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faculty-photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+}
+
+.faculty-photo-wrapper {
+  position: relative;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 12px 0;
+  min-height: 280px;
+}
+
+.faculty-photo-wrapper img {
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.faculty-photo-card:hover .faculty-photo-wrapper img {
+  transform: scale(1.02);
+}
+
+.faculty-badge-overlay {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 2;
+}
+
+.faculty-role-badge {
+  display: inline-block;
+  font-family: var(--font-oswald, 'Oswald', sans-serif);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 9px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.faculty-card-info {
+  padding: 16px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.faculty-member-name {
+  margin: 0 0 4px;
+  font-family: var(--font-oswald, 'Oswald', sans-serif);
+  font-size: 1.25rem;
+  color: var(--color-primary, #1a5632);
+  letter-spacing: 0.02em;
+}
+
+.faculty-member-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-secondary, #800020);
+  margin-bottom: 8px;
+}
+
+.faculty-member-desc {
+  margin: 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
