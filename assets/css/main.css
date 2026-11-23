@@ -9211,17 +9211,31 @@ body.slm-lock {
 /* ==========================================================================
    FACULTY PHOTO CARDS - FULL UNCLIPPED PHOTO PRESENTATION
    ========================================================================== */
+/* Full-Width Layout for Faculty Pages (No Sidebar) */
+.faculty-fullwidth-layout {
+  width: 100%;
+}
+
+.faculty-fullwidth-article {
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: var(--rounded-md, 8px);
+  padding: clamp(24px, 4vw, 44px);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.05));
+  width: 100%;
+}
+
 .faculty-cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
   margin-bottom: 40px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1080px) {
   .faculty-cards-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    gap: 20px;
   }
 }
 
