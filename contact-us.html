@@ -264,29 +264,29 @@
         <div class="container">
             
             <!-- Quick Contact Cards Row -->
-            <div class="contact-cards-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-bottom: 48px;">
+            <div class="contact-quick-grid">
                 
                 <!-- Address Card -->
-                <div style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); display: flex; gap: 16px; align-items: flex-start;">
-                    <div style="width: 48px; height: 48px; border-radius: 8px; background: #fee2e2; color: #800020; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0;">
+                <div class="contact-quick-card">
+                    <div class="contact-icon-box" style="background: #fee2e2; color: #800020;">
                         <i class="fa-solid fa-location-dot"></i>
                     </div>
                     <div>
-                        <h3 style="margin: 0 0 6px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; color: #1f2937;">Campus Address</h3>
-                        <p style="margin: 0; color: #4b5563; font-size: 0.95rem; line-height: 1.5;">
+                        <h3 class="contact-quick-title">Campus Address</h3>
+                        <p class="contact-quick-text">
                             Kosamghat, Mandla Road, Barela P.O.,<br>Jabalpur, Madhya Pradesh &ndash; 483001
                         </p>
                     </div>
                 </div>
 
                 <!-- Phone Card -->
-                <div style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); display: flex; gap: 16px; align-items: flex-start;" id="campus-helpline">
-                    <div style="width: 48px; height: 48px; border-radius: 8px; background: #dcfce7; color: #166534; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0;">
+                <div class="contact-quick-card" id="campus-helpline">
+                    <div class="contact-icon-box" style="background: #dcfce7; color: #166534;">
                         <i class="fa-solid fa-phone-volume"></i>
                     </div>
                     <div>
-                        <h3 style="margin: 0 0 6px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; color: #1f2937;">Phone Helpline</h3>
-                        <p style="margin: 0; color: #4b5563; font-size: 0.95rem; line-height: 1.5;">
+                        <h3 class="contact-quick-title">Phone Helpline</h3>
+                        <p class="contact-quick-text">
                             <a href="tel:8305211667" style="color: #1a5632; font-weight: 600; text-decoration: none;">+91-8305211667</a><br>
                             <span style="font-size: 0.85rem; color: #6b7280;">Admission &amp; General Enquiries</span>
                         </p>
@@ -294,13 +294,13 @@
                 </div>
 
                 <!-- Email Card -->
-                <div style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); display: flex; gap: 16px; align-items: flex-start;">
-                    <div style="width: 48px; height: 48px; border-radius: 8px; background: #e0f2fe; color: #075985; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0;">
+                <div class="contact-quick-card">
+                    <div class="contact-icon-box" style="background: #e0f2fe; color: #075985;">
                         <i class="fa-solid fa-envelope-open-text"></i>
                     </div>
                     <div>
-                        <h3 style="margin: 0 0 6px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; color: #1f2937;">Email Support</h3>
-                        <p style="margin: 0; color: #4b5563; font-size: 0.95rem; line-height: 1.5;">
+                        <h3 class="contact-quick-title">Email Support</h3>
+                        <p class="contact-quick-text">
                             <a href="mailto:donboscobarela@gmail.com" style="color: #075985; font-weight: 600; text-decoration: none;">donboscobarela@gmail.com</a><br>
                             <span style="font-size: 0.85rem; color: #6b7280;">Official Communications</span>
                         </p>
@@ -308,13 +308,13 @@
                 </div>
 
                 <!-- Office Hours Card -->
-                <div style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); display: flex; gap: 16px; align-items: flex-start;" id="office-hours">
-                    <div style="width: 48px; height: 48px; border-radius: 8px; background: #fef3c7; color: #92400e; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0;">
+                <div class="contact-quick-card" id="office-hours">
+                    <div class="contact-icon-box" style="background: #fef3c7; color: #92400e;">
                         <i class="fa-solid fa-clock"></i>
                     </div>
                     <div>
-                        <h3 style="margin: 0 0 6px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; color: #1f2937;">Office Timings</h3>
-                        <p style="margin: 0; color: #4b5563; font-size: 0.95rem; line-height: 1.5;">
+                        <h3 class="contact-quick-title">Office Timings</h3>
+                        <p class="contact-quick-text">
                             <strong>Mon &ndash; Fri:</strong> 9:00 AM &ndash; 1:30 PM<br>
                             <strong>Saturday:</strong> 9:00 AM &ndash; 11:00 AM
                         </p>
@@ -324,55 +324,56 @@
             </div>
 
             <!-- Main Layout: Contact Form + Location Map Details -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; margin-bottom: 40px;">
+            <div class="contact-main-split">
 
                 <!-- Form: Leave A Message (Matching live website) -->
-                <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 32px; box-shadow: 0 4px 12px rgba(0,0,0,0.04);" id="leave-message">
-                    <span style="color: #1a5632; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Get In Touch</span>
-                    <h2 style="margin: 6px 0 16px; font-family: 'Oswald', sans-serif; font-size: 1.6rem; color: #1f2937;">Leave A Message</h2>
-                    <p style="margin: 0 0 24px; color: #6b7280; font-size: 0.95rem; line-height: 1.5;">
+                <div class="contact-form-card" id="leave-message">
+                    <span class="doc-kicker"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
+                    <h2 class="doc-main-heading">Leave A Message</h2>
+                    <div class="doc-rule-line"></div>
+                    <p class="doc-lead-para" style="margin-bottom: 24px;">
                         Have a question regarding admissions, academics, or campus routines? Send us a message and our administrative team will respond.
                     </p>
 
                     <form onsubmit="alert('Thank you for reaching out to Don Bosco School. Your message has been noted.'); return false;">
-                        <div style="margin-bottom: 16px;">
-                            <label style="display: block; font-size: 0.9rem; font-weight: 600; color: #374151; margin-bottom: 6px;">Your Name *</label>
-                            <input type="text" required placeholder="Enter your full name" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 0.95rem; outline: none; box-sizing: border-box;">
+                        <div class="contact-field-wrap">
+                            <label class="contact-label">Your Name *</label>
+                            <input type="text" required placeholder="Enter your full name" class="contact-input">
                         </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
-                            <div>
-                                <label style="display: block; font-size: 0.9rem; font-weight: 600; color: #374151; margin-bottom: 6px;">Email Address *</label>
-                                <input type="email" required placeholder="name@example.com" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 0.95rem; outline: none; box-sizing: border-box;">
+                        <div class="contact-form-row-2">
+                            <div class="contact-field-wrap">
+                                <label class="contact-label">Email Address *</label>
+                                <input type="email" required placeholder="name@example.com" class="contact-input">
                             </div>
-                            <div>
-                                <label style="display: block; font-size: 0.9rem; font-weight: 600; color: #374151; margin-bottom: 6px;">Phone Number *</label>
-                                <input type="tel" required placeholder="10-digit mobile number" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 0.95rem; outline: none; box-sizing: border-box;">
+                            <div class="contact-field-wrap">
+                                <label class="contact-label">Phone Number *</label>
+                                <input type="tel" required placeholder="10-digit mobile number" class="contact-input">
                             </div>
                         </div>
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; font-size: 0.9rem; font-weight: 600; color: #374151; margin-bottom: 6px;">Your Message / Query *</label>
-                            <textarea rows="4" required placeholder="Please describe your query here..." style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 0.95rem; outline: none; box-sizing: border-box; resize: vertical;"></textarea>
+                        <div class="contact-field-wrap">
+                            <label class="contact-label">Your Message / Query *</label>
+                            <textarea rows="4" required placeholder="Please describe your query here..." class="contact-textarea"></textarea>
                         </div>
-                        <button type="submit" style="background: #1a5632; color: #fff; font-family: 'Oswald', sans-serif; font-size: 1.05rem; letter-spacing: 0.5px; border: none; padding: 12px 28px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; text-transform: uppercase;">
+                        <button type="submit" class="contact-submit-btn">
                             <i class="fa-solid fa-paper-plane"></i> Send Message
                         </button>
                     </form>
                 </div>
 
                 <!-- Location & Institutional Context -->
-                <div style="display: flex; flex-direction: column; gap: 24px;" id="campus-map">
-                    <div style="background: #faf9f6; border: 1px solid #e5e7eb; border-radius: 8px; padding: 28px;">
-                        <span style="color: #800020; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Campus Location</span>
-                        <h3 style="margin: 6px 0 12px; font-family: 'Oswald', sans-serif; font-size: 1.35rem; color: #1f2937;">How to Reach Don Bosco School</h3>
-                        <p style="margin: 0 0 16px; color: #4b5563; font-size: 0.95rem; line-height: 1.6;">
+                <div class="contact-info-stack" id="campus-map">
+                    <div class="sidebar-block" style="background: var(--color-neutral, #faf9f6);">
+                        <span class="doc-kicker" style="color: var(--color-secondary, #800020);"><i class="fa-solid fa-map-location-dot"></i> Campus Location</span>
+                        <h3 class="sidebar-block-title" style="margin-top: 4px;">How to Reach Don Bosco School</h3>
+                        <p class="sidebar-contact-info" style="margin-bottom: 16px;">
                             The campus is strategically situated at <strong>Kosamghat on Mandla Road, near Barela</strong>, Jabalpur (M.P.). It is easily accessible by public and private transport connecting Jabalpur city to the Barela subdivision.
                         </p>
-                        <div style="border-top: 1px solid #e5e7eb; padding-top: 16px;">
-                            <p style="margin: 0 0 8px; font-size: 0.9rem; color: #374151;">
-                                <i class="fa-solid fa-landmark" style="color: #1a5632; width: 20px;"></i> <strong>UDISE Code:</strong> 23390103903
+                        <div style="border-top: 1px solid var(--color-border, #e5e7eb); padding-top: 14px; display: flex; flex-direction: column; gap: 8px;">
+                            <p style="margin: 0; font-size: 0.9rem; color: #374151;">
+                                <i class="fa-solid fa-landmark" style="color: var(--color-primary, #1a5632); width: 20px;"></i> <strong>UDISE Code:</strong> 23390103903
                             </p>
-                            <p style="margin: 0 0 8px; font-size: 0.9rem; color: #374151;">
-                                <i class="fa-solid fa-cross" style="color: #800020; width: 20px;"></i> <strong>Administration:</strong> Salesians of Don Bosco
+                            <p style="margin: 0; font-size: 0.9rem; color: #374151;">
+                                <i class="fa-solid fa-cross" style="color: var(--color-secondary, #800020); width: 20px;"></i> <strong>Administration:</strong> Salesians of Don Bosco
                             </p>
                             <p style="margin: 0; font-size: 0.9rem; color: #374151;">
                                 <i class="fa-solid fa-map-pin" style="color: #2563eb; width: 20px;"></i> <strong>Postal Code:</strong> 483001
@@ -380,8 +381,8 @@
                         </div>
                     </div>
 
-                    <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 24px;">
-                        <h4 style="margin: 0 0 8px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; color: #1e40af;">
+                    <div class="sidebar-block" style="background: #eff6ff; border-color: #bfdbfe;">
+                        <h4 style="margin: 0 0 8px; font-family: var(--font-oswald, 'Oswald', sans-serif); font-size: 1.15rem; color: #1e40af; display: flex; align-items: center; gap: 8px;">
                             <i class="fa-solid fa-calendar-check"></i> Visiting Hours for Parents
                         </h4>
                         <p style="margin: 0; color: #1e3a8a; font-size: 0.9rem; line-height: 1.55;">
