@@ -664,47 +664,9 @@
     </footer>
 
     <!-- SANSKARA-STYLE FLOATING SIDEBAR ACTION BUTTONS -->
-    <div class="sanskara-sticky-actions">
-        <a href="our-founder.html" class="sn-action-btn sn-tour-btn" title="About Our Founder">
-            <i class="fa-solid fa-scroll"></i>
-            <span class="sn-tooltip">Our Founder</span>
-        </a>
-        <a href="tel:8305211667" class="sn-action-btn sn-call-btn" title="Call Campus Office">
-            <i class="fa-solid fa-phone"></i>
-            <span class="sn-tooltip">Call Office</span>
-        </a>
-        <a href="https://wa.me/918305211667?text=Hello%20Don%20Bosco%20School%20Kosamghat%2C%20I%20would%20like%20to%20inquire%20about%20admissions." target="_blank" rel="noopener" class="sn-action-btn sn-wa-btn" title="Chat on WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span class="sn-tooltip">WhatsApp</span>
-        </a>
-        <a href="index.html#notice-board" class="sn-action-btn sn-cal-btn" title="Academic Calendar &amp; Notices">
-            <i class="fa-solid fa-calendar-days"></i>
-            <span class="sn-tooltip">Calendar</span>
-        </a>
-        <button type="button" class="sn-action-btn sn-chat-btn" id="sn-chat-toggle" title="Quick Inquiry">
-            <i class="fa-solid fa-comments"></i>
-            <span class="sn-tooltip">Quick Help</span>
-        </button>
-    </div>
+    
 
-    <!-- Quick Inquiry Pop-up Modal / Drawer -->
-    <div class="sn-chat-popup" id="sn-chat-popup">
-        <div class="sn-chat-header">
-            <div>
-                <h4><i class="fa-solid fa-graduation-cap"></i> Don Bosco Helpdesk</h4>
-                <span>Kosamghat, Jabalpur</span>
-            </div>
-            <button type="button" class="sn-chat-close" id="sn-chat-close">&times;</button>
-        </div>
-        <div class="sn-chat-body">
-            <p>Welcome to Don Bosco School Kosamghat! How can we assist you today?</p>
-            <div class="sn-chat-quick-links">
-                <a href="index.html#admissions" class="sn-chip"><i class="fa-solid fa-file-pen"></i> Apply for Admission</a>
-                <a href="index.html#notice-board" class="sn-chip"><i class="fa-regular fa-file-pdf"></i> Exam Timetables</a>
-                <a href="index.html#academics" class="sn-chip"><i class="fa-solid fa-book-open"></i> Courses &amp; Streams</a>
-                <a href="tel:8305211667" class="sn-chip"><i class="fa-solid fa-phone"></i> +91-8305211667</a>
-            </div>
-        </div>
+    
         <div class="sn-chat-footer">
             <a href="mailto:donboscobarela@gmail.com" class="sn-chat-send-btn">
                 <i class="fa-regular fa-paper-plane"></i> Send Direct Email
@@ -712,10 +674,64 @@
         </div>
     </div>
 
-    <!-- Back To Top Smooth Button -->
-    <button type="button" class="scrollToTopBtn" id="scrollToTopBtn" aria-label="Scroll to top">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
+    
+    
+
+    <!-- Pure Vanilla JavaScript -->
+    <!-- Right-Side Floating Actions Cluster: Scroll To Top + Quick Actions Button (Click to show options) -->
+    <div class="floating-widget-cluster" id="floatingWidgetCluster">
+        <!-- Scroll-To-Top Button (Appears on scroll) -->
+        <button type="button" class="scroll-to-top-btn" id="globalScrollToTop" aria-label="Scroll back to top of page" title="Scroll to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+
+        <!-- Floating Action Button (Click to show options) -->
+        <div class="floating-actions-wrap" id="floatingActionsWrap">
+            <button type="button" class="floating-toggle-btn" id="floatingToggleBtn" aria-label="Toggle quick options menu" title="Quick school options">
+                <i class="fa-solid fa-bolt fab-icon-open"></i>
+                <i class="fa-solid fa-xmark fab-icon-close"></i>
+            </button>
+
+            <!-- Floating Options Popover Menu -->
+            <div class="floating-options-panel" id="floatingOptionsPanel" role="menu">
+                <a href="admission-form.html" class="floating-opt-item opt-admissions" role="menuitem">
+                    <span class="floating-opt-icon"><i class="fa-solid fa-file-pen"></i></span>
+                    <div class="floating-opt-label">
+                        <strong>Admissions Open</strong>
+                        <span>Apply Nursery – X</span>
+                    </div>
+                </a>
+                <a href="tel:8305211667" class="floating-opt-item opt-phone" role="menuitem">
+                    <span class="floating-opt-icon"><i class="fa-solid fa-phone"></i></span>
+                    <div class="floating-opt-label">
+                        <strong>Call Campus Desk</strong>
+                        <span>+91-8305211667</span>
+                    </div>
+                </a>
+                <a href="https://wa.me/918305211667?text=Hello%20Don%20Bosco%20School%20Kosamghat,%20I%20would%20like%20to%20inquire%20about%20admissions." target="_blank" rel="noopener" class="floating-opt-item opt-whatsapp" role="menuitem">
+                    <span class="floating-opt-icon"><i class="fa-brands fa-whatsapp"></i></span>
+                    <div class="floating-opt-label">
+                        <strong>WhatsApp Helpdesk</strong>
+                        <span>Chat With Us</span>
+                    </div>
+                </a>
+                <a href="index.html#notice-board" class="floating-opt-item" role="menuitem">
+                    <span class="floating-opt-icon"><i class="fa-solid fa-bell"></i></span>
+                    <div class="floating-opt-label">
+                        <strong>Notice Board</strong>
+                        <span>Circulars &amp; Timetables</span>
+                    </div>
+                </a>
+                <a href="contact-us.html" class="floating-opt-item" role="menuitem">
+                    <span class="floating-opt-icon"><i class="fa-solid fa-map-location-dot"></i></span>
+                    <div class="floating-opt-label">
+                        <strong>Campus Location</strong>
+                        <span>Mandla Road, Kosamghat</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Pure Vanilla JavaScript -->
     <script src="assets/js/main.js"></script>
