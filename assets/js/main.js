@@ -8,6 +8,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     initDataBackgrounds();
     initAdmissionPopup();
+    initPhotoGalleryInteractive();
     initStudentLoginPopup();
     initHeaderAndMobileNav();
     initHeroCarousel();
@@ -1207,3 +1208,115 @@
     }
   }
 })();
+
+
+  /* ==========================================================================
+     ANIMATED PHOTO GALLERY & LIGHTBOX POPUP
+     ========================================================================== */
+  function initPhotoGalleryInteractive() {
+    var galleryGrid = document.getElementById('photoGalleryGrid');
+    if (!galleryGrid) return;
+
+    var filterBtns = document.querySelectorAll('.gallery-filter-btn');
+    var cards = document.querySelectorAll('.gallery-photo-card');
+    var thumbs = document.querySelectorAll('.gallery-img-thumb');
+
+    // Filter Buttons
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        var filter = btn.getAttribute('data-filter');
+        cards.forEach(function (card) {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.classList.remove('is-hidden');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(15px)';
+            setTimeout(function () {
+              card.style.transition = 'all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 30);
+          } else {
+            card.classList.add('is-hidden');
+          }
+        });
+      });
+    });
+
+    // Lightbox modal logic
+    var lightbox = document.getElementById('galleryLightbox');
+    if (!lightbox) return;
+
+    var lightboxImg = document.getElementById('lightboxImg');
+    var lightboxCounter = document.getElementById('lightboxCounter');
+    var closeBtn = document.getElementById('lightboxClose');
+    var overlay = document.getElementById('lightboxOverlay');
+    var prevBtn = document.getElementById('lightboxPrev');
+    var nextBtn = document.getElementById('lightboxNext');
+
+    var visibleThumbs = [];
+    var currentIndex = 0;
+
+    function getVisibleThumbs() {
+      var arr = [];
+      document.querySelectorAll('.gallery-photo-card:not(.is-hidden) .gallery-img-thumb').forEach(function (t) {
+        arr.push(t);
+      });
+      return arr;
+    }
+
+    function showPhoto(idx) {
+      visibleThumbs = getVisibleThumbs();
+      if (!visibleThumbs.length) return;
+      if (idx < 0) idx = visibleThumbs.length - 1;
+      if (idx >= visibleThumbs.length) idx = 0;
+      currentIndex = idx;
+
+      var fullSrc = visibleThumbs[currentIndex].getAttribute('data-full');
+      lightboxImg.src = fullSrc;
+      lightboxCounter.textContent = (currentIndex + 1) + ' / ' + visibleThumbs.length;
+    }
+
+    thumbs.forEach(function (thumb) {
+      thumb.addEventListener('click', function () {
+        visibleThumbs = getVisibleThumbs();
+        var idx = visibleThumbs.indexOf(thumb);
+        if (idx !== -1) {
+          showPhoto(idx);
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    if (overlay) overlay.addEventListener('click', closeLightbox);
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        showPhoto(currentIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        showPhoto(currentIndex + 1);
+      });
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPhoto(currentIndex - 1);
+      if (e.key === 'ArrowRight') showPhoto(currentIndex + 1);
+    });
+  }

@@ -234,92 +234,708 @@
                         </p>
                     </header>
 
-                    <div class="gallery-grid-layout">
+                                        <!-- Interactive Category Filters -->
+                    <div class="gallery-filter-bar">
+                        <button type="button" class="gallery-filter-btn active" data-filter="all">All Photos (67)</button>
+                        <button type="button" class="gallery-filter-btn" data-filter="activities">Activities &amp; Youth</button>
+                        <button type="button" class="gallery-filter-btn" data-filter="celebrations">Celebrations &amp; Annual Days</button>
+                        <button type="button" class="gallery-filter-btn" data-filter="events">National Events</button>
+                        <button type="button" class="gallery-filter-btn" data-filter="moments">Campus Moments</button>
+                        <button type="button" class="gallery-filter-btn" data-filter="campus">School Life</button>
+                    </div>
 
-                        <!-- Independence Day -->
-                        <div class="gallery-photo-card">
-                            <div class="gallery-img-thumb">
-                                <img src="assets/images/independence-day2.jpeg" alt="Independence Day Celebrations">
-                            </div>
-                            <div class="gallery-card-content">
-                                <span class="gallery-card-tag" style="color: #1a5632;">National Festival &bull; 15 August</span>
-                                <h3 class="gallery-card-title">Independence Day Celebration</h3>
-                                <p class="gallery-card-desc">
-                                    Flag hoisting ceremony, patriotic marching drills, and cultural tributes presented by the students at the Kosamghat campus.
-                                </p>
+                    <!-- Animated Photo Gallery Grid -->
+                    <div class="gallery-grid-layout" id="photoGalleryGrid">
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/new-img21.png" data-index="0">
+                                <img src="assets/images/new-img21.png" alt="Don Bosco School Jabalpur Photo Gallery Image 1" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <!-- Yoga & Fitness -->
-                        <div class="gallery-photo-card">
-                            <div class="gallery-img-thumb">
-                                <img src="assets/images/event/yoga.jpeg" alt="International Yoga Day">
-                            </div>
-                            <div class="gallery-card-content">
-                                <span class="gallery-card-tag" style="color: #0284c7;">Health &amp; Wellness</span>
-                                <h3 class="gallery-card-title">Yoga &amp; Physical Formation</h3>
-                                <p class="gallery-card-desc">
-                                    Mass yoga sessions, breathing practices, and physical exercises for mental poise and physical endurance.
-                                </p>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/new-img22.png" data-index="1">
+                                <img src="assets/images/new-img22.png" alt="Don Bosco School Jabalpur Photo Gallery Image 2" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <!-- Plantation & Eco Club -->
-                        <div class="gallery-photo-card">
-                            <div class="gallery-img-thumb">
-                                <img src="assets/images/event/plant1.jpeg" alt="Plantation Drive">
-                            </div>
-                            <div class="gallery-card-content">
-                                <span class="gallery-card-tag" style="color: #16a34a;">Eco Club &bull; Environment</span>
-                                <h3 class="gallery-card-title">Campus Tree Plantation Drive</h3>
-                                <p class="gallery-card-desc">
-                                    Students planting saplings to promote green ecological awareness and environmental stewardship in Kosamghat.
-                                </p>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/new-img23.png" data-index="2">
+                                <img src="assets/images/new-img23.png" alt="Don Bosco School Jabalpur Photo Gallery Image 3" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <!-- Parent Teacher Meeting -->
-                        <div class="gallery-photo-card">
-                            <div class="gallery-img-thumb">
-                                <img src="assets/images/event/ptm.jpeg" alt="Parent Teacher Meeting">
-                            </div>
-                            <div class="gallery-card-content">
-                                <span class="gallery-card-tag" style="color: #800020;">Academic Review</span>
-                                <h3 class="gallery-card-title">Parent-Teacher Interactive Meeting</h3>
-                                <p class="gallery-card-desc">
-                                    Collaborative progress evaluation between teachers and guardians to support each child's academic and emotional growth.
-                                </p>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/new-img24.png" data-index="3">
+                                <img src="assets/images/new-img24.png" alt="Don Bosco School Jabalpur Photo Gallery Image 4" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <!-- Children's Day -->
-                        <div class="gallery-photo-card">
-                            <div class="gallery-img-thumb">
-                                <img src="assets/images/event/cd1.jpg" alt="Children's Day Celebration">
-                            </div>
-                            <div class="gallery-card-content">
-                                <span class="gallery-card-tag" style="color: #d97706;">Celebration &bull; 14 November</span>
-                                <h3 class="gallery-card-title">Children's Day Celebrations</h3>
-                                <p class="gallery-card-desc">
-                                    Festive programmes, games, and performances conducted by teachers honoring the joy and spirit of childhood.
-                                </p>
+                        <div class="gallery-photo-card" data-category="events">
+                            <div class="gallery-img-thumb" data-full="assets/images/independence-day2.jpeg" data-index="4">
+                                <img src="assets/images/independence-day2.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 5" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <!-- Annual Function -->
-                        <div class="gallery-photo-card">
-                            <div class="gallery-img-thumb">
-                                <img src="assets/images/event/fd11.jpg" alt="Annual Function">
-                            </div>
-                            <div class="gallery-card-content">
-                                <span class="gallery-card-tag" style="color: #7c3aed;">Institutional Milestone</span>
-                                <h3 class="gallery-card-title">Annual Function Celebrations</h3>
-                                <p class="gallery-card-desc">
-                                    Spectacular theatrical plays, choreographies, and prize distribution recognizing scholastic and co-curricular excellence.
-                                </p>
+                        <div class="gallery-photo-card" data-category="celebrations">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/fu2.jpeg" data-index="5">
+                                <img src="assets/images/gallery/fu2.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 6" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="gallery-photo-card" data-category="celebrations">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/fu3.jpeg" data-index="6">
+                                <img src="assets/images/gallery/fu3.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 7" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="celebrations">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/fu4.jpeg" data-index="7">
+                                <img src="assets/images/gallery/fu4.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 8" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="events">
+                            <div class="gallery-img-thumb" data-full="assets/images/independence-day1.jpeg" data-index="8">
+                                <img src="assets/images/independence-day1.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 9" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="celebrations">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/fu6.jpeg" data-index="9">
+                                <img src="assets/images/gallery/fu6.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 10" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="celebrations">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/fu7.jpeg" data-index="10">
+                                <img src="assets/images/gallery/fu7.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 11" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="events">
+                            <div class="gallery-img-thumb" data-full="assets/images/independence-day4.jpeg" data-index="11">
+                                <img src="assets/images/independence-day4.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 12" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="celebrations">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/fu9.jpeg" data-index="12">
+                                <img src="assets/images/gallery/fu9.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 13" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="celebrations">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/fu10.jpeg" data-index="13">
+                                <img src="assets/images/gallery/fu10.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 14" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/j1.jpeg" data-index="14">
+                                <img src="assets/images/gallery/j1.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 15" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/j2.jpeg" data-index="15">
+                                <img src="assets/images/gallery/j2.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 16" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/j4.jpeg" data-index="16">
+                                <img src="assets/images/gallery/j4.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 17" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/j5.jpeg" data-index="17">
+                                <img src="assets/images/gallery/j5.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 18" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/j6.jpeg" data-index="18">
+                                <img src="assets/images/gallery/j6.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 19" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/j7.jpeg" data-index="19">
+                                <img src="assets/images/gallery/j7.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 20" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/j8.jpeg" data-index="20">
+                                <img src="assets/images/gallery/j8.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 21" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/j9.jpeg" data-index="21">
+                                <img src="assets/images/gallery/j9.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 22" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/j10.jpeg" data-index="22">
+                                <img src="assets/images/gallery/j10.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 23" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/j11.jpeg" data-index="23">
+                                <img src="assets/images/gallery/j11.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 24" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/j12.jpeg" data-index="24">
+                                <img src="assets/images/gallery/j12.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 25" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="activities">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/j13.jpeg" data-index="25">
+                                <img src="assets/images/gallery/j13.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 26" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/r1.jpeg" data-index="26">
+                                <img src="assets/images/gallery/r1.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 27" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/r2.jpeg" data-index="27">
+                                <img src="assets/images/gallery/r2.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 28" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/r3.jpeg" data-index="28">
+                                <img src="assets/images/gallery/r3.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 29" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="campus">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/c1.jpg" data-index="29">
+                                <img src="assets/images/gallery/c1.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 30" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="campus">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/c2.jpg" data-index="30">
+                                <img src="assets/images/gallery/c2.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 31" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="campus">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/c3.jpg" data-index="31">
+                                <img src="assets/images/gallery/c3.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 32" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="campus">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/c4.jpg" data-index="32">
+                                <img src="assets/images/gallery/c4.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 33" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="campus">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/c5.jpg" data-index="33">
+                                <img src="assets/images/gallery/c5.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 34" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="events">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/ban1.jpg" data-index="34">
+                                <img src="assets/images/gallery/ban1.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 35" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/a1.jpg" data-index="35">
+                                <img src="assets/images/gallery/a1.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 36" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/a2.jpg" data-index="36">
+                                <img src="assets/images/gallery/a2.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 37" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/a3.jpg" data-index="37">
+                                <img src="assets/images/gallery/a3.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 38" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/a4.jpg" data-index="38">
+                                <img src="assets/images/gallery/a4.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 39" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="campus">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/cd2.jpg" data-index="39">
+                                <img src="assets/images/gallery/cd2.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 40" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="campus">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/cd3.jpg" data-index="40">
+                                <img src="assets/images/gallery/cd3.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 41" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="campus">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/cd4.jpg" data-index="41">
+                                <img src="assets/images/gallery/cd4.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 42" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="celebrations">
+                            <div class="gallery-img-thumb" data-full="assets/images/event/fd11.jpg" data-index="42">
+                                <img src="assets/images/event/fd11.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 43" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="celebrations">
+                            <div class="gallery-img-thumb" data-full="assets/images/event/fd8.jpg" data-index="43">
+                                <img src="assets/images/event/fd8.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 44" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g1.jpeg" data-index="44">
+                                <img src="assets/images/gallery/g1.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 45" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g2.jpeg" data-index="45">
+                                <img src="assets/images/gallery/g2.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 46" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g17.jpeg" data-index="46">
+                                <img src="assets/images/gallery/g17.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 47" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g4.jpeg" data-index="47">
+                                <img src="assets/images/gallery/g4.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 48" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g5.jpeg" data-index="48">
+                                <img src="assets/images/gallery/g5.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 49" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g6.jpeg" data-index="49">
+                                <img src="assets/images/gallery/g6.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 50" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g7.jpeg" data-index="50">
+                                <img src="assets/images/gallery/g7.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 51" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g8.jpeg" data-index="51">
+                                <img src="assets/images/gallery/g8.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 52" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g9.jpeg" data-index="52">
+                                <img src="assets/images/gallery/g9.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 53" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g10.jpeg" data-index="53">
+                                <img src="assets/images/gallery/g10.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 54" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g11.jpeg" data-index="54">
+                                <img src="assets/images/gallery/g11.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 55" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g12.jpeg" data-index="55">
+                                <img src="assets/images/gallery/g12.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 56" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g13.jpeg" data-index="56">
+                                <img src="assets/images/gallery/g13.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 57" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g14.jpeg" data-index="57">
+                                <img src="assets/images/gallery/g14.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 58" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/g15.jpeg" data-index="58">
+                                <img src="assets/images/gallery/g15.jpeg" alt="Don Bosco School Jabalpur Photo Gallery Image 59" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/t1.jpg" data-index="59">
+                                <img src="assets/images/gallery/t1.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 60" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/t2.jpg" data-index="60">
+                                <img src="assets/images/gallery/t2.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 61" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/t3.jpg" data-index="61">
+                                <img src="assets/images/gallery/t3.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 62" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/t4.jpg" data-index="62">
+                                <img src="assets/images/gallery/t4.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 63" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/t5.jpg" data-index="63">
+                                <img src="assets/images/gallery/t5.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 64" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/t6.jpg" data-index="64">
+                                <img src="assets/images/gallery/t6.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 65" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/t7.jpg" data-index="65">
+                                <img src="assets/images/gallery/t7.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 66" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-photo-card" data-category="moments">
+                            <div class="gallery-img-thumb" data-full="assets/images/gallery/t8.jpg" data-index="66">
+                                <img src="assets/images/gallery/t8.jpg" alt="Don Bosco School Jabalpur Photo Gallery Image 67" loading="lazy">
+                                <div class="gallery-hover-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Lightbox Modal Popup -->
+                    <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Photo Lightbox">
+                        <div class="lightbox-overlay" id="lightboxOverlay"></div>
+                        <div class="lightbox-container">
+                            <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close photo view">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <div class="lightbox-image-wrap">
+                                <img src="" alt="Enlarged photo" id="lightboxImg">
+                                <div class="lightbox-counter" id="lightboxCounter">1 / 67</div>
+                            </div>
+                            <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
                     </div>
 
                     <div class="doc-nav-buttons">
