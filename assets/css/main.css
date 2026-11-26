@@ -8663,107 +8663,6 @@ body.slm-lock {
 /* ==========================================================================
    HOUSE SYSTEM PAGE COMPONENTS
    ========================================================================== */
-.house-hero-showcase {
-  margin-bottom: 32px;
-  border-radius: var(--rounded-md, 8px);
-  overflow: hidden;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--color-border, #e5e7eb);
-  background: #ffffff;
-}
-
-.house-hero-showcase img {
-  width: 100%;
-  height: auto;
-  max-height: 480px;
-  object-fit: cover;
-  display: block;
-}
-
-.house-hero-caption {
-  padding: 14px 20px;
-  background: #f8fafc;
-  border-top: 1px solid var(--color-border, #e5e7eb);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  font-size: 0.92rem;
-  color: #4b5563;
-}
-
-.house-hero-caption strong {
-  color: var(--color-primary, #1a5632);
-}
-
-.house-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin: 28px 0 36px;
-}
-
-@media (max-width: 680px) {
-  .house-gallery-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.house-gallery-card {
-  border-radius: var(--rounded-md, 8px);
-  overflow: hidden;
-  background: #ffffff;
-  border: 1px solid var(--color-border, #e5e7eb);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.house-gallery-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-}
-
-.house-gallery-thumb {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-  background: #f1f5f9;
-}
-
-.house-gallery-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.35s ease;
-}
-
-.house-gallery-card:hover .house-gallery-thumb img {
-  transform: scale(1.04);
-}
-
-.house-gallery-body {
-  padding: 14px 18px;
-}
-
-.house-gallery-title {
-  margin: 0 0 6px;
-  font-family: var(--font-oswald, 'Oswald', sans-serif);
-  font-size: 1.05rem;
-  color: #1f2937;
-  letter-spacing: 0.03em;
-}
-
-.house-gallery-desc {
-  margin: 0;
-  font-size: 0.88rem;
-  color: #6b7280;
-  line-height: 1.5;
-}
-
 .house-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -8887,6 +8786,112 @@ body.slm-lock {
   color: #4b5563;
   font-size: 0.94rem;
   line-height: 1.55;
+}
+
+/* Student Clubs Photo Showcase Gallery */
+.club-gallery-section {
+  margin-top: 36px;
+  margin-bottom: 32px;
+}
+
+.club-gallery-header {
+  margin-bottom: 20px;
+}
+
+.club-gallery-header h3 {
+  font-family: var(--font-oswald, 'Oswald', sans-serif);
+  font-size: 1.45rem;
+  color: var(--color-primary, #1a5632);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.club-gallery-header p {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.club-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .club-photos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .club-photos-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.club-photo-item {
+  background: #ffffff;
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: var(--rounded-md, 8px);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.club-photo-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+}
+
+.club-photo-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.club-photo-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.club-photo-item:hover .club-photo-img-wrap img {
+  transform: scale(1.04);
+}
+
+.club-photo-caption {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+}
+
+.club-photo-caption h4 {
+  font-family: var(--font-oswald, 'Oswald', sans-serif);
+  font-size: 1.05rem;
+  color: var(--color-primary, #1a5632);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.club-photo-caption p {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
 }
 
 /* ==========================================================================
