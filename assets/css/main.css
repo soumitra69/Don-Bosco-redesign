@@ -8845,21 +8845,14 @@ body.slm-lock {
 .prominent-banner-frame {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: auto;
   overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .prominent-banner-frame {
-    height: 250px;
-  }
+  line-height: 0;
 }
 
 .prominent-banner-frame img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
+  height: auto;
   display: block;
   transition: transform 0.6s ease;
 }
