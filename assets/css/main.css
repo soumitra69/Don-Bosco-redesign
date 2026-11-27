@@ -261,20 +261,20 @@ ul {
 }
 
 @keyframes admissionBlinkHighlight {
-  0%, 100% {
+  0%, 49% {
     background-color: var(--color-secondary);
     border-color: var(--color-secondary);
     color: #FFFFFF;
   }
-  50% {
-    background-color: var(--color-tertiary);
-    border-color: var(--color-tertiary);
+  50%, 100% {
+    background-color: #f5b800;
+    border-color: #ffd043;
     color: #141f17;
   }
 }
 
 .hero-action-cluster .btn-crimson {
-  animation: admissionBlinkHighlight 1.1s ease-in-out infinite;
+  animation: admissionBlinkHighlight 0.65s linear infinite;
 }
 
 .hero-action-cluster .btn-crimson:hover {
