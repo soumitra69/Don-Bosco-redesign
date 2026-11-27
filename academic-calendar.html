@@ -642,62 +642,190 @@
 
     <script>
     (function () {
-        var monthsData = [
+                var monthsData = [
             { year: 2026, month: 3, name: 'April 2026', events: {
-                1: { title: 'New Academic Session 2026–27 Begins', type: 'academic' },
-                14: { title: 'Dr. B.R. Ambedkar Jayanti (Holiday)', type: 'holiday' },
-                24: { title: 'Parent Orientation & Book Distribution', type: 'event' }
+                1: { title: 'Holiday', type: 'holiday' },
+                2: { title: 'Holiday', type: 'holiday' },
+                3: { title: 'Holiday', type: 'holiday' },
+                4: { title: 'Holiday', type: 'holiday' },
+                5: { title: 'Holiday', type: 'holiday' },
+                6: { title: 'Holiday', type: 'holiday' },
+                7: { title: 'Classes Resume', type: 'academic' },
+                14: { title: 'Ambedkar Jayanti (Holiday)', type: 'holiday' },
+                20: { title: 'Birthday: Anupa Kerketta', type: 'event' },
+                24: { title: 'Birthday: Ms. Sneha Kotwar', type: 'event' }
             }},
             { year: 2026, month: 4, name: 'May 2026', events: {
-                1: { title: 'Summer Vacation Begins', type: 'holiday' },
-                15: { title: 'Summer Break Continues', type: 'holiday' }
+                1: { title: 'Buddha Purnima / Summer Vacation Begins', type: 'holiday' },
+                14: { title: 'Ambedkar Jayanti (Holiday)', type: 'holiday' },
+                27: { title: 'Bakrid (Holiday)', type: 'holiday' }
             }},
             { year: 2026, month: 5, name: 'June 2026', events: {
-                15: { title: 'Summer Vacation Ends', type: 'holiday' },
-                16: { title: 'School Reopens After Summer Break', type: 'academic' },
-                21: { title: 'International Yoga Day Assembly', type: 'event' }
+                1: { title: 'Summer Vacation', type: 'holiday' },
+                6: { title: 'Birthday: Mrs. Akansha Yadav', type: 'event' },
+                11: { title: 'Seminar at Bariatu: Educational Pedagogy of DB', type: 'event' },
+                12: { title: 'Seminar at Bariatu: Educational Pedagogy of DB', type: 'event' },
+                15: { title: 'Classes Resume / Staff Meeting', type: 'academic' },
+                20: { title: 'International Yoga Day', type: 'event' },
+                26: { title: 'Muharram / Birthday: Pragya Yadav', type: 'holiday' },
+                27: { title: 'Morning Assembly - Class 6th & 7th', type: 'event' },
+                30: { title: 'Staff Meeting', type: 'academic' }
             }},
             { year: 2026, month: 6, name: 'July 2026', events: {
-                15: { title: 'Investiture Ceremony & House Assembly', type: 'event' },
-                20: { title: 'Periodic Test - I (PT-1) Begins', type: 'exam' },
-                25: { title: 'Periodic Test - I Concludes', type: 'exam' }
+                1: { title: 'National Doctors’ Day', type: 'event' },
+                3: { title: 'Morning Talk: Mrs. Anupa K.', type: 'event' },
+                4: { title: 'Animated Assembly: Cl. 4th', type: 'event' },
+                7: { title: 'World Chocolate Day / Forgiveness Day', type: 'event' },
+                10: { title: 'Morning Talk: Ms. Ajita', type: 'event' },
+                11: { title: 'Study Leave / First Parents Teachers Meeting', type: 'event' },
+                13: { title: 'Election of the Captains and Monitors', type: 'event' },
+                17: { title: 'Morning Talk: Ms. Jarin', type: 'event' },
+                18: { title: 'Freshers’ Day Cum Investiture Ceremony', type: 'event' },
+                22: { title: 'Birthday: Ms. Tanya Rajput', type: 'event' },
+                25: { title: 'Kargil Diwas: Talk - Mrs. Cinderella / Class-4', type: 'event' },
+                27: { title: 'National Parents’ Day', type: 'event' },
+                30: { title: 'International Friendship Day', type: 'event' },
+                31: { title: 'Morning Talk: Ms. Khusi M. / Staff Meeting', type: 'event' }
             }},
             { year: 2026, month: 7, name: 'August 2026', events: {
-                15: { title: 'Independence Day Flag Hoisting', type: 'event' },
-                22: { title: 'Inter-House Debate & Literary Fest', type: 'event' }
+                1: { title: 'Preparation for Independence Day Begins', type: 'event' },
+                7: { title: 'Morning Talk: Sr. Alize / Drawing Competition (For All)', type: 'event' },
+                8: { title: 'Study Leave', type: 'academic' },
+                10: { title: 'Submission of Question Papers - PT-1', type: 'academic' },
+                13: { title: 'Patriot Singing & Dance Competition (House-wise)', type: 'event' },
+                14: { title: 'Morning Talk: Ms. Pragya Y. / 15th Aug Rehearsal', type: 'event' },
+                15: { title: '80th Independence Day', type: 'event' },
+                16: { title: 'Birthday of Don Bosco', type: 'event' },
+                17: { title: 'P.T-1 Begins (Principal’s Meeting in Delhi)', type: 'exam' },
+                18: { title: 'P.T-1', type: 'exam' },
+                19: { title: 'P.T-1', type: 'exam' },
+                20: { title: 'P.T-1', type: 'exam' },
+                21: { title: 'P.T-1', type: 'exam' },
+                22: { title: 'P.T-1', type: 'exam' },
+                24: { title: 'P.T-1', type: 'exam' },
+                25: { title: 'P.T-1', type: 'exam' },
+                26: { title: 'Milad-Un-Nabi (Holiday)', type: 'holiday' },
+                27: { title: 'P.T-1 / Teachers’ Day Preparation Begins', type: 'exam' },
+                28: { title: 'Raksha Bandhan (Holiday)', type: 'holiday' },
+                31: { title: 'Staff Meeting', type: 'academic' }
             }},
             { year: 2026, month: 8, name: 'September 2026', events: {
-                5: { title: 'Teachers’ Day Celebration', type: 'event' },
-                18: { title: 'Half-Yearly Examination Begins', type: 'exam' },
-                26: { title: 'Half-Yearly Examination Concludes', type: 'exam' }
+                3: { title: 'Birthday: Sr. Elize N.', type: 'event' },
+                4: { title: 'Janmashtami (Holiday)', type: 'holiday' },
+                5: { title: 'Celebration of Teachers’ Day', type: 'event' },
+                8: { title: 'International Literacy Day - Message: Ms. Pragya Y.', type: 'event' },
+                10: { title: 'Birthday: Mrs. Sangeeta P.', type: 'event' },
+                11: { title: 'Morning Talk: Poonam Rose', type: 'event' },
+                12: { title: 'Result Day - P.T-1', type: 'academic' },
+                14: { title: 'Ganesh Chaturthi (Holiday)', type: 'holiday' },
+                15: { title: 'Hindi Diwas - Message: Mrs. Sangeeta & Poonam Rose', type: 'event' },
+                18: { title: 'Morning Talk: Sr. Pushpa', type: 'event' },
+                19: { title: 'Story Telling Competition (Cl. 1 to 7)', type: 'event' },
+                21: { title: 'International Day of Peace - Message: Mrs. Anupa K.', type: 'event' },
+                25: { title: 'Morning Talk: Mrs. Rajni', type: 'event' },
+                26: { title: 'Reading Competition (Cl. 3 to 7)', type: 'event' },
+                30: { title: 'Staff Meeting', type: 'academic' }
             }},
             { year: 2026, month: 9, name: 'October 2026', events: {
+                1: { title: 'Gandhi Jayanti Message: Ms. Sneha K.', type: 'event' },
                 2: { title: 'Gandhi Jayanti (Holiday)', type: 'holiday' },
-                10: { title: 'PTM & Term I Result Declaration', type: 'event' },
-                20: { title: 'Dussehra Break', type: 'holiday' }
+                5: { title: 'Terminal Exam - 1 Begins', type: 'exam' },
+                6: { title: 'Terminal Exam - 1', type: 'exam' },
+                7: { title: 'Terminal Exam - 1', type: 'exam' },
+                8: { title: 'Terminal Exam - 1', type: 'exam' },
+                9: { title: 'Terminal Exam - 1', type: 'exam' },
+                10: { title: 'Terminal Exam - 1', type: 'exam' },
+                12: { title: 'Terminal Exam - 1', type: 'exam' },
+                13: { title: 'Terminal Exam - 1', type: 'exam' },
+                14: { title: 'Terminal Exam - 1', type: 'exam' },
+                15: { title: 'Terminal Exam - 1', type: 'exam' },
+                16: { title: 'Terminal Exam - 1 Concludes', type: 'exam' },
+                19: { title: 'Dussehra Holiday', type: 'holiday' },
+                20: { title: 'Dussehra Holiday / Birthday: Fr. Bhushan Paul X.', type: 'holiday' },
+                21: { title: 'Dussehra Holiday', type: 'holiday' },
+                22: { title: 'School Re-opens After Dussehra Holidays', type: 'academic' },
+                23: { title: 'Morning Talk: Mrs. Sangeeta P.', type: 'event' },
+                26: { title: 'Maharshi Valmiki Jayanti (Holiday)', type: 'holiday' },
+                27: { title: 'Birthday Celebration', type: 'event' },
+                30: { title: 'Morning Talk: Ms. Sneha K.', type: 'event' },
+                31: { title: 'Result Day', type: 'academic' }
             }},
             { year: 2026, month: 10, name: 'November 2026', events: {
-                14: { title: 'Children’s Day & Cultural Fiesta', type: 'event' },
-                21: { title: 'Annual Sports Meet', type: 'event' }
+                2: { title: 'Staff Meeting / Celebration of Fruit Day', type: 'event' },
+                5: { title: 'Diwali Celebration / Diya Decoration (Cl. 1 to 7)', type: 'event' },
+                6: { title: 'Dipawali Holiday', type: 'holiday' },
+                7: { title: 'Dipawali Holiday', type: 'holiday' },
+                9: { title: 'Dipawali Holiday / Birthday: Fr. Lievens Aind, sdb', type: 'holiday' },
+                10: { title: 'Dipawali Holiday', type: 'holiday' },
+                11: { title: 'School Re-opens After Dipawali', type: 'academic' },
+                13: { title: 'Rhymes Recitation (Nur-UKG) / Talk: Tanya Rajput', type: 'event' },
+                14: { title: 'Children’s Day', type: 'event' },
+                20: { title: 'Morning Talk: Ms. Ajita X.', type: 'event' },
+                21: { title: 'Clay Modelling (Cl. Nursery to 2)', type: 'event' },
+                23: { title: 'Birthday: Ms. Jarin Arick / PT-2 Paper Submission', type: 'academic' },
+                24: { title: 'Guru Nanak Jayanti (Holiday)', type: 'holiday' },
+                27: { title: 'Morning Talk: Mrs. Anupa K.', type: 'event' },
+                28: { title: 'Solo Dance Competition (Cl. 3 to 7)', type: 'event' }
             }},
             { year: 2026, month: 11, name: 'December 2026', events: {
-                1: { title: 'Admission Form Distribution (2027-28)', type: 'academic' },
-                7: { title: 'Periodic Test - II (PT-2) Begins', type: 'exam' },
-                24: { title: 'Christmas & Winter Break Begins', type: 'holiday' }
+                3: { title: 'Periodic Test - 2 Begins', type: 'exam' },
+                4: { title: 'PT-2 / Talk: Mrs. Cinderella / B’day: Mrs. Mariam Marawi', type: 'exam' },
+                5: { title: 'Periodic Test - 2', type: 'exam' },
+                7: { title: 'Periodic Test - 2', type: 'exam' },
+                8: { title: 'Periodic Test - 2', type: 'exam' },
+                9: { title: 'Periodic Test - 2', type: 'exam' },
+                10: { title: 'Periodic Test - 2', type: 'exam' },
+                11: { title: 'Periodic Test - 2', type: 'exam' },
+                12: { title: 'Periodic Test - 2 Concludes', type: 'exam' },
+                18: { title: 'Morning Talk: Sr. Elice', type: 'event' },
+                23: { title: 'Pre-Christmas Gathering', type: 'event' },
+                24: { title: 'Christmas Holiday', type: 'holiday' },
+                25: { title: 'Christmas', type: 'holiday' },
+                26: { title: 'Christmas Holiday', type: 'holiday' },
+                28: { title: 'Winter Vacation', type: 'holiday' },
+                29: { title: 'Winter Vacation', type: 'holiday' },
+                30: { title: 'Winter Vacation', type: 'holiday' },
+                31: { title: 'Winter Vacation', type: 'holiday' }
             }},
             { year: 2027, month: 0, name: 'January 2027', events: {
-                2: { title: 'School Reopens After Winter Break', type: 'academic' },
-                11: { title: 'New Admissions Begin (2027-28)', type: 'academic' },
-                26: { title: 'Republic Day Celebration', type: 'event' },
-                31: { title: 'Feast of St. John Bosco (Founder’s Day)', type: 'event' }
+                1: { title: 'Winter Vacation', type: 'holiday' },
+                2: { title: 'Winter Vacation', type: 'holiday' },
+                4: { title: 'Winter Vacation', type: 'holiday' },
+                5: { title: 'Class Resumes After Winter Vacation', type: 'academic' },
+                8: { title: 'Morning Talk: Ms. Jarin A.', type: 'event' },
+                9: { title: 'Result Day - P.T-2', type: 'academic' },
+                14: { title: 'Makar Sankranti (Holiday)', type: 'holiday' },
+                15: { title: 'Morning Talk: Ms. Khushi M.', type: 'event' },
+                16: { title: 'Bosco Sing-out Competition (In Houses)', type: 'event' },
+                22: { title: 'Morning Talk: Ms. Pragya Y.', type: 'event' },
+                23: { title: 'Drawing & Rangoli Competition (In Houses)', type: 'event' },
+                26: { title: 'Republic Day', type: 'event' },
+                29: { title: 'Morning Talk: Mrs. Poonam Rose', type: 'event' },
+                30: { title: 'Founders’ Day', type: 'event' }
             }},
             { year: 2027, month: 1, name: 'February 2027', events: {
-                15: { title: 'Annual Practical & Oral Assessments', type: 'exam' },
-                22: { title: 'Annual Examination (Term II) Begins', type: 'exam' }
+                3: { title: 'Annual Function Rehearsal - Day 1', type: 'event' },
+                4: { title: 'Annual Function Rehearsal - Day 2', type: 'event' },
+                5: { title: 'Annual Function', type: 'event' },
+                13: { title: 'Birthday: Mrs. Cinderella', type: 'event' }
             }},
             { year: 2027, month: 2, name: 'March 2027', events: {
-                6: { title: 'Annual Examination Concludes', type: 'exam' },
-                27: { title: 'Annual Result Declaration & PTM', type: 'academic' }
+                4: { title: 'Final Exam Begins', type: 'exam' },
+                5: { title: 'Final Exam', type: 'exam' },
+                6: { title: 'Maha Shivratri (Holiday)', type: 'holiday' },
+                8: { title: 'Final Exam', type: 'exam' },
+                9: { title: 'Final Exam', type: 'exam' },
+                10: { title: 'Id-Ul-Fitar (Holiday)', type: 'holiday' },
+                11: { title: 'Final Exam', type: 'exam' },
+                12: { title: 'Final Exam', type: 'exam' },
+                13: { title: 'Final Exam', type: 'exam' },
+                15: { title: 'Final Exam', type: 'exam' },
+                16: { title: 'Final Exam Concludes', type: 'exam' },
+                20: { title: 'Result Day - Final Exam', type: 'academic' },
+                26: { title: 'Good Friday (Holiday)', type: 'holiday' },
+                27: { title: 'Holi Saturday (Holiday)', type: 'holiday' },
+                28: { title: 'Easter Sunday (Holiday)', type: 'holiday' },
+                29: { title: 'Easter Monday (Holiday)', type: 'holiday' }
             }}
         ];
 
