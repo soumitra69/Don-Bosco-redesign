@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
     <!-- Academic Design System Stylesheet -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css?v=2.3">
 </head>
 
 <body>
@@ -219,59 +219,252 @@
     </div>
 
     <!-- ==========================================================================
-         5. CURRICULUM MAIN CONTENT (100% AUTHENTIC LIVE PORTAL CONTENT)
+         5. ACADEMIC CALENDAR CONTENT SECTION
          ========================================================================== -->
-    <section class="section-band-white" id="curriculum-content" style="padding: 44px 0 54px;">
+    <section class="section-band-white" id="academic-calendar-section" style="padding: 48px 0 64px;">
         <div class="container">
-            <div class="section-header-academic" style="margin-bottom: 24px;">
-                <span class="eyebrow"><i class="fa-solid fa-graduation-cap"></i> Academic Structure</span>
-                <h2>Curriculum at Don Bosco School, Jabalpur</h2>
-            </div>
+            <div class="academic-doc-layout">
 
-            <!-- Authentic Live Curriculum Guidelines -->
-            <div style="background-color: var(--color-neutral); border: 1px solid var(--color-border); border-left: 4px solid var(--color-primary); border-radius: var(--rounded-md); padding: 24px 28px; box-shadow: var(--shadow-sm);">
-                <ul style="list-style: none; padding-left: 0; margin-bottom: 0; display: flex; flex-direction: column; gap: 16px;">
-                    <li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15.5px; line-height: 1.65; color: var(--color-on-surface);">
-                        <i class="fas fa-book-open" style="color: var(--color-primary); font-size: 18px; margin-top: 4px; flex-shrink: 0;"></i>
-                        <div>
-                            Don Bosco is a Primary School at present affiliated to the <strong>Madhya Pradesh Board of Education</strong> and subsequently it will be affiliated to <strong>CBSE pattern</strong>.
-                        </div>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15.5px; line-height: 1.65; color: var(--color-on-surface);">
-                        <i class="fas fa-book-open" style="color: var(--color-primary); font-size: 18px; margin-top: 4px; flex-shrink: 0;"></i>
-                        <div>
-                            Don Bosco School, Jabalpur, presently has classes from <strong>LKG to Class VII</strong>, and plans to expand unto <strong>Class XII</strong> in the near future.
-                        </div>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15.5px; line-height: 1.65; color: var(--color-on-surface);">
-                        <i class="fas fa-book-open" style="color: var(--color-primary); font-size: 18px; margin-top: 4px; flex-shrink: 0;"></i>
-                        <div>
-                            The medium of instruction is <strong>English</strong>, and every effort is made to teach the students to handle English as a written and spoken language. Students are expected to speak English in the school campus. <strong>Hindi is taught as a second language</strong>.
-                        </div>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15.5px; line-height: 1.65; color: var(--color-on-surface);">
-                        <i class="fas fa-book-open" style="color: var(--color-primary); font-size: 18px; margin-top: 4px; flex-shrink: 0;"></i>
-                        <div>
-                            Special attention is given to develop the student’s personality, initiative, originality and sense of national integration through creative co-curricular activities individually and in groups.
-                        </div>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15.5px; line-height: 1.65; color: var(--color-on-surface);">
-                        <i class="fas fa-book-open" style="color: var(--color-primary); font-size: 18px; margin-top: 4px; flex-shrink: 0;"></i>
-                        <div>
-                            Great importance is given to a high standard of morality and discipline.
-                        </div>
-                    </li>
-                </ul>
+                <!-- Left Column: Calendar Content -->
+                <article class="academic-doc-article">
+                    <header class="doc-header-block">
+                        <span class="doc-kicker"><i class="fa-solid fa-calendar-days"></i> Session 2026&ndash;27 Schedule</span>
+                        <h2 class="doc-main-heading">Annual Academic &amp; Activity Calendar</h2>
+                        <div class="doc-rule-line"></div>
+                        <p class="doc-lead-para">
+                            The Academic Calendar of Don Bosco School, Kosamghat, Jabalpur outlines the key academic terms, periodic assessments, Parent-Teacher Meetings (PTMs), co-curricular events, Salesian feast days, and gazetted holidays for the session 2026&ndash;27.
+                        </p>
+                    </header>
 
-                <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--color-border);">
-                    <a href="admission-form.html" class="btn-primary">
-                        <span>Apply for Admission</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="syllabus.html" class="btn-secondary">
-                        <span>View Class Syllabus</span>
-                    </a>
-                </div>
+                    <!-- Quick Highlights Notice -->
+                    <div class="doc-notice-box notice-green" style="margin-bottom: 32px;">
+                        <h3 class="doc-notice-title">
+                            <i class="fa-solid fa-circle-info"></i> Session Overview
+                        </h3>
+                        <p class="doc-notice-text">
+                            <strong>Academic Session:</strong> April 2026 to March 2027 &bull; <strong>Term I:</strong> April &ndash; September &bull; <strong>Term II:</strong> October &ndash; March. Use the interactive calendar below to explore month-by-month dates and school milestones.
+                        </p>
+                    </div>
+
+                    <!-- Unique Interactive Monthly Calendar (Session 2026-27) -->
+                    <div class="db-cal-wrapper" id="dbAcademicCalendar">
+                        <div class="db-cal-topbar">
+                            <h3 class="db-cal-month-title" id="dbCalMonthTitle">
+                                <i class="fa-regular fa-calendar-check"></i> April 2026
+                            </h3>
+                            <div class="db-cal-controls">
+                                <button type="button" class="db-cal-nav-btn" id="dbCalPrev" aria-label="Previous Month">
+                                    <i class="fa-solid fa-chevron-left"></i> Prev
+                                </button>
+                                <select id="dbCalSelect" class="db-cal-select" aria-label="Select Month">
+                                    <option value="0">April 2026</option>
+                                    <option value="1">May 2026</option>
+                                    <option value="2">June 2026</option>
+                                    <option value="3">July 2026</option>
+                                    <option value="4">August 2026</option>
+                                    <option value="5">September 2026</option>
+                                    <option value="6">October 2026</option>
+                                    <option value="7">November 2026</option>
+                                    <option value="8">December 2026</option>
+                                    <option value="9">January 2027</option>
+                                    <option value="10">February 2027</option>
+                                    <option value="11">March 2027</option>
+                                </select>
+                                <button type="button" class="db-cal-nav-btn" id="dbCalNext" aria-label="Next Month">
+                                    Next <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="db-cal-legend">
+                            <span class="db-cal-legend-item"><span class="db-dot db-dot-academic"></span> Academic / Reopening</span>
+                            <span class="db-cal-legend-item"><span class="db-dot db-dot-exam"></span> Examination</span>
+                            <span class="db-cal-legend-item"><span class="db-dot db-dot-holiday"></span> Holiday / Vacation</span>
+                            <span class="db-cal-legend-item"><span class="db-dot db-dot-event"></span> Celebration / Feast / PTM</span>
+                        </div>
+
+                        <div class="db-cal-grid-wrap">
+                            <div class="db-cal-weekdays">
+                                <div>Sun</div>
+                                <div>Mon</div>
+                                <div>Tue</div>
+                                <div>Wed</div>
+                                <div>Thu</div>
+                                <div>Fri</div>
+                                <div>Sat</div>
+                            </div>
+                            <div class="db-cal-days" id="dbCalDaysGrid"></div>
+                        </div>
+
+                        <div class="db-cal-events-panel">
+                            <h4 class="db-cal-events-title" id="dbCalEventsHeading">
+                                <i class="fa-solid fa-list-check"></i> Highlights for April 2026
+                            </h4>
+                            <div class="db-cal-event-list" id="dbCalEventsList"></div>
+                        </div>
+                    </div>
+
+                    <!-- Term I Table -->
+                    <div class="doc-body-content" style="margin-bottom: 36px;">
+                        <h3 class="doc-sub-heading"><i class="fa-solid fa-leaf" style="color: var(--color-primary, #1a5632); margin-right: 8px;"></i> Term I: April 2026 &ndash; September 2026</h3>
+                        <div class="academic-table-container" style="margin-top: 14px;">
+                            <table class="academic-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 150px;"><i class="fa-regular fa-calendar"></i> Month / Date</th>
+                                        <th><i class="fa-solid fa-star"></i> Event / Academic Milestone</th>
+                                        <th style="width: 140px;"><i class="fa-solid fa-tag"></i> Category</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="col-name">01 April 2026</td>
+                                        <td>Commencement of New Academic Session 2026&ndash;27</td>
+                                        <td><span class="role-tag role-tag-green">Academic</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">14 April 2026</td>
+                                        <td>Dr. B.R. Ambedkar Jayanti (Holiday)</td>
+                                        <td><span class="role-tag role-tag-amber">Holiday</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">01 May &ndash; 15 June</td>
+                                        <td>Summer Vacation</td>
+                                        <td><span class="role-tag role-tag-amber">Vacation</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">16 June 2026</td>
+                                        <td>School Reopens after Summer Break</td>
+                                        <td><span class="role-tag role-tag-green">Academic</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">21 June 2026</td>
+                                        <td>International Yoga Day &amp; Wellness Assembly</td>
+                                        <td><span class="role-tag role-tag-green">Activity</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">20 &ndash; 25 July 2026</td>
+                                        <td>Periodic Test &ndash; I (PT-1)</td>
+                                        <td><span class="role-tag" style="background: #fee2e2; color: #991b1b;">Examination</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">15 August 2026</td>
+                                        <td>Independence Day Flag Hoisting &amp; Cultural Program</td>
+                                        <td><span class="role-tag role-tag-green">Celebration</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">05 September 2026</td>
+                                        <td>Teachers&rsquo; Day Celebration</td>
+                                        <td><span class="role-tag role-tag-green">Celebration</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">18 &ndash; 26 Sept 2026</td>
+                                        <td>Half-Yearly Examination (Term I)</td>
+                                        <td><span class="role-tag" style="background: #fee2e2; color: #991b1b;">Examination</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Term II Table -->
+                    <div class="doc-body-content" style="margin-bottom: 32px;">
+                        <h3 class="doc-sub-heading"><i class="fa-solid fa-award" style="color: var(--color-secondary, #6b0b37); margin-right: 8px;"></i> Term II: October 2026 &ndash; March 2027</h3>
+                        <div class="academic-table-container" style="margin-top: 14px;">
+                            <table class="academic-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 150px;"><i class="fa-regular fa-calendar"></i> Month / Date</th>
+                                        <th><i class="fa-solid fa-star"></i> Event / Academic Milestone</th>
+                                        <th style="width: 140px;"><i class="fa-solid fa-tag"></i> Category</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="col-name">02 October 2026</td>
+                                        <td>Gandhi Jayanti &amp; Swachhata Abhiyan</td>
+                                        <td><span class="role-tag role-tag-amber">Holiday</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">10 October 2026</td>
+                                        <td>Parent-Teacher Meeting (Term I Result Declaration)</td>
+                                        <td><span class="role-tag role-tag-green">PTM</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">14 November 2026</td>
+                                        <td>Children&rsquo;s Day &amp; Cultural Fiesta</td>
+                                        <td><span class="role-tag role-tag-green">Celebration</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">01 Dec &ndash; 07 Dec</td>
+                                        <td>Admission Form Distribution (2027&ndash;28) &amp; Periodic Test &ndash; II</td>
+                                        <td><span class="role-tag" style="background: #fee2e2; color: #991b1b;">Examination</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">24 Dec &ndash; 01 Jan</td>
+                                        <td>Christmas &amp; Winter Break</td>
+                                        <td><span class="role-tag role-tag-amber">Vacation</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">26 January 2027</td>
+                                        <td>Republic Day Celebration</td>
+                                        <td><span class="role-tag role-tag-green">Celebration</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">31 January 2027</td>
+                                        <td>Feast of St. John Bosco (Founder&rsquo;s Day)</td>
+                                        <td><span class="role-tag role-tag-green">Salesian Feast</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">22 Feb &ndash; 06 Mar</td>
+                                        <td>Annual Examination (Term II)</td>
+                                        <td><span class="role-tag" style="background: #fee2e2; color: #991b1b;">Examination</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-name">27 March 2027</td>
+                                        <td>Annual Result Declaration &amp; Promotion</td>
+                                        <td><span class="role-tag role-tag-green">Academic</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="doc-nav-buttons">
+                        <a href="co-curricular.html" class="doc-nav-btn prev">
+                            <i class="fa-solid fa-arrow-left"></i> Co-Curricular
+                        </a>
+                        <a href="admission-process.html" class="doc-nav-btn next">
+                            Admission Process <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Right Column: Sidebar -->
+                <aside class="academic-doc-sidebar">
+                    <div class="sidebar-block">
+                        <h4 class="sidebar-block-title">Academics</h4>
+                        <ul class="sidebar-nav-list">
+                            <li><a href="curriculum.html"><i class="fa-solid fa-chevron-right"></i> Curriculum</a></li>
+                            <li><a href="syllabus.html"><i class="fa-solid fa-chevron-right"></i> School Syllabus</a></li>
+                            <li><a href="fees-structure.html"><i class="fa-solid fa-chevron-right"></i> School Fee</a></li>
+                            <li><a href="uniform.html"><i class="fa-solid fa-chevron-right"></i> School Uniform</a></li>
+                            <li><a href="co-curricular.html"><i class="fa-solid fa-chevron-right"></i> Co-Curricular</a></li>
+                            <li><a href="academic-calendar.html" class="active"><i class="fa-solid fa-chevron-right"></i> Academic Calendar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-block contact-card">
+                        <h4 class="sidebar-block-title">Academic Helpdesk</h4>
+                        <p class="sidebar-contact-info">
+                            <strong>Don Bosco School</strong><br>
+                            Kosamghat, Mandla Road, Jabalpur (M.P.) &ndash; 483001<br><br>
+                            <i class="fa-solid fa-phone"></i> +91-8305211667<br>
+                            <i class="fa-solid fa-envelope"></i> donboscobarela@gmail.com
+                        </p>
+                    </div>
+                </aside>
+
             </div>
         </div>
     </section>
