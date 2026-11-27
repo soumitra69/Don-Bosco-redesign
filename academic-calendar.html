@@ -270,6 +270,7 @@
                                     <option value="10">February 2027</option>
                                     <option value="11">March 2027</option>
                                 </select>
+                                <button type="button" class="db-cal-today-btn" id="dbCalToday" aria-label="Go to Today"><i class="fa-solid fa-calendar-day"></i> Today</button>
                                 <button type="button" class="db-cal-nav-btn" id="dbCalNext" aria-label="Next Month">
                                     Next <i class="fa-solid fa-chevron-right"></i>
                                 </button>
@@ -706,6 +707,7 @@
         var selectEl = document.getElementById('dbCalSelect');
         var prevBtn = document.getElementById('dbCalPrev');
         var nextBtn = document.getElementById('dbCalNext');
+        var todayBtn = document.getElementById('dbCalToday');
         var listEl = document.getElementById('dbCalEventsList');
         var headingEl = document.getElementById('dbCalEventsHeading');
 
@@ -727,11 +729,15 @@
             for (var i = 0; i < firstDay; i++) {
                 html += '<div class="db-cal-day is-empty"></div>';
             }
+            var now = new Date();
+            var isCurrentMonth = (now.getFullYear() === m.year && now.getMonth() === m.month);
+            var todayDate = now.getDate();
             for (var d = 1; d <= daysInMonth; d++) {
                 var dayOfWeek = new Date(m.year, m.month, d).getDay();
                 var ev = m.events[d];
                 var classes = 'db-cal-day';
                 if (dayOfWeek === 0) classes += ' is-sunday';
+                if (isCurrentMonth && d === todayDate) classes += ' is-today';
                 if (ev) classes += ' has-event type-' + ev.type;
 
                 html += '<div class="' + classes + '"' + (ev ? ' title="' + ev.title + '"' : '') + '>';
@@ -767,7 +773,19 @@
             renderMonth(parseInt(this.value, 10));
         });
 
-        renderMonth(0);
+        function goToToday() {
+            var now = new Date();
+            var idx = monthsData.findIndex(function (m) {
+                return m.year === now.getFullYear() && m.month === now.getMonth();
+            });
+            renderMonth(idx !== -1 ? idx : 0);
+        }
+
+        if (todayBtn) {
+            todayBtn.addEventListener('click', goToToday);
+        }
+
+        goToToday();
     })();
     </script>
 </body>

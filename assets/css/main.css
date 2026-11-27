@@ -9451,6 +9451,41 @@ body.slm-lock {
   color: #dc2626;
 }
 
+.db-cal-day.is-today {
+  border: 2px solid var(--color-tertiary, #d49800);
+  box-shadow: 0 0 0 2px rgba(212, 152, 0, 0.25);
+  background: #fefce8;
+}
+
+.db-cal-day.is-today .db-day-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary, #1a5632);
+  color: #ffffff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 0.82rem;
+}
+
+.db-cal-today-btn {
+  background: var(--color-tertiary, #d49800);
+  color: #141f17;
+  border: 1px solid var(--color-tertiary, #d49800);
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.db-cal-today-btn:hover {
+  background: #f5b800;
+  transform: translateY(-1px);
+}
+
 .db-cal-day.has-event {
   cursor: pointer;
   border-width: 1.5px;
