@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
     <!-- Academic Design System Stylesheet -->
-    <link rel="stylesheet" href="assets/css/main.css?v=2.4">
+    <link rel="stylesheet" href="assets/css/main.css?v=2.5">
 </head>
 
 <body>
@@ -278,11 +278,31 @@
                             </div>
                         </div>
 
+                        <!-- Quick 1-Click Month Pills -->
+                        <div class="db-cal-month-pills" id="dbCalMonthPills">
+                            <button type="button" class="db-month-pill" data-idx="0">Apr</button>
+                            <button type="button" class="db-month-pill" data-idx="1">May</button>
+                            <button type="button" class="db-month-pill" data-idx="2">Jun</button>
+                            <button type="button" class="db-month-pill" data-idx="3">Jul</button>
+                            <button type="button" class="db-month-pill" data-idx="4">Aug</button>
+                            <button type="button" class="db-month-pill" data-idx="5">Sep</button>
+                            <button type="button" class="db-month-pill" data-idx="6">Oct</button>
+                            <button type="button" class="db-month-pill" data-idx="7">Nov</button>
+                            <button type="button" class="db-month-pill" data-idx="8">Dec</button>
+                            <button type="button" class="db-month-pill" data-idx="9">Jan</button>
+                            <button type="button" class="db-month-pill" data-idx="10">Feb</button>
+                            <button type="button" class="db-month-pill" data-idx="11">Mar</button>
+                        </div>
+
+                        <!-- Filterable Colorful Legend -->
                         <div class="db-cal-legend">
-                            <span class="db-cal-legend-item"><span class="db-dot db-dot-academic"></span> Academic / Reopening</span>
-                            <span class="db-cal-legend-item"><span class="db-dot db-dot-exam"></span> Examination</span>
-                            <span class="db-cal-legend-item"><span class="db-dot db-dot-holiday"></span> Holiday / Vacation</span>
-                            <span class="db-cal-legend-item"><span class="db-dot db-dot-event"></span> Celebration / Feast / PTM</span>
+                            <div class="db-cal-filter-group" id="dbCalFilters">
+                                <button type="button" class="db-filter-chip active" data-filter="all">All</button>
+                                <button type="button" class="db-filter-chip" data-filter="academic"><span class="db-dot db-dot-academic"></span> Academic</button>
+                                <button type="button" class="db-filter-chip" data-filter="exam"><span class="db-dot db-dot-exam"></span> Exams</button>
+                                <button type="button" class="db-filter-chip" data-filter="holiday"><span class="db-dot db-dot-holiday"></span> Holidays</button>
+                                <button type="button" class="db-filter-chip" data-filter="event"><span class="db-dot db-dot-event"></span> Events / B'days</button>
+                            </div>
                         </div>
 
                         <div class="db-cal-grid-wrap">
@@ -296,6 +316,15 @@
                                 <div>Sat</div>
                             </div>
                             <div class="db-cal-days" id="dbCalDaysGrid"></div>
+                        </div>
+
+                        <!-- Interactive Selected Date Spotlight -->
+                        <div class="db-cal-spotlight" id="dbCalSpotlight">
+                            <div>
+                                <div style="font-size:0.78rem;font-weight:800;text-transform:uppercase;color:#92400e;" id="dbSpotDate"></div>
+                                <div style="font-size:1rem;font-weight:700;color:#141f17;" id="dbSpotTitle"></div>
+                            </div>
+                            <button type="button" onclick="document.getElementById('dbCalSpotlight').classList.remove('show')" style="background:none;border:none;font-size:1.2rem;cursor:pointer;color:#92400e;" aria-label="Close">&times;</button>
                         </div>
 
                         <div class="db-cal-events-panel">
@@ -831,7 +860,14 @@
         ];
 
         var currentIdx = 0;
+        var activeFilter = 'all';
+        var selectedDay = null;
         var gridEl = document.getElementById('dbCalDaysGrid');
+        var pillsContainer = document.getElementById('dbCalMonthPills');
+        var filtersContainer = document.getElementById('dbCalFilters');
+        var spotlightEl = document.getElementById('dbCalSpotlight');
+        var spotDateEl = document.getElementById('dbSpotDate');
+        var spotTitleEl = document.getElementById('dbSpotTitle');
         var titleEl = document.getElementById('dbCalMonthTitle');
         var selectEl = document.getElementById('dbCalSelect');
         var prevBtn = document.getElementById('dbCalPrev');
@@ -851,36 +887,65 @@
             prevBtn.disabled = idx === 0;
             nextBtn.disabled = idx === monthsData.length - 1;
 
+            if (pillsContainer) {
+                pillsContainer.querySelectorAll('.db-month-pill').forEach(function (btn) {
+                    btn.classList.toggle('active', parseInt(btn.getAttribute('data-idx'), 10) === idx);
+                });
+            }
+
             var firstDay = new Date(m.year, m.month, 1).getDay();
             var daysInMonth = new Date(m.year, m.month + 1, 0).getDate();
-
-            var html = '';
-            for (var i = 0; i < firstDay; i++) {
-                html += '<div class="db-cal-day is-empty"></div>';
-            }
             var now = new Date();
             var isCurrentMonth = (now.getFullYear() === m.year && now.getMonth() === m.month);
             var todayDate = now.getDate();
+
+            var htmlStr = '';
+            for (var i = 0; i < firstDay; i++) {
+                htmlStr += '<div class="db-cal-day is-empty"></div>';
+            }
             for (var d = 1; d <= daysInMonth; d++) {
                 var dayOfWeek = new Date(m.year, m.month, d).getDay();
-                var ev = m.events[d];
+                var rawEv = m.events[d];
+                var ev = (rawEv && (activeFilter === 'all' || rawEv.type === activeFilter)) ? rawEv : null;
                 var classes = 'db-cal-day';
                 if (dayOfWeek === 0) classes += ' is-sunday';
                 if (isCurrentMonth && d === todayDate) classes += ' is-today';
+                if (selectedDay === d) classes += ' is-selected';
                 if (ev) classes += ' has-event type-' + ev.type;
 
-                html += '<div class="' + classes + '"' + (ev ? ' title="' + ev.title + '"' : '') + '>';
-                html += '<span class="db-day-num">' + d + '</span>';
-                if (ev) {
-                    html += '<span class="db-day-tag">' + ev.title + '</span>';
+                htmlStr += '<div class="' + classes + '" data-day="' + d + '"' + (ev ? ' title="' + ev.title + '"' : '') + '>';
+                htmlStr += '<div class="db-day-head"><span class="db-day-num">' + d + '</span>';
+                if (isCurrentMonth && d === todayDate) {
+                    htmlStr += '<span class="db-today-pill">TODAY</span>';
                 }
-                html += '</div>';
+                htmlStr += '</div>';
+                if (ev) {
+                    htmlStr += '<span class="db-day-tag">' + ev.title + '</span>';
+                }
+                htmlStr += '</div>';
             }
-            gridEl.innerHTML = html;
+            gridEl.innerHTML = htmlStr;
 
-            var evKeys = Object.keys(m.events).map(Number).sort(function (a, b) { return a - b; });
+            // Attach click listener to days with events
+            gridEl.querySelectorAll('.db-cal-day.has-event').forEach(function (cell) {
+                cell.addEventListener('click', function () {
+                    var dayNum = parseInt(this.getAttribute('data-day'), 10);
+                    selectedDay = dayNum;
+                    var ev = m.events[dayNum];
+                    if (ev && spotlightEl) {
+                        spotDateEl.textContent = dayNum + ' ' + m.name;
+                        spotTitleEl.textContent = ev.title;
+                        spotlightEl.classList.add('show');
+                    }
+                    renderMonth(currentIdx);
+                });
+            });
+
+            var evKeys = Object.keys(m.events).map(Number).sort(function (a, b) { return a - b; })
+                .filter(function (day) { return activeFilter === 'all' || m.events[day].type === activeFilter; });
+
             if (evKeys.length === 0) {
-                listEl.innerHTML = '<p style="margin:0;color:#6b7280;font-size:0.9rem;">Regular academic classes as per timetable.</p>';
+                listEl.innerHTML = '<p style="margin:0;color:#6b7280;font-size:0.9rem;">No matching events in this filter for ' + m.name + '.</p>';
             } else {
                 listEl.innerHTML = evKeys.map(function (day) {
                     var ev = m.events[day];
@@ -890,6 +955,27 @@
                         '</div>';
                 }).join('');
             }
+        }
+
+        if (pillsContainer) {
+            pillsContainer.querySelectorAll('.db-month-pill').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    selectedDay = null;
+                    if (spotlightEl) spotlightEl.classList.remove('show');
+                    renderMonth(parseInt(this.getAttribute('data-idx'), 10));
+                });
+            });
+        }
+
+        if (filtersContainer) {
+            filtersContainer.querySelectorAll('.db-filter-chip').forEach(function (chip) {
+                chip.addEventListener('click', function () {
+                    filtersContainer.querySelectorAll('.db-filter-chip').forEach(function (c) { c.classList.remove('active'); });
+                    this.classList.add('active');
+                    activeFilter = this.getAttribute('data-filter');
+                    renderMonth(currentIdx);
+                });
+            });
         }
 
         prevBtn.addEventListener('click', function () {
