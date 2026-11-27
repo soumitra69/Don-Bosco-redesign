@@ -470,6 +470,138 @@
 
     <!-- Pure Vanilla JavaScript -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+    (function () {
+        var monthsData = [
+            { year: 2026, month: 3, name: 'April 2026', events: {
+                1: { title: 'New Academic Session 2026–27 Begins', type: 'academic' },
+                14: { title: 'Dr. B.R. Ambedkar Jayanti (Holiday)', type: 'holiday' },
+                24: { title: 'Parent Orientation & Book Distribution', type: 'event' }
+            }},
+            { year: 2026, month: 4, name: 'May 2026', events: {
+                1: { title: 'Summer Vacation Begins', type: 'holiday' },
+                15: { title: 'Summer Break Continues', type: 'holiday' }
+            }},
+            { year: 2026, month: 5, name: 'June 2026', events: {
+                15: { title: 'Summer Vacation Ends', type: 'holiday' },
+                16: { title: 'School Reopens After Summer Break', type: 'academic' },
+                21: { title: 'International Yoga Day Assembly', type: 'event' }
+            }},
+            { year: 2026, month: 6, name: 'July 2026', events: {
+                15: { title: 'Investiture Ceremony & House Assembly', type: 'event' },
+                20: { title: 'Periodic Test - I (PT-1) Begins', type: 'exam' },
+                25: { title: 'Periodic Test - I Concludes', type: 'exam' }
+            }},
+            { year: 2026, month: 7, name: 'August 2026', events: {
+                15: { title: 'Independence Day Flag Hoisting', type: 'event' },
+                22: { title: 'Inter-House Debate & Literary Fest', type: 'event' }
+            }},
+            { year: 2026, month: 8, name: 'September 2026', events: {
+                5: { title: 'Teachers’ Day Celebration', type: 'event' },
+                18: { title: 'Half-Yearly Examination Begins', type: 'exam' },
+                26: { title: 'Half-Yearly Examination Concludes', type: 'exam' }
+            }},
+            { year: 2026, month: 9, name: 'October 2026', events: {
+                2: { title: 'Gandhi Jayanti (Holiday)', type: 'holiday' },
+                10: { title: 'PTM & Term I Result Declaration', type: 'event' },
+                20: { title: 'Dussehra Break', type: 'holiday' }
+            }},
+            { year: 2026, month: 10, name: 'November 2026', events: {
+                14: { title: 'Children’s Day & Cultural Fiesta', type: 'event' },
+                21: { title: 'Annual Sports Meet', type: 'event' }
+            }},
+            { year: 2026, month: 11, name: 'December 2026', events: {
+                1: { title: 'Admission Form Distribution (2027-28)', type: 'academic' },
+                7: { title: 'Periodic Test - II (PT-2) Begins', type: 'exam' },
+                24: { title: 'Christmas & Winter Break Begins', type: 'holiday' }
+            }},
+            { year: 2027, month: 0, name: 'January 2027', events: {
+                2: { title: 'School Reopens After Winter Break', type: 'academic' },
+                11: { title: 'New Admissions Begin (2027-28)', type: 'academic' },
+                26: { title: 'Republic Day Celebration', type: 'event' },
+                31: { title: 'Feast of St. John Bosco (Founder’s Day)', type: 'event' }
+            }},
+            { year: 2027, month: 1, name: 'February 2027', events: {
+                15: { title: 'Annual Practical & Oral Assessments', type: 'exam' },
+                22: { title: 'Annual Examination (Term II) Begins', type: 'exam' }
+            }},
+            { year: 2027, month: 2, name: 'March 2027', events: {
+                6: { title: 'Annual Examination Concludes', type: 'exam' },
+                27: { title: 'Annual Result Declaration & PTM', type: 'academic' }
+            }}
+        ];
+
+        var currentIdx = 0;
+        var gridEl = document.getElementById('dbCalDaysGrid');
+        var titleEl = document.getElementById('dbCalMonthTitle');
+        var selectEl = document.getElementById('dbCalSelect');
+        var prevBtn = document.getElementById('dbCalPrev');
+        var nextBtn = document.getElementById('dbCalNext');
+        var listEl = document.getElementById('dbCalEventsList');
+        var headingEl = document.getElementById('dbCalEventsHeading');
+
+        if (!gridEl) return;
+
+        function renderMonth(idx) {
+            currentIdx = idx;
+            var m = monthsData[idx];
+            titleEl.innerHTML = '<i class="fa-regular fa-calendar-check"></i> ' + m.name;
+            headingEl.innerHTML = '<i class="fa-solid fa-list-check"></i> Highlights for ' + m.name;
+            selectEl.value = String(idx);
+            prevBtn.disabled = idx === 0;
+            nextBtn.disabled = idx === monthsData.length - 1;
+
+            var firstDay = new Date(m.year, m.month, 1).getDay();
+            var daysInMonth = new Date(m.year, m.month + 1, 0).getDate();
+
+            var html = '';
+            for (var i = 0; i < firstDay; i++) {
+                html += '<div class="db-cal-day is-empty"></div>';
+            }
+            for (var d = 1; d <= daysInMonth; d++) {
+                var dayOfWeek = new Date(m.year, m.month, d).getDay();
+                var ev = m.events[d];
+                var classes = 'db-cal-day';
+                if (dayOfWeek === 0) classes += ' is-sunday';
+                if (ev) classes += ' has-event type-' + ev.type;
+
+                html += '<div class="' + classes + '"' + (ev ? ' title="' + ev.title + '"' : '') + '>';
+                html += '<span class="db-day-num">' + d + '</span>';
+                if (ev) {
+                    html += '<span class="db-day-tag">' + ev.title + '</span>';
+                }
+                html += '</div>';
+            }
+            gridEl.innerHTML = html;
+
+            var evKeys = Object.keys(m.events).map(Number).sort(function (a, b) { return a - b; });
+            if (evKeys.length === 0) {
+                listEl.innerHTML = '<p style="margin:0;color:#6b7280;font-size:0.9rem;">Regular academic classes as per timetable.</p>';
+            } else {
+                listEl.innerHTML = evKeys.map(function (day) {
+                    var ev = m.events[day];
+                    return '<div class="db-cal-event-card type-' + ev.type + '">' +
+                        '<span class="db-cal-event-date">' + day + ' ' + m.name + '</span>' +
+                        '<span class="db-cal-event-name">' + ev.title + '</span>' +
+                        '</div>';
+                }).join('');
+            }
+        }
+
+        prevBtn.addEventListener('click', function () {
+            if (currentIdx > 0) renderMonth(currentIdx - 1);
+        });
+        nextBtn.addEventListener('click', function () {
+            if (currentIdx < monthsData.length - 1) renderMonth(currentIdx + 1);
+        });
+        selectEl.addEventListener('change', function () {
+            renderMonth(parseInt(this.value, 10));
+        });
+
+        renderMonth(0);
+    })();
+    </script>
 </body>
 
 </html>
