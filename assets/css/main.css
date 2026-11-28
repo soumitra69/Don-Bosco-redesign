@@ -274,7 +274,13 @@ ul {
 }
 
 .hero-action-cluster .btn-crimson {
-  animation: admissionBlinkHighlight 0.65s linear infinite;
+  -webkit-animation: admissionBlinkHighlight 0.65s linear infinite !important;
+  animation: admissionBlinkHighlight 0.65s linear infinite !important;
+}
+
+.hero-action-cluster .btn-crimson .btn-line-1,
+.hero-action-cluster .btn-crimson .btn-line-2 {
+  color: inherit !important;
 }
 
 .hero-action-cluster .btn-crimson:hover {
@@ -7033,8 +7039,8 @@ html {
 
   .hero-action-cluster .btn-crimson .btn-line-1,
   .hero-action-cluster .btn-crimson .btn-line-2 {
-    color: #FFFFFF !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+    color: inherit !important;
+    text-shadow: none !important;
   }
 
   .hero-action-cluster .btn-secondary .btn-line-1,
@@ -7813,8 +7819,8 @@ html {
 
   .hero-action-cluster .btn-crimson .btn-line-1,
   .hero-action-cluster .btn-crimson .btn-line-2 {
-    color: #FFFFFF !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+    color: inherit !important;
+    text-shadow: none !important;
   }
 
   .hero-action-cluster .btn-secondary .btn-line-1,
